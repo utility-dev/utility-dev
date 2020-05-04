@@ -1095,7 +1095,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				return;
 			  }
 
-			  var dbPromise = idb.open('utility-db', 1, function(upgradeDb) {
+			  var dbPromise = window.indexedDB.open('utility-db', 1, function(upgradeDb) {
 				if (!upgradeDb.objectStoreNames.contains('tarifs')) {
 				  var peopleOS = upgradeDb.createObjectStore('tarifs');
 				  peopleOS.createIndex('company', 'company', {unique: false});
