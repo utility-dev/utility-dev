@@ -757,85 +757,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
                         <!-- /tab7 -->
                         
-                        <!-- tab8 -->
-						<div>
-							<i class="icon fa fa-tint inner-icon" aria-hidden="true"></i>
-                    <div id="tab2" class="tab-grid">
-		                      <div class="login-form">
-						<form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-						<ol>	
-                            <li>
-                                <div class="agileits-select">
-                                <select class="selectpicker show-tick" data-live-search="true">
-                                  <option data-tokens="Water Provider">Water Provider</option>
-                                  <option data-tokens="Provider1">Provider1</option>
-                                  <option data-tokens="Provider2">Provider2</option>
-                                  <option data-tokens="Provider3">Provider3</option>
-                                  <option data-tokens="Provider4">Provider4</option>
-                                  <option data-tokens="Provider5">Provider5</option>
-                                  <option data-tokens="Provider6">Provider6</option>
-                                  <option data-tokens="Provider7">Provider7</option>
-                                </select>
-                                </div>
-                            </li>
-                            <li>
-                              <input type="text" id="customer" value="Consumer Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Consumer Number';}" required="">	
-                            </li>
-                            
-                            <li>
-                                <input type="submit" class="submit" value="Proceed" />
-                            </li>
-				        </ol>
-						</form>	
-																							
-						</div>	
-						</div>
-						</div>
-                        <!-- /tab8 -->
-                        
-                        <!-- tab9 -->
-						<div>
-							<i class="icon fa fa-paper-plane inner-icon" aria-hidden="true"></i>
-                    <div id="tab2" class="tab-grid">
-		                      <div class="login-form">
-						<form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-						<ol>	
-                            <li>
-								<h4>Entrer le type de compte mobile source?</h4>
-                                <div class="agileits-select">
-                                <select class="selectpicker show-tick" data-live-search="true">
-                                  <option data-tokens="Select Operator">Nombre de bouteilles </option>
-                                  <option data-tokens="Operator1">Airtel Money</option>
-                                  <option data-tokens="Operator2">MobiCash</option>
-                                  <option data-tokens="Operator3">Flooz</option>
-                                  <option data-tokens="Operator4">Moov Money</option>
-                                </select>
-                                </div>
-                            </li>
-                            <li>
-								<h4>Entrer le type de compte mobile de destination?</h4>
-                                <div class="agileits-select">
-                                <select class="selectpicker show-tick" data-live-search="true">
-                                  <option data-tokens="Select Operator">Nombre de bouteilles </option>
-                                  <option data-tokens="Operator1">Airtel Money</option>
-                                  <option data-tokens="Operator2">MobiCash</option>
-                                  <option data-tokens="Operator3">Flooz</option>
-                                  <option data-tokens="Operator4">Moov Money</option>
-                                </select>
-                                </div>
-                            </li>
-                            
-                             <li>
-                                <input type="submit" class="submit" value="Transférer Maintenant" />
-                            </li>
-				        </ol>
-						</form>	
-																							
-						</div>	
-						</div>
-						</div>
-                        <!-- /tab9 -->
-                        
                         <!-- tab10 -->
 					
                         <!-- /tab10 -->
@@ -1165,6 +1086,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 					});
 				});
+				
+			(function() {
+
+			  //check for support
+			  if (!('indexedDB' in window)) {
+				console.log('This browser doesn\'t support IndexedDB');
+				return;
+			  }
+
+			  var dbPromise = idb.open('utility-db', 1, function(upgradeDb) {
+				if (!upgradeDb.objectStoreNames.contains('tarifs')) {
+				  var peopleOS = upgradeDb.createObjectStore('tarifs');
+				  peopleOS.createIndex('company', 'company', {unique: false});
+				}
+				if (!upgradeDb.objectStoreNames.contains('commandes')) {
+				  var notesOS = upgradeDb.createObjectStore('commandes');
+				}
+			  });
+			  
+			  dbPromise.then(function(db) {
+			  var tx = db.transaction('tarifs', 'readwrite');
+			  var tarifs = tx.objectStore('tarifs');
+			  let mins = [300,1001,5001,10001,20001,25001,30001,40001,50001,60001,80001,100001,150001,250001,500001,1000001,2000001,3000001,4000001];
+			  let maxs = [1000,5000,10000,20000,25000,30000,40000,50000,60000,80000,100000,150000,250000,500000,1000000,2000000,3000000,4000000,5000000];
+			  let frais = [50,50,100,200,300,300,400,600,600,800,800,1500,1500,1500,2500,3000,3000,3000,3000]
+			  let companies = ['airtel', 'mobicash', 'flooz', 'moov'];
+			  for (const element of companies) {
+				 for (i = 0; i < 19; i++) {
+					var item = {
+						min_price: mins[0],
+						max_price: maxs[0],
+						frais: frais[0],
+						company: element,
+						created: new Date().getTime()
+					};
+					tarifs.add(item);
+				}
+			  }
+				return tx.complete;
+			  }).then(function() {
+					console.log('added item to the tarifs os!');
+				});
+			})();
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
