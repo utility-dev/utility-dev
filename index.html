@@ -1090,26 +1090,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			(function() {
 
 			  //check for support
-			  if (!('indexedDB' in window)) {
+			  if (!window.indexedDB) {
 				console.log('This browser doesn\'t support IndexedDB');
 				return;
 			  }
-
-			  var dbPromise = window.indexedDB.open('utility-db', 1, function(upgradeDb) {
-				if (!upgradeDb.objectStoreNames.contains('tarifs')) {
-				  var peopleOS = upgradeDb.createObjectStore('tarifs');
-				  peopleOS.createIndex('company', 'company', {unique: false});
-				}
-				if (!upgradeDb.objectStoreNames.contains('commandes')) {
-				  var notesOS = upgradeDb.createObjectStore('commandes');
-				}
-			  }).then(function(db) {
-			  var tx = db.transaction('tarifs', 'readwrite');
-			  var tarifs = tx.objectStore('tarifs');
-			  let mins = [300,1001,5001,10001,20001,25001,30001,40001,50001,60001,80001,100001,150001,250001,500001,1000001,2000001,3000001,4000001];
-			  let maxs = [1000,5000,10000,20000,25000,30000,40000,50000,60000,80000,100000,150000,250000,500000,1000000,2000000,3000000,4000000,5000000];
-			  let frais = [50,50,100,200,300,300,400,600,600,800,800,1500,1500,1500,2500,3000,3000,3000,3000]
-			  let companies = ['airtel', 'mobicash', 'flooz', 'moov'];
+			   
+			   var db;
+			   var request = window.indexedDB.open("utility-db", 1);
+			   var tarifData = [];
+			   let mins = [300,1001,5001,10001,20001,25001,30001,40001,50001,60001,80001,100001,150001,250001,500001,1000001,2000001,3000001,4000001];
+			   let maxs = [1000,5000,10000,20000,25000,30000,40000,50000,60000,80000,100000,150000,250000,500000,1000000,2000000,3000000,4000000,5000000];
+			   let frais = [50,50,100,200,300,300,400,600,600,800,800,1500,1500,1500,2500,3000,3000,3000,3000]
+			   let companies = ['airtel', 'mobicash', 'flooz', 'moov'];
 			  for (const element of companies) {
 				 for (i = 0; i < 19; i++) {
 					var item = {
@@ -1119,13 +1111,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						company: element,
 						created: new Date().getTime()
 					};
-					tarifs.add(item);
+					tarifData.add(item);
 				}
 			  }
-				return tx.complete;
-			  }).then(function() {
-					console.log('added item to the tarifs os!');
-				});
+			   
+			   request.onerror = function(event) {
+					console.log("error: ");
+				};
+								
+				request.onsuccess = function(event) {
+					db = request.result;
+					console.log("success: "+ db);
+				 };
+				 
+				request.onupgradeneeded = function(event) {
+					var db = event.target.result;
+					var tarifs = db.createObjectStore("tarifs");
+					var commandes = db.createObjectStore("commandes");
+					
+					for (var i in employeeData) {
+					   tarifs.add(tarifData[i]);
+					}
+				 }
 			})();
 			</script>
 			<!-- start-smoth-scrolling -->
