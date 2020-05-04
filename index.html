@@ -258,7 +258,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ol>							
 							<li>
                                 <h4>Entrer Votre Numéro de téléphone</h4>
-								<input type="tel" id="tel" name="tel" pattern="\d{10}" placeholder="Numéro de Téléphone" required="required" />
+								<input type="tel" id="tel" name="tel" onkeyup="filterFunction()" pattern="\d{10}" placeholder="Numéro de Téléphone" required="required" />
 								<p class="validation01">
 									<span class="invalid">SVP Entrer un Numéro de Téléphone Valide</span>
 									<span class="valid">Valider!</span>
@@ -267,12 +267,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li>
 							    <h4>Selectionner Votre Opérateur</h4>
                                 <div class="agileits-select">
-                                <select class="selectpicker show-tick" data-live-search="true" required="required" >
+                                <select class="selectpicker show-tick" id="selectOpe" data-live-search="true" required="required" >
                                   <option data-tokens="Select Operator">Opérateur</option>
-                                  <option data-tokens="Airtel">Airtel</option>
-                                  <option data-tokens="Aircel">Azur</option>
-                                  <option data-tokens="BSNL">Libertis</option>
-                                  <option data-tokens="Tata Docomo">Moov</option>
+                                  <option data-tokens="07">Airtel</option>
+                                  <option data-tokens="06">Libertis</option>
                                   <!--<option data-tokens="Reliance GSM">Reliance GSM</option>
                                   <option data-tokens="Reliance CDMA">Reliance CDMA</option>
                                   <option data-tokens="Telenor">Telenor</option>
@@ -316,9 +314,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li>
                                 <div class="mobile-right ">
                                     <h4>Combien Voulez-Vous Recharger?</h4>
-                                    <div class="mobile-rchge">
-                                        <input type="text" placeholder="Montant" name="amount" required="required"  />	
-                                    </div>
+                                    <div class="agileits-select">
+                                <select class="selectpicker show-tick" data-live-search="true" required="required" >
+                                  <option data-tokens="Select Operator">Montant</option>
+                                  <option data-tokens="1000">1000</option>
+                                  <option data-tokens="2000">2000</option>
+								  <option data-tokens="3000">3000</option>
+                                  <!--<option data-tokens="Reliance GSM">Reliance GSM</option>
+                                  <option data-tokens="Reliance CDMA">Reliance CDMA</option>
+                                  <option data-tokens="Telenor">Telenor</option>
+                                  <option data-tokens="Jio">Jio</option>
+                                  <option data-tokens="Vodafone">Vodafone</option>
+                                  <option data-tokens="Idea">Idea</option>
+                                  <option data-tokens="MTS">MTS</option>-->
+                                </select>
+                                </div>
                                     <!--<div class="mobile-rchge">
                                         <a href="plans.html">Voir les promotions</a>
                                     </div>-->
@@ -334,7 +344,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>	
 
                     </div>
-                    <div id="tab2" class="tab-grid">
+                    <!--<div id="tab2" class="tab-grid">
 		                      <div class="login-form">
 						<form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
 						<ol>							
@@ -410,7 +420,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</form>	
 																							
 						</div>	
-                    </div>
+                    </div>-->
 				</div>
 			
 			<div class="clearfix"> </div>
@@ -1134,6 +1144,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					}
 				 }
 			})();
+			function filterFunction() {
+			  var input, filter;
+			  input = document.getElementById("tel");
+			  filter = input.value.substring(0, 2);
+			  div = document.getElementById("selectOpe");
+			  opt = div.getElementsByTagName("option");
+			  if(filter.trim() !=""){
+			  for (i = 0; i < opt.length; i++) {
+				if(opt[i].value.localeCompare(filter) == 0){
+					opt[i].style.display = "";
+				}else {
+				  opt[i].style.display = "none";
+				}
+			  }
+			}
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
