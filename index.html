@@ -1127,7 +1127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				request.onupgradeneeded = function(event) {
 					var db = event.target.result;
 					var tarifs = db.createObjectStore("tarifs", {autoIncrement:true});
-					var commandes = db.createObjectStore("commandes");
+					var commandes = db.createObjectStore("commandes", {autoIncrement:true});
 					
 					for (var i in tarifData) {
 					   tarifs.add(tarifData[i]);
