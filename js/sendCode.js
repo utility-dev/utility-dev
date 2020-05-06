@@ -19,11 +19,14 @@ $(function() {
                 code = code.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/checkregister/".concat(code),
-                type: "GET",
-                cache: false,
-                success: function(response) {
-                   var res = JSON.parse(response)
+				  url: "https://tsoumbou.pythonanywhere.com/api/checkregister".concat(code),
+				  dataType: 'json',
+				  beforeSend: function() {
+				   // do something before running the request
+				  }
+				}).done(function(data) {
+				  // process datadata
+					var res = JSON.parse(response)
                    if(res.checkToken == "OK"){
                        // Success message
                       $('#success').html("<div class='alert alert-success'>");
@@ -33,11 +36,8 @@ $(function() {
                           .append("<strong>Your message has been sent. </strong>");
                       $('#success > .alert-success')
                           .append('</div>');
-
-                      //clear all fields
-                      $('#contactForm').trigger("reset");
-                   }else{
-                          // Fail message
+				   }else{
+					       // Fail message
                         $('#success').html("<div class='alert alert-danger'>");
                         $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
@@ -45,11 +45,9 @@ $(function() {
                         $('#success > .alert-danger').append('</div>');
                         //clear all fields
                         $('#contactForm').trigger("reset");
-                   }
-                    
-                },
-                error: function() {
-                    // Fail message
+				   }
+				}).fail(function() {
+				  // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
@@ -57,8 +55,10 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-            })
+				}).always(function() {
+				  // code that runs regardless of request succeeding or failing
+				});
+
         },
         filter: function() {
             return $(this).is(":visible");
