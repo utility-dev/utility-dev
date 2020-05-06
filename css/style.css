@@ -3581,6 +3581,15 @@ button.submit {
     letter-spacing: 1px;
     cursor: pointer;
 }
+button.submit1 {
+    background: #2893ec;
+    border: none;
+    color: #fff;
+    padding: 9px 20px;
+    margin: 10px 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
 input.submit {
     background: #2893ec;
     border: none;
