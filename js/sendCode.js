@@ -57,7 +57,7 @@ $(function() {
                     $('#contactForm').trigger("reset");
 				}).always(function() {
 				  // code that runs regardless of request succeeding or failing
-				});
+				})
 
         },
         filter: function() {
