@@ -19,15 +19,13 @@ $(function() {
                 code = code.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-				  url: "https://tsoumbou.pythonanywhere.com/api/checkregister".concat(code),
-				  dataType: 'json',
-				  beforeSend: function() {
-				   // do something before running the request
-				  }
-				}).done(function(data) {
-				  // process datadata
-					var res = JSON.parse(response)
-                   if(res.checkToken == "OK"){
+                url: "https://tsoumbou.pythonanywhere.com/api/checkregister/".concat(code),
+                dataType: "json",
+                cache: false,
+                success: function(data) {
+					
+					var res = JSON.parse(data);
+                   if(res.checkToken){
                        // Success message
                       $('#success').html("<div class='alert alert-success'>");
                       $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -46,8 +44,9 @@ $(function() {
                         //clear all fields
                         $('#contactForm').trigger("reset");
 				   }
-				}).fail(function() {
-				  // Fail message
+                },
+                error: function() {
+                    // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
@@ -55,10 +54,8 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
-				}).always(function() {
-				  // code that runs regardless of request succeeding or failing
-				})
-
+                },
+            })
         },
         filter: function() {
             return $(this).is(":visible");
