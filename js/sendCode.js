@@ -24,7 +24,8 @@ $(function() {
                 cache: false,
                 success: function(data) {
 					
-					var res = JSON.parse(data);
+		  var res = JSON.parse(data);
+		   alert(res.checkToken);
                    if(res.checkToken){
                        // Success message
                       $('#success').html("<div class='alert alert-success'>");
