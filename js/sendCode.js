@@ -34,13 +34,9 @@ $(function() {
                 },
                 error: function() {
                     // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry "  + " it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:me@example.com?Subject=Message_Me from myprogrammingblog.com;>me@example.com</a> ? Sorry for the inconvenience!");
-                    $('#success > .alert-danger').append('</div>');
+                    $('#success').html("<h3 class='other-nw alert-danger'>Féliciations votre inscription est validée </h3>");
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#sendCodeForm').trigger("reset");
                 },
             })
         },
