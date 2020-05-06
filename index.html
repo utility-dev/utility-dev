@@ -156,19 +156,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <button type="submit" class="submit btn btn-primary btn-sm">
                                                             Enregistrer & Continuer</button>
                                                         <button type="reset" class="submit btn btn-default btn-sm">
-                                                            Annuler</button>
+                                                            Effacer</button>
                                                     </div>
                                                 </div>
                                             </form>
-											<form class="form-horizontal" action="#" method="get" style="display : none">
-												<div class="form-group">
-                                                    <label for="sendCode" class="col-sm-2 control-label">
-                                                        Code </label>
-                                                    <div class="col-sm-10">
-                                                        <input type="tel" class="form-control" id="sendCode" placeholder="Entrer le code reçu par sms" required="required" />
-                                                    </div>
-                                                </div>
-											</form>
+											<div class="col-sm-10 w3ls-validRegisterForm">
+												<form class="form-horizontal" action="#" method="get" style="display : none">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="success"></div>
+												</form>
+											</div>
                                         </div>
                                     </div>
                                     <div id="OR">
