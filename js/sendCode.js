@@ -19,7 +19,7 @@ $(function() {
                 code = code.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/checkregister/",
+                url: "https://tsoumbou.pythonanywhere.com/api/checkregister/".concat(code),
                 type: "POST",
                 data: {
                     token: code
