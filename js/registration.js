@@ -44,7 +44,14 @@ $(function() {
     });
 });
 
-$( ".resetRegisterForm" ).click(function() {
+$( '#resetRegisterForm').click(function() {
+      $('#Registration').show();
+      $('#sendCodeForm').hide();
+      $('#succes').hide();
+      $('#succes').html("");
+});
+
+$( '#xresetRegisterForm').click(function() {
       $('#Registration').show();
       $('#sendCodeForm').hide();
       $('#succes').hide();
