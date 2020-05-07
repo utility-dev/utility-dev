@@ -14,7 +14,7 @@ $(function() {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
 	    var genre = $("#gender :selected").val();
-            var name = $("div.form-horizontal input#nom").val();
+            var name = $("div.w3ls-registrationForm input#nom").val();
             var tel = $("div.w3ls-registrationForm input#mobile").val();
             var pass = $("div.w3ls-registrationForm input#password").val();
             var prenom = $("div.w3ls-registrationForm input#prenom").val();
