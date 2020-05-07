@@ -31,6 +31,7 @@ $(function() {
                     $('#success').html("<h3 class='other-nw alert-danger'>Désolé votre code ne correspond pas</h3>");
                     //clear all fields
                     $('#sendCodeForm').trigger("reset");
+                    $('#sendCodeForm').hide();
                 },
             })
         },
