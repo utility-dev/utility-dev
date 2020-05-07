@@ -908,8 +908,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   $('#sendCodeForm').hide();
 	    //check connexion 
 	    if("firstname" in sessionStorage){
+		$('#w3layouts-login').after().empty();
 		$('#w3layouts-login').after(sessionStorage.getItem("lastname"));    
 	    }else{
+		$('#w3layouts-login').after().empty();
 		$('#w3layouts-login').after("Se Connecter/S'inscrire");    
 	    }
             //check for support
