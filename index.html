@@ -63,6 +63,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="w3layouts-login" id= "w3layouts-login" style ="display : none">
 		<a data-toggle="modal" data-target="#myModal" href="#"><i class="glyphicon glyphicon-user"></i>Se Connecter/S'inscrire</a>
             </div>
+	    <div class="w3layouts-loged" id= "w3layouts-loged" style ="display : none">
+            </div>
             <div class="clearfix"></div>
             <!--Login modal-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -909,7 +911,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   $('#w3layouts-login').hide();
 	    //check connexion 
 	    if("firstname" in sessionStorage){
-		$('#w3layouts-login').after(sessionStorage.getItem("lastname"));    
+		//$('#w3layouts-login').hide(); 
+		$('#w3layouts-loged').html("<a data-toggle='modal' data-target='#myModal' href='#'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("lastname"),"</a>"));    
 	    }else{
 		$('#w3layouts-login').removeAttr("style");    
 	    }
