@@ -4,7 +4,7 @@
   */
 $(function() {
 
-    $("div.form-horizontal input").jqBootstrapValidation({
+    $("div.w3ls-registrationForm input").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // something to have when submit produces an error ?
