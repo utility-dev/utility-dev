@@ -20,7 +20,7 @@ $(function() {
             var prenom = $("div.w3ls-registrationForm input#prenom").val();
             $.ajax({
                 url: "https://tsoumbou.pythonanywhere.com/api/save/".concat(name,"/",prenom,"/",tel,"/",genre,"/",pass),
-                type: "json",
+                dataType: "json",
                 cache: false,
                 success: function() {
                     // Success message
