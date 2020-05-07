@@ -24,14 +24,15 @@ $(function() {
                 cache: false,
                 success: function() {
                        // Success message
-                    $('#success').html("<h3 class='other-nw alert-success'>Féliciations votre inscription est validée </h3>");		   
+                    $('#success').html("<h3 class='other-nw alert-success'>Féliciations votre inscription est validée </h3>");
+                    $('#sendCodeForm').hide();
                 },
                 error: function() {
                     // Fail message
                     $('#success').html("<h3 class='other-nw alert-danger'>Désolé votre code ne correspond pas</h3>");
                     //clear all fields
                     $('#sendCodeForm').trigger("reset");
-                    $('#sendCodeForm').hide();
+                    
                 },
             })
         },
