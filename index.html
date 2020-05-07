@@ -911,7 +911,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    if("firstname" in sessionStorage){
 		$('#w3layouts-login').after(sessionStorage.getItem("lastname"));    
 	    }else{
-		$('#w3layouts-login').show();    
+		$('#w3layouts-login').removeAttr("style");    
 	    }
             //check for support
             if (!window.indexedDB) {
