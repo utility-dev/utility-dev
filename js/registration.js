@@ -15,9 +15,9 @@ $(function() {
             // get values from FORM
 	    var genre = $("#gender :selected").val();
             var name = $("div.form-horizontal input#nom").val();
-            var tel = $("div.form-horizontal input#mobile").val();
-            var pass = $("div.form-horizontal input#password").val();
-            var prenom = $("div.form-horizontal input#prenom").val();
+            var tel = $("div.w3ls-registrationForm input#mobile").val();
+            var pass = $("div.w3ls-registrationForm input#password").val();
+            var prenom = $("div.w3ls-registrationForm input#prenom").val();
             $.ajax({
                 url: "https://tsoumbou.pythonanywhere.com/api/save/".concat(name,"/",prenom,"/",tel,"/",genre,"/",pass),
                 type: "json",
