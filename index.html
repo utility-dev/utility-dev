@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </form>
                                         </div>
                                         <div class="tab-pane w3ls-registrationForm" id="Registration">
-                                            <form class="form-horizontal" action="#" method="get">
+                                            <form class="form-horizontal" action="#" method="get" id="formRegistration">
                                                 <div class="form-group">
                                                     <label for="email" class="col-sm-2 control-label">
                                                         Nom</label>
@@ -891,12 +891,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
 	
-	    jQuery(document).ready(function($) {
+	    jQuery(document).ready(function($) {//formRegistration
             $(".resetRegisterForm").click(function(event) {
+	      $('#Registration').removeClass("active");
+	      $('#Registration').trigger("reset");
 	      $('#Registration').show();
 	      $('#sendCodeForm').hide();
-	      $('#succes').hide();
-	      $('#succes').html("");
+	      $('#success').empty();
+              $('#succes').empty();
             });
         });
 
