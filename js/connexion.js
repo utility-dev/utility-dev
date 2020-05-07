@@ -21,14 +21,17 @@ $(function() {
 			request.open('GET', "https://tsoumbou.pythonanywhere.com/api/auth/".concat(tel,"/",pass), true)
 			request.onload = function() {
 			  var data = JSON.parse(this.response);
+      		          console.log(data);
 
 			  if (request.status >= 200 && request.status < 400) {
-				sessionStorage.setItem("firstname", data.firstname);
-				sessionStorage.setItem("name", data.name);
-				sessionStorage.setItem("phone", data.phone);
-				sessionStorage.setItem("gender", data.gender);
-				$(location).attr('href','https://utility-dev.github.io/index.html');
-				$('#succesConnexion').empty();
+			      data.forEach(obj => {
+				sessionStorage.setItem("firstname", obj.firstname);
+				sessionStorage.setItem("name", obj.name);
+				sessionStorage.setItem("phone", obj.phone);
+				sessionStorage.setItem("gender", obj.gender);
+			      }
+			     $(location).attr('href','https://utility-dev.github.io/index.html');
+			     $('#succesConnexion').empty();
 			  } else {
 				console.log('error');
 			  }
