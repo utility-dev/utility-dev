@@ -13,19 +13,19 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-			var genre = $("#gender :selected").val()
+	    var genre = $("#gender :selected").val();
             var name = $("div.form-horizontal input#nom").val();
             var tel = $("div.form-horizontal input#mobile").val();
             var pass = $("div.form-horizontal input#password").val();
-            var firstName = $("div.form-horizontal input#prenom").val();
+            var prenom = $("div.form-horizontal input#prenom").val();
             $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/save/".concat(name,"/",firstname,"/",tel,"/",gender,"/",pass),
+                url: "https://tsoumbou.pythonanywhere.com/api/save/".concat(name,"/",prenom,"/",tel,"/",genre,"/",pass),
                 type: "json",
                 cache: false,
                 success: function() {
                     // Success message
                     $('#Registration').hide();
-					$('#sendCodeForm').show();
+		   $('#sendCodeForm').show();
                 },
                 error: function() {
                     $('#succes').html("<h3 class='other-nw alert-danger'>Erreur lors de l'inscription</h3>");
