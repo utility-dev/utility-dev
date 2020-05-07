@@ -28,7 +28,7 @@ $(function() {
 		   $('#sendCodeForm').show();
                 },
                 error: function() {
-                    $('#succes').html("<h3 class='other-nw alert-danger'>Erreur lors de l'inscription</h3>");
+                    $('#succes').html("<h3 class='other-nw alert-danger'>Erreur Mobile dejà enregistré</h3>");
                     //clear all fields
                 },
             })
