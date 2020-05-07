@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- bootstrap-CSS -->
     <link rel="stylesheet" href="css/bootstrap-select.css">
-    <!-- bootstrap-select-CSS -->
+    <!-- bootstrap-select-CSS -->    
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
     <!-- Fontawesome-CSS -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -60,8 +60,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h1><a href="index.html">Utility</a></h1>
             </div>
             <!--//logo-->
-            <div class="w3layouts-login">
-		<a data-toggle="modal" data-target="#myModal" href="#"><i id="w3layouts-login" class="glyphicon glyphicon-user"> </i></a>
+            <div class="w3layouts-login" id= "w3layouts-login">
+		<a data-toggle="modal" data-target="#myModal" href="#"><i class="glyphicon glyphicon-user"></i>Se Connecter/S'inscrire</a>
             </div>
             <div class="clearfix"></div>
             <!--Login modal-->
@@ -906,13 +906,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         (function() {
 	   $('#sendCodeForm').hide();
+	   $('#w3layouts-login').hide();
 	    //check connexion 
 	    if("firstname" in sessionStorage){
-		$('#w3layouts-login').after().empty();
 		$('#w3layouts-login').after(sessionStorage.getItem("lastname"));    
 	    }else{
-		$('#w3layouts-login').after().empty();
-		$('#w3layouts-login').after("Se Connecter/S'inscrire");    
+		$('#w3layouts-login').show();    
 	    }
             //check for support
             if (!window.indexedDB) {
