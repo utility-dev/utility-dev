@@ -916,7 +916,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    if("firstname" in sessionStorage){
 		//$('#w3layouts-login').hide(); 
 		 $("#w3layouts-loged").removeAttr("style");
-		$('#w3layouts-loged').html("<a data-toggle='modal' data-target='#myModal' href='#'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>"), "<a data-toggle='modal' data-target='#myModal' href='#'>Deconnexion</a>");    
+		$('#w3layouts-loged').html("<a data-toggle='modal' data-target='#myModal' href='#'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>", "<a data-toggle='modal' data-target='#myModal' href='#'>Deconnexion</a>"));    
 	    }else{
 		$('#w3layouts-login').removeAttr("style");    
 	    }
