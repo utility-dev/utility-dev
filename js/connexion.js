@@ -29,7 +29,7 @@ $(function() {
 				sessionStorage.setItem("name", obj.name);
 				sessionStorage.setItem("phone", obj.phone);
 				sessionStorage.setItem("gender", obj.gender);
-			      }
+			      });
 			     $(location).attr('href','https://utility-dev.github.io/index.html');
 			     $('#succesConnexion').empty();
 			  } else {
