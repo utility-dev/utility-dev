@@ -24,17 +24,11 @@ $(function() {
                 cache: false,
                 success: function() {
                        // Success message
-                      $('#success').html("<div class='alert alert-success'>");
-                      $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                          .append("</button>");
-                      $('#success > .alert-success')
-                          .append("<strong>Your message has been sent. </strong>");
-                      $('#success > .alert-success')
-                          .append('</div>');		   
+                    $('#success').html("<h3 class='other-nw alert-success-code'>Féliciations votre inscription est validée </h3>");		   
                 },
                 error: function() {
                     // Fail message
-                    $('#success').html("<h3 class='other-nw alert-danger'>Féliciations votre inscription est validée </h3>");
+                    $('#success').html("<h3 class='other-nw alert-danger-code'>Désolé votre code ne correspond pas</h3>");
                     //clear all fields
                     $('#sendCodeForm').trigger("reset");
                 },
