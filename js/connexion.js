@@ -13,8 +13,8 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var tel = $("div.w3ls-registrationForm input#tel").val();
-            var pass = $("div.w3ls-registrationForm input#exampleInputPassword1").val();
+            var tel = $("div.w3ls-connexionForm input#tel").val();
+            var pass = $("div.w3ls-connexionForm input#exampleInputPassword1").val();
 			
 			var request = new XMLHttpRequest();
 
