@@ -23,10 +23,10 @@ $(function() {
 			  var data = JSON.parse(this.response);
 
 			  if (request.status >= 200 && request.status < 400) {
-				sessionStorage.setItem("firstname", obj.firstname);
-				sessionStorage.setItem("name", obj.name);
-				sessionStorage.setItem("phone", obj.phone);
-				sessionStorage.setItem("gender", obj.gender);
+				sessionStorage.setItem("firstname", data.firstname);
+				sessionStorage.setItem("name", data.name);
+				sessionStorage.setItem("phone", data.phone);
+				sessionStorage.setItem("gender", data.gender);
 				$(location).attr('href','https://utility-dev.github.io/index.html');
 				$('#succesConnexion').empty();
 			  } else {
