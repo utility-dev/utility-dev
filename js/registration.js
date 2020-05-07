@@ -44,6 +44,13 @@ $(function() {
     });
 });
 
+$( ".resetRegisterForm" ).click(function() {
+      $('#Registration').show();
+      $('#sendCodeForm').hide();
+      $('#succes').hide();
+      $('#succes').html("");
+});
+
 
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
