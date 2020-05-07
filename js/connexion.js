@@ -15,7 +15,27 @@ $(function() {
             // get values from FORM
             var tel = $("div.w3ls-registrationForm input#tel").val();
             var pass = $("div.w3ls-registrationForm input#exampleInputPassword1").val();
-            $.ajax({
+			
+			var request = new XMLHttpRequest();
+
+			request.open('GET', "https://tsoumbou.pythonanywhere.com/api/auth/".concat(tel,"/",pass), true)
+			request.onload = function() {
+			  var data = JSON.parse(this.response);
+
+			  if (request.status >= 200 && request.status < 400) {
+				sessionStorage.setItem("firstname", obj.firstname);
+				sessionStorage.setItem("name", obj.name);
+				sessionStorage.setItem("phone", obj.phone);
+				sessionStorage.setItem("gender", obj.gender);
+				$(location).attr('href','https://utility-dev.github.io/index.html');
+				$('#succesConnexion').empty();
+			  } else {
+				console.log('error');
+			  }
+			}
+
+			request.send();
+            /*$.ajax({
                 url: "https://tsoumbou.pythonanywhere.com/api/auth/".concat(tel,"/",pass),
                 dataType: "json",
                 cache: false,
@@ -33,7 +53,7 @@ $(function() {
                     $('#succesConnexion').html("<h3 class='other-nw alert-danger'>Numéro ou mot de passe incorrect</h3>");
                     //clear all fields
                 },
-            })
+            })*/
         },
         filter: function() {
             return $(this).is(":visible");
