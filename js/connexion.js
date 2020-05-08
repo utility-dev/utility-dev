@@ -69,7 +69,8 @@ $(function() {
 });
 
 
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-    $('#success').html('');
+/*When clicking on deconnexion button */
+$('#deconnexion').click(function() {
+    sessionStorage.clear();
+    $(location).attr('href','https://utility-dev.github.io/index.html');
 });
