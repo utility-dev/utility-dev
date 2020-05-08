@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close resetRegisterForm"  data-dismiss="modal" aria-hidden="true">
+                            <button type="button" class="close resetRegisterForm resetLoginForm"  data-dismiss="modal" aria-hidden="true">
                                 &times;</button>
                             <h4 class="modal-title" id="myModalLabel">
                             Utility</h4>
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#Login" data-toggle="tab" class="resetRegisterForm">Se Connecter</a></li>
-                                        <li><a href="#Registration" data-toggle="tab">S'inscrire</a></li>
+                                        <li><a href="#Registration" data-toggle="tab" class="resetLoginForm">S'inscrire</a></li>
                                     </ul>
                                     <!-- Tab panes -->
                                     <div class="tab-content">
@@ -922,6 +922,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	      $('#success').empty();
               $('#succes').empty();
 	      $('#sendCodeForm').trigger("reset");
+            });
+        });
+		
+		jQuery(document).ready(function($) {//formRegistration
+            $(".resetLoginForm").click(function(event) {
+	     // $('#Registration').removeClass("active");
+	      $("#loginForm").removeAttr("style");
+	      $('#loginForm').trigger("reset");
+	      //$('#Registration').show();
+	      $('#sendCodeConxForm').hide();
+	      $('#success').empty();
+              $('#validSuccesConnexion').empty();
+	      $('#sendCodeConxForm').trigger("reset");
             });
         });
 	    
