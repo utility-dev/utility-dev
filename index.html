@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/sendCode.js"></script>
     <script src="js/registration.js"></script>
     <script src="js/connexion.js"></script>
-    <script src="js/validConnexionForm.js"></script>
+	<script src="js/validConnexionForm.js"></script>
 
 </head>
 <!-- //head -->
@@ -114,8 +114,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     </div>
                                                 </div>
 												<div id="succesConnexion" class="col-sm-10"></div>
-                                            </form>
+                                            </form>						
                                         </div>
+										<div class="col-sm-10 w3ls-validConnexionForm">
+												<form class="form-horizontal" id="sendCodeConxForm" action="#" method="get">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendConexCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+												</form>
+												</div>
                                         <div class="tab-pane w3ls-registrationForm" id="Registration">
                                             <form class="form-horizontal" action="#" method="get" id="formRegistration">
                                                 <div class="form-group">
@@ -923,6 +937,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         (function() {
 	   $('#sendCodeForm').hide();
+	   $('#sendCodeConxForm').hide();
 	   $('#w3layouts-login').hide();
 	   $("#w3layouts-loged").hide();
 	    //check connexion 
