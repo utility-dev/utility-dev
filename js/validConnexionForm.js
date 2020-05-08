@@ -35,7 +35,7 @@ $(function() {
 			      console.log('error');
 			     $('#validSuccesConnexion').html("<h3 class='other-nw alert-danger'>Désolé votre code ne correspond pas</h3>");
                               //clear all fields
-                              //$('#sendCodeConxForm').trigger("reset");
+                              $('#sendCodeConxForm').trigger("reset");
 			  }
 			}
 
