@@ -13,7 +13,7 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var code = $("div.w3ls-validConnexionForm input#sendConxCode").val();
+            var code = $("div.w3ls-validConnexionForm input#sendConexCode").val();
 			var request = new XMLHttpRequest();
 
 			request.open('GET', "https://tsoumbou.pythonanywhere.com/api/valid/auth/".concat(code), true)
@@ -30,7 +30,7 @@ $(function() {
 				sessionStorage.setItem("session_token", data.session_token);
 			     $(location).attr('href','https://utility-dev.github.io/index.html');
 			     $('#succesConnexion').empty();
-				 $('#sendCodeConxForm').hide();
+				 $('#sendConexCode').hide();
 			  } else {
 				console.log('error');
 			  }
