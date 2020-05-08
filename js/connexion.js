@@ -21,8 +21,8 @@ $(function() {
                 cache: false,
                 success: function() {
                     // Success message
-                    $('#login').hide();
-		            $('#sendCodeConxForm').show();
+                    $('#loginForm').hide();
+		    $('#sendCodeConxForm').show();
                 },
                 error: function() {
                     $('#succesConnexion').html("<h3 class='other-nw alert-danger'>Numéro ou mot de passe incorrect</h3>");
