@@ -71,6 +71,7 @@ $(function() {
 
 /*When clicking on deconnexion button */
 $('#deconnexion').click(function() {
-    sessionStorage.clear();
-    $(location).attr('href','https://utility-dev.github.io/index.html');
+	alert("test");
+    //sessionStorage.clear();
+   // $(location).attr('href','https://utility-dev.github.io/index.html');
 });
