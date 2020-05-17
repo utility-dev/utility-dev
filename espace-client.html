@@ -185,20 +185,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Pay</span></span>
+			<span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Mon espace client</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
 	<!-- Pay -->
 	<div class="agile-pay w3layouts-content">
     <div class="container">
-			<h3 class="w3-head">Payment</h3>
+			<h3 class="w3-head" id="w3-head-welcome-msg"></h3>
+            <script>$("#w3-head-welcome-msg").html("Bonjour ".concat(sessionStorage.getItem("firstname")))</script>
 	<!--Horizontal Tab-->
         <div id="parentHorizontalTab">
             <ul class="resp-tabs-list hor_1">
-                <li>Credit/Debit</li>
-                <li>Netbanking</li>
-                <li>Paypal Account</li>
+                <li>Mes paramètres</li>
+                <li>Mes  achats/réservations</li>
+                <li>Mes remboursements</li>
+                <li>Mon programme de fidélité</li>
             </ul>
             <div class="resp-tabs-container hor_1">
                 <div>
@@ -351,7 +353,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 	<!-- // Pay -->
 
-<!-- subscribe -->
+<!-- subscribe 
 	<div class="w3-subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
@@ -375,133 +377,315 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div> 
 		</div>
 	</div>
-	<!-- //subscribe --> 
+	//subscribe --> 
 
 <!--footer-->
-<footer>
-	<div class="container-fluid">
-		<div class="w3-agile-footer-top-at">
-			<div class="col-md-2 agileits-amet-sed">
-				<h4>Company</h4>
-				<ul class="w3ls-nav-bottom">
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="support.html">Support</a></li>
-					<li><a href="sitemap.html">Sitemap</a></li>
-					<li><a href="terms.html">Terms & Conditions</a></li>
-					<li><a href="faq.html">Faq</a></li>	
-					<li><a href="index.html#mobileappagileits">Mobile</a></li>	
-					<li><a href="feedback.html">Feedback</a></li>	
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="shortcodes.html">Shortcodes</a></li>
-					<li><a href="icons.html">Icons Page</a></li>
-					
-				</ul>	
-			</div>
-			<div class="col-md-3 agileits-amet-sed ">
-				<h4>Mobile Recharges</h4>
-					<ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab1">Airtel</a></li>
-						<li><a href="index.html#parentVerticalTab1">Aircel</a></li>
-						<li><a href="index.html#parentVerticalTab1">Vodafone</a></li>
-						<li><a href="index.html#parentVerticalTab1">BSNL</a></li>
-						<li><a href="index.html#parentVerticalTab1">Tata Docomo</a></li>
-						<li><a href="index.html#parentVerticalTab1">Reliance GSM</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Reliance CDMA</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Telenor</a></li>	
-						<li><a href="index.html#parentVerticalTab1">MTS</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Jio</a></li>	
-					</ul>	
-			</div>
-			<div class="col-md-3 agileits-amet-sed ">
-				<h4>DATACARD RECHARGES</h4>
-				   <ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab3">Tata Photon</a></li>
-						<li><a href="index.html#parentVerticalTab3">MTS MBlaze</a></li>
-						<li><a href="index.html#parentVerticalTab3">MTS MBrowse</a></li>
-						<li><a href="index.html#parentVerticalTab3">Airtel</a></li>
-						<li><a href="index.html#parentVerticalTab3">Aircel</a></li>
-						<li><a href="index.html#parentVerticalTab3">BSNL</a></li>	
-						<li><a href="index.html#parentVerticalTab3">MTNL Delhi</a></li>	
-						<li><a href="index.html#parentVerticalTab3">Vodafone</a></li>	
-						<li><a href="index.html#parentVerticalTab3">Idea</a></li>	
-						<li><a href="index.html#parentVerticalTab3">MTNL Mumbai</a></li>
-						<li><a href="index.html#parentVerticalTab3">Tata Photon Whiz</a></li>	
-					</ul>	
-			</div>
-			<div class="col-md-2 agileits-amet-sed">
-				<h4>DTH Recharges</h4>
-				<ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab2"> Airtel Digital TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Dish TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Tata Sky Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Reliance Digital TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Sun Direct Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Videocon D2H Recharges</a></li>	
-					</ul>	
-			</div>
-            <div class="col-md-2 agileits-amet-sed ">
-				<h4>Payment Options</h4>
-				   <ul class="w3ls-nav-bottom">
-						<li>Credit Cards</li>
-						<li>Debit Cards</li>
-						<li>Any Visa Debit Card (VBV)</li>
-						<li>Direct Bank Debits</li>
-						<li>Cash Cards</li>	
-					</ul>	
-			</div>
-		<div class="clearfix"> </div>
-		</div>
-    </div>
-	<div class="w3l-footer-bottom">
-		<div class="container-fluid">
-			<div class="col-md-4 w3-footer-logo">
-				<h2><a href="index.html">ONLINE RECHARGE</a></h2>
-			</div>
-			<div class="col-md-8 agileits-footer-class">
-				<p >© 2017 Online Recharge. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-			</div>
-		<div class="clearfix"> </div>
-	 	</div>
-	</div>
-</footer>
-<!--//footer-->
-<!-- for bootstrap working -->
-		<script src="js/bootstrap.js"></script>
-<!-- //for bootstrap working -->
-<!-- easy-responsive-tabs -->    
-<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
-<script src="js/easyResponsiveTabs.js"></script>
-<!-- //easy-responsive-tabs --> 
-<!-- here stars scrolling icon -->
-			<script type="text/javascript">
-				$(document).ready(function() {
-					/*
-						var defaults = {
-						containerID: 'toTop', // fading element id
-						containerHoverID: 'toTopHover', // fading element hover id
-						scrollSpeed: 1200,
-						easingType: 'linear' 
-						};
-					*/
-										
-					$().UItoTop({ easingType: 'easeOutQuart' });
-										
-					});
-			</script>
-			<!-- start-smoth-scrolling -->
-			<script type="text/javascript" src="js/move-top.js"></script>
-			<script type="text/javascript" src="js/easing.js"></script>
-			<script type="text/javascript">
-				jQuery(document).ready(function($) {
-					$(".scroll").click(function(event){		
-						event.preventDefault();
-						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-					});
-				});
-			</script>
-			<!-- start-smoth-scrolling -->
-		<!-- //here ends scrolling icon -->
+    <footer>
+        <div class="container-fluid">
+            <div class="w3-agile-footer-top-at">
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Compagnie</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="about.html">A propos de nous</a></li>
+                        <li><a href="support.html">Contact</a></li>
+                        <li><a href="terms.html">Conditions d'utilisation</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <!--<li><a href="shortcodes.html">Shortcodes</a></li>
+                    <li><a href="icons.html">Icons Page</a></li>-->
+
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Recharge Mobile</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Airtel</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Libertis</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Moov</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Tata Docomo</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>    
+                        <li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">MTS</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">Jio</a></li>  -->
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Abonnement Décodeurs</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Canal +</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">IP9</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">IPTV</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>   
+                        <li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Idea</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Factures</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll"> Electricité</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Gas</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Eau</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Reliance Digital TV Recharges</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>   -->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed ">
+                    <h4>Paiement</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li>Airtel Money</li>
+                        <li>Mobicash</li>
+                        <li>MobiCash</li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="w3l-footer-bottom">
+            <div class="container-fluid">
+                <div class="col-md-4 w3-footer-logo">
+                    <h2><a href="index.html">Utility</a></h2>
+                </div>
+                <div class="col-md-8 agileits-footer-class">
+                    <p>© 2017 Online Recharge. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+
+    <!-- for bootstrap working -->
+    <script src="js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- Responsive-slider -->
+    <!-- Banner-slider -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function() {
+            $("#slider").responsiveSlides({
+                auto: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!-- //Banner-slider -->
+    <!-- //Responsive-slider -->
+    <!-- Bootstrap select option script -->
+    <script src="js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function() {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function() {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function() {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <!-- //Bootstrap select option script -->
+
+    <!-- easy-responsive-tabs -->
+    <link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+    <script src="js/easyResponsiveTabs.js"></script>
+    <!-- //easy-responsive-tabs -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    
+    jQuery(document).ready(function($) {
+            $(".resetRegisterForm").click(function(event) {
+         // $('#Registration').removeClass("active");
+          $("#Registration").removeAttr("style");
+          $('#formRegistration').trigger("reset");
+          //$('#Registration').show();
+          $('#sendCodeForm').hide();
+          $('#success').empty();
+              $('#succes').empty();
+          $('#sendCodeForm').trigger("reset");
+            });
+        });
+        
+    jQuery(document).ready(function($) {
+            $(".resetLoginForm").click(function(event) {
+         // $('#Registration').removeClass("active");
+          $("#loginForm").removeAttr("style");
+          $("#btnForgotPassword").removeAttr("style");
+          $('#loginForm').trigger("reset");
+          //$('#Registration').show();
+          $('#sendCodeConxForm').hide();
+          $('#forgotPassword').hide();
+          $('#success').empty();
+          $('#validSuccesConnexion').empty();
+          $('#validForgotPassword').empty();
+          $('#sendCodeConxForm').trigger("reset");
+          $('#sendForgotPassword').trigger("reset");
+            });
+        });
+        
+    jQuery(document).ready(function($) {
+            $("#compte").click(function(event) {
+        $(location).attr('href','https://utility-dev.github.io/plans.html');
+            });
+        });
+        
+    jQuery(document).ready(function($) {
+            $("#btnForgotPassword").click(function(event) {
+                $('#loginForm').hide();
+               $('#forgotPassword').show();
+            });
+        });
+
+        (function() {
+       $('#sendCodeForm').hide();
+       $('#sendCodeConxForm').hide();
+       $('#w3layouts-login').hide();
+       $("#w3layouts-loged").hide();
+       $('#w3layouts-forgotPassword').hide();
+       $('#forgotPassword').hide();
+       $('#w3ls-validRegisterForm').hide();
+        //check connexion 
+        $.ajax({
+                url: "https://tsoumbou.pythonanywhere.com/api/valid/session_token/".concat(sessionStorage.getItem("session_token")),
+                dataType: "json",
+                cache: false,
+                success: function() {
+                  $("#w3layouts-loged").removeAttr("style");
+          $('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='https://utility-dev.github.io/plans.html' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='https://utility-dev.github.io/index.html' style='display : inline-block' onClick='sessionStorage.clear();'>Deconnexion</a>"));
+                },
+                error: function() {
+                    window.location.replace("https://utility-dev.github.io/index.html");
+                    $('#w3layouts-login').removeAttr("style");
+                },
+            });
+        /*if("firstname" in sessionStorage){
+        //$('#w3layouts-login').hide(); 
+         $("#w3layouts-loged").removeAttr("style");
+        $('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='#' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='#' style='display : inline-block'>Deconnexion</a>"));    
+        }else{
+        $('#w3layouts-login').removeAttr("style");    
+        }*/
+            //check for support
+            if (!window.indexedDB) {
+                console.log('This browser doesn\'t support IndexedDB');
+                return;
+            }
+
+            var db;
+            var request = window.indexedDB.open("utility-db", 1);
+            var tarifData = [];
+            let mins = [300, 1001, 5001, 10001, 20001, 25001, 30001, 40001, 50001, 60001, 80001, 100001, 150001, 250001, 500001, 1000001, 2000001, 3000001, 4000001];
+            let maxs = [1000, 5000, 10000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 150000, 250000, 500000, 1000000, 2000000, 3000000, 4000000, 5000000];
+            let frais = [50, 50, 100, 200, 300, 300, 400, 600, 600, 800, 800, 1500, 1500, 1500, 2500, 3000, 3000, 3000, 3000]
+            let companies = ['airtel', 'mobicash', 'flooz', 'moov'];
+            for (const element of companies) {
+                for (i = 0; i < 19; i++) {
+                    var item = {
+                        min_price: mins[0],
+                        max_price: maxs[0],
+                        frais: frais[0],
+                        company: element,
+                        created: new Date().getTime()
+                    };
+                    tarifData.push(item);
+                }
+            }
+
+            request.onerror = function(event) {
+                console.log("error: ");
+            };
+
+            request.onsuccess = function(event) {
+                db = request.result;
+                console.log("success: " + db);
+            };
+
+            request.onupgradeneeded = function(event) {
+                var db = event.target.result;
+                var tarifs = db.createObjectStore("tarifs", {
+                    autoIncrement: true
+                });
+                var commandes = db.createObjectStore("commandes", {
+                    autoIncrement: true
+                });
+
+                for (var i in tarifData) {
+                    tarifs.add(tarifData[i]);
+                }
+            }
+        })();
+
+        function filterFunction() {
+            var input, filter;
+            alert('test');
+            input = document.getElementById("tel");
+            alert(input.value);
+            filter = input.value.substring(0, 2);
+            alert(filter);
+            div = document.getElementById("selectOpe");
+            alert(div.value);
+            opt = div.getElementsByTagName("option");
+            alert(opt.length);
+            if (filter.trim() != "") {
+                for (i = 0; i < opt.length; i++) {
+                    if (opt[i].value.localeCompare(filter) == 0) {
+                        opt[i].style.display = "";
+                    } else {
+                        opt[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
 </body>
-<!-- /body -->
+<!-- //body -->
+
 </html>
+<!-- //html -->
 <!-- /html -->

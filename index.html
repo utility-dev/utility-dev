@@ -343,7 +343,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 </select>
                                                             </div>
                                                             <div class="mobile-rchge">
-                                                                <a href="plans.html">Voir les promotions</a>
+                                                                <a href="#">Voir les promotions</a>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
@@ -958,7 +958,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    
 	jQuery(document).ready(function($) {
             $("#compte").click(function(event) {
-   		$(location).attr('href','https://utility-dev.github.io/plans.html');
+   		$(location).attr('href','https://utility-dev.github.io/espace-client.html');
             });
         });
 		
@@ -984,7 +984,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 cache: false,
                 success: function() {
                   $("#w3layouts-loged").removeAttr("style");
-		  $('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='https://utility-dev.github.io/plans.html' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='https://utility-dev.github.io/index.html' style='display : inline-block' onClick='sessionStorage.clear();'>Deconnexion</a>"));
+		  $('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='https://utility-dev.github.io/espace-client.html' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='https://utility-dev.github.io/index.html' style='display : inline-block' onClick='sessionStorage.clear();'>Deconnexion</a>"));
                 },
                 error: function() {
                     $('#w3layouts-login').removeAttr("style");
