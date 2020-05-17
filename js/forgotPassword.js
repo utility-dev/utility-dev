@@ -27,7 +27,7 @@ $(function() {
 		    $( "#validForgotPassword" ).empty();
 		    $("#validForgotPassword").removeAttr("style")
 	            $('#validForgotPassword').html("<h3 class='other-nw alert-success'>Un mot de passe temporaire vous a été envoyé par sms </h3>"); 
-                    setTimeout(function(){$('#forgotPassword').hide(); $("#loginForm").removeAttr("style");}, 10000);
+                    setTimeout(function(){$('#forgotPassword').hide(); $("#loginForm").removeAttr("style");}, 6000);
                 },
                 error: function() {
                     // Fail message
