@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="submit btn btn-primary btn-sm">
                                                             Valider</button>
-                                                        <a href="javascript:;" class="agileits-forgot">Mot de Passe Oublié?</a>
+                                                        <a href="javascript:;" class="agileits-forgot" id="btnForgotPassword">Mot de Passe Oublié?</a>
                                                     </div>
                                                 </div>
 												<div id="succesConnexion" class="col-sm-10"></div>
@@ -131,7 +131,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 													<div id="validSuccesConnexion" class="col-sm-10"></div>
 												</form>
-										    </div>											
+										    </div>
+											<!-- mot de passe oublié-->	
+								             <div class="col-sm-10 w3ls-forgotPassword">
+												<form class="form-horizontal" id="forgotPassword" action="#" method="get">
+													<div class="form-group">
+														<label for="forgotPassword" class="col-sm-2 control-label">
+															Tél </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendForgotPassword" placeholder="Entrer votre tél" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="validForgotPassword" class="col-sm-10"></div>
+												</form>
+										    </div>
+                                           <!-- mot de passe oublié-->											
                                         </div>
 										
                                         <div class="tab-pane w3ls-registrationForm" id="Registration">
@@ -931,12 +948,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $(".resetLoginForm").click(function(event) {
 	     // $('#Registration').removeClass("active");
 	      $("#loginForm").removeAttr("style");
+		  $("#btnForgotPassword").removeAttr("style");
 	      $('#loginForm').trigger("reset");
 	      //$('#Registration').show();
 	      $('#sendCodeConxForm').hide();
+		  $('#sendForgotPassword').hide();
 	      $('#success').empty();
-              $('#validSuccesConnexion').empty();
+          $('#validSuccesConnexion').empty();
+		  $('#validForgotPassword').empty();
 	      $('#sendCodeConxForm').trigger("reset");
+		  $('#sendForgotPassword').trigger("reset");
             });
         });
 	    
@@ -951,12 +972,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    		$(location).attr('href','https://utility-dev.github.io/plans.html');
             });
         });
+		
+		jQuery(document).ready(function($) {
+            $("#btnForgotPassword").click(function(event) {
+                $('#loginForm').hide();
+		       $('#forgotPassword').show();
+            });
+        });
 
         (function() {
 	   $('#sendCodeForm').hide();
 	   $('#sendCodeConxForm').hide();
 	   $('#w3layouts-login').hide();
 	   $("#w3layouts-loged").hide();
+	   $('#w3layouts-forgotPassword').hide();
+	   $('#sendForgotPassword').hide();
+	   $('#w3ls-validRegisterForm').hide();
 	    //check connexion 
 	    if("firstname" in sessionStorage){
 		//$('#w3layouts-login').hide(); 
