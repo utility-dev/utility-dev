@@ -24,9 +24,10 @@ $(function() {
                 cache: false,
                 success: function() {
                        // Success message
-					$( "#validForgotPassword" ).empty();
-                    $('#validForgotPassword').html("<h3 class='other-nw alert-success'>Un mot de passe temporaire vous a été envoyé par sms </h3>");
+		    $( "#validForgotPassword" ).empty();
+		    setTimeout(function(){ $('#validForgotPassword').html("<h3 class='other-nw alert-success'>Un mot de passe temporaire vous a été envoyé par sms </h3>"); }, 3000);
                     $('#forgotPassword').hide();
+	            $("#loginForm").removeAttr("style");
                 },
                 error: function() {
                     // Fail message
