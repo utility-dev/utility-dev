@@ -932,7 +932,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
 	
-	    jQuery(document).ready(function($) {//formRegistration
+	jQuery(document).ready(function($) {
             $(".resetRegisterForm").click(function(event) {
 	     // $('#Registration').removeClass("active");
 	      $("#Registration").removeAttr("style");
@@ -945,7 +945,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
 		
-		jQuery(document).ready(function($) {//formRegistration
+	jQuery(document).ready(function($) {
             $(".resetLoginForm").click(function(event) {
 	     // $('#Registration').removeClass("active");
 	      $("#loginForm").removeAttr("style");
@@ -962,12 +962,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
 	    
-	  jQuery(document).ready(function($) {
+	jQuery(document).ready(function($) {
             $("#deconnexion").click(function(event) {
                 sessionStorage.clear();
-   		$(location).attr('href','https://utility-dev.github.io/index.html');
+   		//$(location).attr('href','https://utility-dev.github.io/index.html');
             });
         });
+	    
 	jQuery(document).ready(function($) {
             $("#compte").click(function(event) {
    		$(location).attr('href','https://utility-dev.github.io/plans.html');
@@ -1001,7 +1002,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 error: function() {
                     $('#w3layouts-login').removeAttr("style");
                 },
-            })
+            });
 	    /*if("firstname" in sessionStorage){
 		//$('#w3layouts-login').hide(); 
 		 $("#w3layouts-loged").removeAttr("style");
