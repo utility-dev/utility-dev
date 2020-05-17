@@ -5481,4 +5481,35 @@ abbr[title], abbr[data-original-title] {
 		font-size: 10px;
 		line-height: 20px;
 	}
+	div.form-group:before {
+    border-bottom: 1px solid #cacaca;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+	}
+    div.form-group {
+    padding: -webkit-calc(12px + 1vw);
+    padding: -moz-calc(12px + 1vw);
+    padding: calc(12px + 1vw);
+	}
+	div.form-group {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 16px;
+	}
+	*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+}
 }
