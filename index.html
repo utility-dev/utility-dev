@@ -991,7 +991,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   $('#w3ls-validRegisterForm').hide();
 	    //check connexion 
 	    $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/updatePassword/".concat(sessionStorage.getItem("session_token")),
+                url: "https://tsoumbou.pythonanywhere.com/api/valid/session_token/".concat(sessionStorage.getItem("session_token")),
                 dataType: "json",
                 cache: false,
                 success: function() {
