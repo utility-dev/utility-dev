@@ -990,13 +990,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   $('#forgotPassword').hide();
 	   $('#w3ls-validRegisterForm').hide();
 	    //check connexion 
-	    if("firstname" in sessionStorage){
+	    $.ajax({
+                url: "https://tsoumbou.pythonanywhere.com/api/updatePassword/".concat(sessionStorage.getItem("session_token")),
+                dataType: "json",
+                cache: false,
+                success: function() {
+                  $("#w3layouts-loged").removeAttr("style");
+		  $('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='#' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='#' style='display : inline-block'>Deconnexion</a>"));
+                },
+                error: function() {
+                    $('#w3layouts-login').removeAttr("style");
+                },
+            })
+	    /*if("firstname" in sessionStorage){
 		//$('#w3layouts-login').hide(); 
 		 $("#w3layouts-loged").removeAttr("style");
 		$('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='#' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='#' style='display : inline-block'>Deconnexion</a>"));    
 	    }else{
 		$('#w3layouts-login').removeAttr("style");    
-	    }
+	    }*/
             //check for support
             if (!window.indexedDB) {
                 console.log('This browser doesn\'t support IndexedDB');
