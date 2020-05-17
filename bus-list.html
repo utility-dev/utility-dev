@@ -8,160 +8,216 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- html -->
 <html>
 <!-- head -->
+
 <head>
-<title>Online Recharge a Corporate Category Bootstrap Responsive Web Template | Bus List :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
-<!-- metatags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <title>Utility</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- bootstrap-select-CSS -->    
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Fontawesome-CSS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <!--meta data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //metatags -->
-<!-- online fonts -->
-<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-<!-- /online fonts -->
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--//meta data-->
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- /online fonts -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/sendCode.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="js/connexion.js"></script>
+	<script src="js/validConnexionForm.js"></script>
 
 </head>
-<!-- /head -->
+<!-- //head -->
 <!-- body -->
+
 <body>
-<!--header-->
-<header>
-	<div class="container">
-		<!--logo-->
-			<div class="logo">
-				<h1><a href="index.html">Online Recharge</a></h1>
-			</div>
-		<!--//logo-->
-		  <div class="w3layouts-login">
-				<a data-toggle="modal" data-target="#myModal" href="#"><i class="glyphicon glyphicon-user"> </i>Login/Register</a>
-			</div>    
-				<div class="clearfix"></div>
-    <!--Login modal-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;</button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            Online Recharge</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-8 extra-w3layouts" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                                    <li><a href="#Registration" data-toggle="tab">Register</a></li>
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="Login">
-                                        <form  class="form-horizontal" action="#" method="get">
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                                Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email1" placeholder="Email" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                                Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <button type="submit" class="submit btn btn-primary btn-sm">
-                                                    Submit</button>
-                                                <a href="javascript:;" class="agileits-forgot">Forgot your password?</a>
-                                            </div>
-                                        </div>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane" id="Registration">
-                                        <form  class="form-horizontal" action="#" method="get">
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                                Name</label>
-                                            <div class="col-sm-10">
-                                                <div class="row">
-                                                    <div class="col-md-3 col-sm-3 col-xs-3">
-                                                        <select class="form-control">
-                                                            <option>Mr.</option>
-                                                            <option>Ms.</option>
-                                                            <option>Mrs.</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-9 col-sm-9 col-xs-9">
-                                                        <input type="text" class="form-control" placeholder="Name" required="required" />
+    <!--header-->
+    <header>
+        <div class="container">
+            <!--logo-->
+            <div class="logo">
+                <h1><a href="index.html">Utility</a></h1>
+            </div>
+            <!--//logo-->
+            <div class="w3layouts-login" id= "w3layouts-login" style ="display : none">
+		<a data-toggle="modal" data-target="#myModal" href="#"><i class="glyphicon glyphicon-user"></i>Se Connecter/S'inscrire</a>
+            </div>
+	    <div class="w3layouts-login" id= "w3layouts-loged">
+            </div>
+            <div class="clearfix"></div>
+            <!--Login modal-->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close resetRegisterForm resetLoginForm"  data-dismiss="modal" aria-hidden="true">
+                                &times;</button>
+                            <h4 class="modal-title" id="myModalLabel">
+                            Utility</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-8 extra-w3layouts" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#Login" data-toggle="tab" class="resetRegisterForm">Se Connecter</a></li>
+                                        <li><a href="#Registration" data-toggle="tab" class="resetLoginForm">S'inscrire</a></li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="Login">
+										<div class= "w3ls-connexionForm">
+                                            <form class="form-horizontal" action="#" method="get" id="loginForm">
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Tel</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="tel" placeholder="+24174689936" required="required" />
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                                        Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="submit btn btn-primary btn-sm">
+                                                            Valider</button>
+                                                        <a href="javascript:;" class="agileits-forgot">Mot de Passe Oublié?</a>
+                                                    </div>
+                                                </div>
+												<div id="succesConnexion" class="col-sm-10"></div>
+                                            </form>
+										</div>
+											<div class="col-sm-10 w3ls-validConnexionForm">
+												<form class="form-horizontal" id="sendCodeConxForm" action="#" method="get">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendConexCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="validSuccesConnexion" class="col-sm-10"></div>
+												</form>
+										    </div>											
                                         </div>
-                                        <div class="form-group">
-                                            <label for="email" class="col-sm-2 control-label">
-                                                Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email" placeholder="Email" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="mobile" class="col-sm-2 control-label">
-                                                Mobile</label>
-                                            <div class="col-sm-10">
-                                                <input type="tel" class="form-control" id="mobile" placeholder="Mobile" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="col-sm-2 control-label">
-                                                Password</label>
-                                            <div class="col-sm-10">
-                                                <input type="password" class="form-control" id="password" placeholder="Password" required="required" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-2">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <button type="submit" class="submit btn btn-primary btn-sm">
-                                                    Save & Continue</button>
-                                                <button type="reset" class="submit btn btn-default btn-sm">
-                                                    Cancel</button>
-                                            </div>
-                                        </div>
-                                        </form>
+										
+                                        <div class="tab-pane w3ls-registrationForm" id="Registration">
+                                            <form class="form-horizontal" action="#" method="get" id="formRegistration">
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Nom</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="row">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                <select class="form-control" id="gender">
+                                                                    <option>Mr.</option>
+                                                                    <option>Ms.</option>
+                                                                    <option>Mrs.</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                                                <input type="text" class="form-control" id="nom" placeholder="Name" required="required" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Prénom</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="prenom" placeholder="Prénom" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="mobile" class="col-sm-2 control-label">
+                                                        Tél</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="tel" class="form-control" id="mobile" placeholder="Mobile" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password" class="col-sm-2 control-label">
+                                                        Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" id="password" placeholder="Password" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="submit btn btn-primary btn-sm">
+                                                            Enregistrer & Continuer</button>
+                                                        <button type="reset" class="submit btn btn-default btn-sm">
+                                                            Effacer</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+											</div>
+											<div class="col-sm-10 w3ls-validRegisterForm">
+												<form class="form-horizontal" id="sendCodeForm" action="#" method="get">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+												</form>
+												</div>
+												<div id="success" class="col-sm-10"></div>
+												<div id="succes" class="col-sm-10"></div>
                                     </div>
+                                    <div id="OR">
+                                        ET</div>
                                 </div>
-                                <div id="OR"  >
-                                    OR</div>
-                            </div>
-                            <div class="col-md-4 extra-agileits">
-                                <div class="row text-center sign-with">
-                                    <div class="col-md-12">
-                                        <h3 class="other-nw">
-                                            Sign in with</h3>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="btn-group btn-group-justified">
-                                            <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                <div class="col-md-4 extra-agileits">
+                                    <div class="row text-center sign-with">
+                                        <div class="col-md-12">
+                                            <h3 class="other-nw">
+                                            Suivez-nous sur </h3>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="btn-group btn-group-justified">
+                                                <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
                                                 Google +</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -170,10 +226,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
+            <!--//Login modal-->
         </div>
-    <!--//Login modal-->
-    </div>
-</header>
+    </header>
 <!-- //header -->
 	
 <!-- innerbanner -->	
@@ -501,130 +556,295 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //subscribe --> 
 
 <!--footer-->
-<footer>
-	<div class="container-fluid">
-		<div class="w3-agile-footer-top-at">
-			<div class="col-md-2 agileits-amet-sed">
-				<h4>Company</h4>
-				<ul class="w3ls-nav-bottom">
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="support.html">Support</a></li>
-					<li><a href="sitemap.html">Sitemap</a></li>
-					<li><a href="terms.html">Terms & Conditions</a></li>
-					<li><a href="faq.html">Faq</a></li>	
-					<li><a href="index.html#mobileappagileits">Mobile</a></li>	
-					<li><a href="feedback.html">Feedback</a></li>	
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="shortcodes.html">Shortcodes</a></li>
-					<li><a href="icons.html">Icons Page</a></li>
-					
-				</ul>	
-			</div>
-			<div class="col-md-3 agileits-amet-sed ">
-				<h4>Mobile Recharges</h4>
-					<ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab1">Airtel</a></li>
-						<li><a href="index.html#parentVerticalTab1">Aircel</a></li>
-						<li><a href="index.html#parentVerticalTab1">Vodafone</a></li>
-						<li><a href="index.html#parentVerticalTab1">BSNL</a></li>
-						<li><a href="index.html#parentVerticalTab1">Tata Docomo</a></li>
-						<li><a href="index.html#parentVerticalTab1">Reliance GSM</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Reliance CDMA</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Telenor</a></li>	
-						<li><a href="index.html#parentVerticalTab1">MTS</a></li>	
-						<li><a href="index.html#parentVerticalTab1">Jio</a></li>	
-					</ul>	
-			</div>
-			<div class="col-md-3 agileits-amet-sed ">
-				<h4>DATACARD RECHARGES</h4>
-				   <ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab3">Tata Photon</a></li>
-						<li><a href="index.html#parentVerticalTab3">MTS MBlaze</a></li>
-						<li><a href="index.html#parentVerticalTab3">MTS MBrowse</a></li>
-						<li><a href="index.html#parentVerticalTab3">Airtel</a></li>
-						<li><a href="index.html#parentVerticalTab3">Aircel</a></li>
-						<li><a href="index.html#parentVerticalTab3">BSNL</a></li>	
-						<li><a href="index.html#parentVerticalTab3">MTNL Delhi</a></li>	
-						<li><a href="index.html#parentVerticalTab3">Vodafone</a></li>	
-						<li><a href="index.html#parentVerticalTab3">Idea</a></li>	
-						<li><a href="index.html#parentVerticalTab3">MTNL Mumbai</a></li>
-						<li><a href="index.html#parentVerticalTab3">Tata Photon Whiz</a></li>	
-					</ul>	
-			</div>
-			<div class="col-md-2 agileits-amet-sed">
-				<h4>DTH Recharges</h4>
-				<ul class="w3ls-nav-bottom">
-						<li><a href="index.html#parentVerticalTab2"> Airtel Digital TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Dish TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Tata Sky Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Reliance Digital TV Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Sun Direct Recharges</a></li>
-						<li><a href="index.html#parentVerticalTab2">Videocon D2H Recharges</a></li>	
-					</ul>	
-			</div>
-            <div class="col-md-2 agileits-amet-sed ">
-				<h4>Payment Options</h4>
-				   <ul class="w3ls-nav-bottom">
-						<li>Credit Cards</li>
-						<li>Debit Cards</li>
-						<li>Any Visa Debit Card (VBV)</li>
-						<li>Direct Bank Debits</li>
-						<li>Cash Cards</li>	
-					</ul>	
-			</div>
-		<div class="clearfix"> </div>
-		</div>
-    </div>
-	<div class="w3l-footer-bottom">
-		<div class="container-fluid">
-			<div class="col-md-4 w3-footer-logo">
-				<h2><a href="index.html">ONLINE RECHARGE</a></h2>
-			</div>
-			<div class="col-md-8 agileits-footer-class">
-				<p >© 2017 Online Recharge. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-			</div>
-		<div class="clearfix"> </div>
-	 	</div>
-	</div>
-</footer>
-<!--//footer-->
-<!-- for bootstrap working -->
-		<script src="js/bootstrap.js"></script>
-<!-- //for bootstrap working -->
-<!-- Seat select -->
-<script src="js/jquery.seat-charts.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery.seat-charts.css">
-<!-- //Seat select -->
-<!-- here stars scrolling icon -->
-			<script type="text/javascript">
-				$(document).ready(function() {
-					/*
-						var defaults = {
-						containerID: 'toTop', // fading element id
-						containerHoverID: 'toTopHover', // fading element hover id
-						scrollSpeed: 1200,
-						easingType: 'linear' 
-						};
-					*/
-										
-					$().UItoTop({ easingType: 'easeOutQuart' });
-										
-					});
-			</script>
-			<!-- start-smoth-scrolling -->
-			<script type="text/javascript" src="js/move-top.js"></script>
-			<script type="text/javascript" src="js/easing.js"></script>
-			<script type="text/javascript">
-				jQuery(document).ready(function($) {
-					$(".scroll").click(function(event){		
-						event.preventDefault();
-						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-					});
-				});
-			</script>
-			<!-- start-smoth-scrolling -->
-		<!-- //here ends scrolling icon -->
+
+    <!--footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="w3-agile-footer-top-at">
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Compagnie</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="about.html">A propos de nous</a></li>
+                        <li><a href="support.html">Contact</a></li>
+                        <li><a href="terms.html">Conditions d'utilisation</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <!--<li><a href="shortcodes.html">Shortcodes</a></li>
+					<li><a href="icons.html">Icons Page</a></li>-->
+
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Recharge Mobile</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Airtel</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Azur</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Libertis</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Moov</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Tata Docomo</a></li>
+						<li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">MTS</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">Jio</a></li>	-->
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Abonnement Décodeurs</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Canal +</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">IP9</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">IPTV</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
+						<li><a href="#mobilew3layouts" class="scroll">BSNL</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">Idea</a></li>	
+						<li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
+						<li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li>	-->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Paiement de Factures</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll"> Electricité</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Gas</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Eau</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Reliance Digital TV Recharges</a></li>
+						<li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
+						<li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>	-->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed ">
+                    <h4>Options de Paiement</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li>Airtel Money</li>
+                        <li>Mobicash</li>
+                        <li>MOOV Money</li>
+                        <li>Flooz</li>
+                        <li>MobiCash</li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="w3l-footer-bottom">
+            <div class="container-fluid">
+                <div class="col-md-4 w3-footer-logo">
+                    <h2><a href="index.html">Utility</a></h2>
+                </div>
+                <div class="col-md-8 agileits-footer-class">
+                    <p>© 2017 Online Recharge. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+
+    <!-- for bootstrap working -->
+    <script src="js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- Responsive-slider -->
+    <!-- Banner-slider -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function() {
+            $("#slider").responsiveSlides({
+                auto: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!-- //Banner-slider -->
+    <!-- //Responsive-slider -->
+    <!-- Bootstrap select option script -->
+    <script src="js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function() {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function() {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function() {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <!-- //Bootstrap select option script -->
+
+    <!-- easy-responsive-tabs -->
+    <link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+    <script src="js/easyResponsiveTabs.js"></script>
+    <!-- //easy-responsive-tabs -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            	var defaults = {
+            	containerID: 'toTop', // fading element id
+            	containerHoverID: 'toTopHover', // fading element hover id
+            	scrollSpeed: 1200,
+            	easingType: 'linear' 
+            	};
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+	
+	    jQuery(document).ready(function($) {//formRegistration
+            $(".resetRegisterForm").click(function(event) {
+	     // $('#Registration').removeClass("active");
+	      $("#Registration").removeAttr("style");
+	      $('#formRegistration').trigger("reset");
+	      //$('#Registration').show();
+	      $('#sendCodeForm').hide();
+	      $('#success').empty();
+              $('#succes').empty();
+	      $('#sendCodeForm').trigger("reset");
+            });
+        });
+		
+		jQuery(document).ready(function($) {//formRegistration
+            $(".resetLoginForm").click(function(event) {
+	     // $('#Registration').removeClass("active");
+	      $("#loginForm").removeAttr("style");
+	      $('#loginForm').trigger("reset");
+	      //$('#Registration').show();
+	      $('#sendCodeConxForm').hide();
+	      $('#success').empty();
+              $('#validSuccesConnexion').empty();
+	      $('#sendCodeConxForm').trigger("reset");
+            });
+        });
+	    
+	  jQuery(document).ready(function($) {
+            $("#deconnexion").click(function(event) {
+                sessionStorage.clear();
+   		$(location).attr('href','https://utility-dev.github.io/index.html');
+            });
+        });
+	jQuery(document).ready(function($) {
+            $("#compte").click(function(event) {
+   		$(location).attr('href','https://utility-dev.github.io/plans.html');
+            });
+        });
+
+        (function() {
+	   $('#sendCodeForm').hide();
+	   $('#sendCodeConxForm').hide();
+	   $('#w3layouts-login').hide();
+	   $("#w3layouts-loged").hide();
+	    //check connexion 
+	    if("firstname" in sessionStorage){
+		//$('#w3layouts-login').hide(); 
+		 $("#w3layouts-loged").removeAttr("style");
+		$('#w3layouts-loged').html("<a id='compte' data-toggle='modal'  href='#' style ='display: inline-block'><i class='glyphicon glyphicon-user'></i>".concat(sessionStorage.getItem("firstname"),"</a>","<a id='deconnexion' data-toggle='modal' href='#' style='display : inline-block'>Deconnexion</a>"));    
+	    }else{
+		$('#w3layouts-login').removeAttr("style");    
+	    }
+            //check for support
+            if (!window.indexedDB) {
+                console.log('This browser doesn\'t support IndexedDB');
+                return;
+            }
+
+            var db;
+            var request = window.indexedDB.open("utility-db", 1);
+            var tarifData = [];
+            let mins = [300, 1001, 5001, 10001, 20001, 25001, 30001, 40001, 50001, 60001, 80001, 100001, 150001, 250001, 500001, 1000001, 2000001, 3000001, 4000001];
+            let maxs = [1000, 5000, 10000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 150000, 250000, 500000, 1000000, 2000000, 3000000, 4000000, 5000000];
+            let frais = [50, 50, 100, 200, 300, 300, 400, 600, 600, 800, 800, 1500, 1500, 1500, 2500, 3000, 3000, 3000, 3000]
+            let companies = ['airtel', 'mobicash', 'flooz', 'moov'];
+            for (const element of companies) {
+                for (i = 0; i < 19; i++) {
+                    var item = {
+                        min_price: mins[0],
+                        max_price: maxs[0],
+                        frais: frais[0],
+                        company: element,
+                        created: new Date().getTime()
+                    };
+                    tarifData.push(item);
+                }
+            }
+
+            request.onerror = function(event) {
+                console.log("error: ");
+            };
+
+            request.onsuccess = function(event) {
+                db = request.result;
+                console.log("success: " + db);
+            };
+
+            request.onupgradeneeded = function(event) {
+                var db = event.target.result;
+                var tarifs = db.createObjectStore("tarifs", {
+                    autoIncrement: true
+                });
+                var commandes = db.createObjectStore("commandes", {
+                    autoIncrement: true
+                });
+
+                for (var i in tarifData) {
+                    tarifs.add(tarifData[i]);
+                }
+            }
+        })();
+
+        function filterFunction() {
+            var input, filter;
+            alert('test');
+            input = document.getElementById("tel");
+            alert(input.value);
+            filter = input.value.substring(0, 2);
+            alert(filter);
+            div = document.getElementById("selectOpe");
+            alert(div.value);
+            opt = div.getElementsByTagName("option");
+            alert(opt.length);
+            if (filter.trim() != "") {
+                for (i = 0; i < opt.length; i++) {
+                    if (opt[i].value.localeCompare(filter) == 0) {
+                        opt[i].style.display = "";
+                    } else {
+                        opt[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
 </body>
-<!-- /body -->
+<!-- //body -->
+
 </html>
-<!-- /html -->
+<!-- //html -->
