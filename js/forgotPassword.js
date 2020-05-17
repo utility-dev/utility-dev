@@ -4,7 +4,7 @@
   */
 $(function() {
 
-    $("div.w3ls-validRegisterForm input,div.w3ls-forgotPassword input").jqBootstrapValidation({
+    $("div.w3ls-forgotPassword input").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // something to have when submit produces an error ?
@@ -13,7 +13,7 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var tel = $("div.w3ls-validRegisterForm input#sendForgotPassword").val();
+            var tel = $("div.w3ls-forgotPassword input#sendForgotPassword").val();
             // Check for white space in tel for Success/Fail message
             if (tel.indexOf(' ') >= 0) {
                 tel = tel.split(' ').slice(0, -1).join(' ');
