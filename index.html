@@ -300,9 +300,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><i class="icon fa fa-flask" aria-hidden="true"></i>Bouteille de Gas</li>
                             <li><i class="icon fa fa-tint" aria-hidden="true"></i>Eau Seeg</li>
                             <li><i class="icon fa fa-paper-plane" aria-hidden="true"></i>Transfert d'argent</li>
-							<li onclick="$(location).attr('href','https://utility-dev.github.io/plane.html');"><i class="icon fa fa-plane" aria-hidden="true"></i>Billet d'avion</li>
-							<li onclick="$(location).attr('href','https://utility-dev.github.io/bus.html');"><i class="icon fa fa-bus" aria-hidden="true"></i>Billet de bus</li>
-							<li onclick="$(location).attr('href','https://utility-dev.github.io/train.html');"><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de trains</li>
+			    <li onclick="$(location).attr('href','https://utility-dev.github.io/plane.html');"><i class="icon fa fa-plane" aria-hidden="true"></i>Billet d'avion</li>
+			    <li onclick="$(location).attr('href','https://utility-dev.github.io/bus.html');"><i class="icon fa fa-bus" aria-hidden="true"></i>Billet de bus</li>
+			    <li onclick="$(location).attr('href','https://utility-dev.github.io/train.html');"><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de trains</li>
                         </ul>
                     </div>
                     <div class="resp-tabs-container hor_1">
@@ -546,7 +546,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <!-- /tab6 -->
-
                         <!-- tab7 -->
                         <div>
 						<div class="login-form">
@@ -612,6 +611,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <!-- /tab7 -->
+			    
+			     <!-- tab8 -->
+                        <div>
+						<div class="login-form">
+                            <i class="icon fa fa-plane inner-icon" aria-hidden="true"></i>
+                                    <form action="https://utility-dev.github.io/trains-list.html" method="post">
+									<div class="ban-top">
+										<div class="bnr-left">
+											<label class="inputLabel">de:</label>
+											<input class="city tags" type="text" placeholder="Enter la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left">
+											<label class="inputLabel">à:</label>
+											<input class="city tags" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+				<input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+				<input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker,#datepicker1" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="submit" class="submit" value="Chercher">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab8 -->
                     </div>
                     <div class="clearfix"></div>
                 </div>
