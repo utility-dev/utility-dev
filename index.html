@@ -30,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
     </script>
     <!--//meta data-->
     <!-- online fonts -->
@@ -43,6 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/connexion.js"></script>
     <script src="js/validConnexionForm.js"></script>
     <script src="js/forgotPassword.js"></script>
+    <link rel="stylesheet" href="css/jqui.css">
 
 </head>
 <!-- //head -->
@@ -300,9 +302,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><i class="icon fa fa-flask" aria-hidden="true"></i>Bouteille de Gas</li>
                             <li><i class="icon fa fa-tint" aria-hidden="true"></i>Eau Seeg</li>
                             <li><i class="icon fa fa-paper-plane" aria-hidden="true"></i>Transfert d'argent</li>
-			    <li onclick="$(location).attr('href','https://utility-dev.github.io/plane.html');"><i class="icon fa fa-plane" aria-hidden="true"></i>Billet d'avion</li>
-			    <li onclick="$(location).attr('href','https://utility-dev.github.io/bus.html');"><i class="icon fa fa-bus" aria-hidden="true"></i>Billet de bus</li>
-			    <li onclick="$(location).attr('href','https://utility-dev.github.io/train.html');"><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de trains</li>
+			    <li><i class="icon fa fa-plane" aria-hidden="true"></i>Billet d'avion</li>
+			    <li><i class="icon fa fa-bus" aria-hidden="true"></i>Billet de bus</li>
+			    <li><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de trains</li>
                         </ul>
                     </div>
                     <div class="resp-tabs-container hor_1">
@@ -384,7 +386,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab2 -->								
                         <div>
                             <div class="login-form">
-                                <i class="icon fa fa-television inner-icon" aria-hidden="true"></i>
+                                <i class="train-icon fa fa-television inner-icon" aria-hidden="true"></i>
                                 <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
 
                                     <ol>
@@ -417,7 +419,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab3 -->
                         <div>
 							<div class="login-form">
-                                        <i class="icon fa fa-lightbulb-o inner-icon" aria-hidden="true"></i>
+                                        <i class="train-icon fa fa-lightbulb-o inner-icon" aria-hidden="true"></i>
                                                 <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
                                                     <ol>
                                                         <li>
@@ -451,7 +453,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab4 -->
                         <div>
 						<div class="login-form">
-                            <i class="icon fa fa-connectdevelop inner-icon" aria-hidden="true"></i>
+                            <i class="train-icon fa fa-connectdevelop inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
                                         <ol>
                                             <li>
@@ -484,7 +486,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab5 -->
                         <div>
 							<div class="login-form">
-                            <i class="icon fa fa-flask inner-icon" aria-hidden="true"></i>
+                            <i class="train-icon fa fa-flask inner-icon" aria-hidden="true"></i>
                                 
                                     <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
                                         <ol>
@@ -522,7 +524,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab6 -->
                         <div>
 						 <div class="login-form">
-                            <i class="icon fa fa-tint inner-icon" aria-hidden="true"></i>
+                            <i class="train-icon fa fa-tint inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
                                         <ol>
                                             <li>
@@ -549,7 +551,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- tab7 -->
                         <div>
 						<div class="login-form">
-                            <i class="icon fa fa-paper-plane inner-icon" aria-hidden="true"></i>
+                            <i class="train-icon fa fa-paper-plane inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
                                         <ol>
                                             <li>
@@ -615,7 +617,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			     <!-- tab8 -->
                         <div>
 						<div class="login-form">
-                            <i class="icon fa fa-plane inner-icon" aria-hidden="true"></i>
+                            <i class="train-icon fa fa-plane inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/trains-list.html" method="post">
 									<div class="ban-top">
 										<div class="bnr-left">
@@ -657,6 +659,99 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <!-- /tab8 -->
+			    
+			 <!-- tab9 -->
+                        <div>
+						<div class="login-form">
+                            <i class="train-icon fa fa-bus inner-icon" aria-hidden="true"></i>
+                                    <form action="https://utility-dev.github.io/bus-list.html" method="post">
+									<div class="ban-top">
+										<div class="bnr-left">
+											<label class="inputLabel">de:</label>
+											<input class="city tags" type="text" placeholder="Entrez la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left">
+											<label class="inputLabel">à:</label>
+											<input class="city tags" type="text" placeholder="Entrez la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+				<input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+				<input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker,#datepicker1" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="submit" class="submit" value="Chercher">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab9 -->
+			    
+			     
+			 <!-- tab10 -->
+                        <div>
+						<div class="login-form">
+                            <i class="train-icon fa fa-train inner-icon" aria-hidden="true"></i>
+                                    <form action="https://utility-dev.github.io/trains-list.html" method="post">
+									<div class="ban-top">
+										<div class="bnr-left">
+											<label class="inputLabel">de:</label>
+											<input class="city tags" type="text" placeholder="Enter la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left">
+											<label class="inputLabel">à:</label>
+											<input class="city tags" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+				<input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+				<input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker,#datepicker1" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="submit" class="submit" value="Chercher">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab10 -->
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -1013,6 +1108,252 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		       $('#forgotPassword').show();
             });
         });
+	    
+$( function() {
+    var availableTags = [
+      	"Libreville",
+	"Port-Gentil",
+	"Mouila",
+	"Lambaréné",
+	"Franceville",
+	"Oyem",
+	"Lebamba",
+	"Bongolo",
+	"Bitam",
+	"Mayumba",
+	"Paris",
+	"Koulamoutou",
+	"Mouanda",
+	"Bitam",
+	"Makokou",
+	"Ntoum",
+	"Kango",
+	"Tchibanga",
+	"Tsogni",
+	"Gamba",
+	"Mounana",
+	"Okondja",
+	"Ndendé",
+	"Booué",
+	"Fougamou",
+	"Ndjolé",
+	"Lastourville",
+	"Mitzic",
+	"Mékambo",
+	"Lékoni",
+	"Mimongo",
+	"Minvoul",
+	"Mbigou",
+	"Medouneu",
+	"Omboué",
+	"Cocobeach",
+        "Omboué",
+	"Abou Dabi",
+	"Abuja",
+	"Accra",
+	"Achgabat",
+	"Addis-Abeba",
+	"Alger",
+	"Alofi",
+	"Amman",
+	"Amsterdam",
+	"Andorre-la-Vieille",
+	"Ankara",
+	"Antananarivo",
+	"Apia",
+	"Asmara",
+	"Asuncion",
+	"Athènes",
+	"Avarua",
+	"Bagdad",
+	"Bakou",
+	"Bamako",
+	"Bandar Seri Begawan",
+	"Bangkok",
+	"Bangui",
+	"Banjul",
+	"Basseterre",
+	"Belgrade",
+	"Belmopan",
+	"Berlin",
+	"Berne (capitale de facto)3",
+	"Beyrouth",
+	"Bichkek",
+	"Bissau",
+	"Bloemfontein (capitale judiciaire)4",
+	"Bogota",
+	"Brasilia",
+	"Bratislava",
+	"Brazzaville",
+	"Bridgetown",
+	"Bruxelles",
+	"Bucarest",
+	"Budapest",
+	"Buenos Aires",
+	"Le Caire",
+	"Canberra",
+	"Le Cap (capitale législative)4",
+	"Caracas",
+	"Castries",
+	"Chisinau",
+	"Sri Jayawardenapura Kotte (administrative et législative)5",
+	"Conakry",
+	"Copenhague",
+	"Dakar",
+	"Damas",
+	"Delap-Uliga-Darrit (Majuro)6",
+	"Dacca",
+	"Dili",
+	"Djibouti",
+	"Djoubanote 1",
+	"Dodoma",
+	"Doha",
+	"Douchanbé",
+	"Dublin",
+	"Erevan",
+	"Freetown",
+	"Funafuti (Vaiaku)7",
+	"Gaborone",
+	"Georgetown",
+	"Gitega",
+	"Guatemala",
+	"Hanoï",
+	"Harare",
+	"La Havane",
+	"Helsinki",
+	"Honiara",
+	"Islamabad",
+	"Jakarta",
+	"Jérusalem (contesté au profit de Tel-aviv)note 2",
+	"Ramallah (capitale proclamée : Jérusalem-est)note 3",
+	"Kaboul",
+	"Kampala",
+	"Katmandou",
+	"Khartoum",
+	"Kiev",
+	"Kigali",
+	"Kingston",
+	"Kingstown",
+	"Kinshasa",
+	"Melekeok24",
+	"Koweït",
+	"Kuala Lumpur25",
+	"Lilongwe",
+	"Lima",
+	"Lisbonne",
+	"Ljubljana",
+	"Lomé",
+	"Londres",
+	"Luanda",
+	"Lusaka",
+	"Luxembourg",
+	"Madrid",
+	"Malabo",
+	"Malé",
+	"Managua",
+	"Manama",
+	"Manille",
+	"Maputo",
+	"Mascate",
+	"Maseru",
+	"Mbabane",
+	"Mexico",
+	"Minsk",
+	"Mogadiscio (Muqdisho26)",
+	"Monaco",
+	"Monrovia",
+	"Montevideo",
+	"Moroni",
+	"Moscou",
+	"Nairobi",
+	"Nassau",
+	"Naypyidaw 27",
+	"N'Djaména",
+	"New Delhi",
+	"Niamey",
+	"Nicosie",
+	"Nouakchott",
+	"Noursoultan28",
+	"Nuku alofa",
+	"Oslo",
+	"Ottawa",
+	"Ouagadougou",
+	"Oulan-Bator",
+	"Palikir",
+	"Panama",
+	"Paramaribo",
+	"Paris",
+	"La Paz (gouvernement et ambassades)29",
+	"Pékin",
+	"Phnom Penh",
+	"Podgorica",
+	"Port Moresby",
+	"Port-au-Prince",
+	"Port-d'Espagne",
+	"Port-Louis",
+	"Porto-Novo (administrative)30",
+	"Port-Vila",
+	"Prague",
+	"Praia",
+	"Pretoria (capitale administrative)4",
+	"Putrajaya (capitale administrative)25",
+	"Pyongyang",
+	"Quito",
+	"Rabat",
+	"Ramallah (capitale de facto)note 3",
+	"Reykjavik",
+	"Riga",
+	"Riyad",
+	"Rome",
+	"Roseau",
+	"Saint John's",
+	"Saint-Domingue",
+	"Saint-Georges",
+	"Saint-Marin",
+	"San José",
+	"San Salvador",
+	"Sanaa",
+	"Santiago",
+	"São Tomé",
+	"Sarajevo",
+	"Séoul",
+	"Singapour",
+	"Skopje",
+	"Sofia",
+	"Stockholm",
+	"Sucre (constitutionnelle)29",
+	"Suva",
+	"Tachkent",
+	"Tallinn",
+	"Tarawa-Sud31",
+	"Tbilissi",
+	"Tegucigalpa",
+	"Téhéran",
+	"Thimphou",
+	"Tirana",
+	"Tokyo",
+	"Tripoli",
+	"Tunis",
+	"Vaduz",
+	"La Valette",
+	"Varsovie",
+	"Cité du Vatican",
+	"Victoria",
+	"Vienne",
+	"Vientiane",
+	"Vilnius",
+	"Washington D.C.",
+	"Wellington",
+	"Windhoek",
+	"Yamoussoukro32",
+	"Yaoundé",
+	"Yaren",
+	"Zagreb"
+    ];
+    $( ".tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
 
         (function() {
 	   $('#sendCodeForm').hide();
