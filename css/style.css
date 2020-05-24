@@ -5333,6 +5333,7 @@ abbr[title], abbr[data-original-title] {
 	}
 	img.w3ls-mobile {
 		width: 25%;
+		color: #2893ec;
 	}
 	ul.tabs-menu {
 		margin: 30px 0px 5px 0;
@@ -5422,6 +5423,7 @@ abbr[title], abbr[data-original-title] {
 	}
 	img.w3ls-mobile {
 		width: 30%;
+		color: #2893ec;
 	}
 	.mobile-rchge {
 		width: 70%;
