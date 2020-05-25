@@ -204,7 +204,11 @@
                                 }
                             }
                             else {
-                                newHash = '#' + newHash;
+                                var noShow = ["8", "9", "10"];
+                                if(!noShow.includes(newHash[newHash.length -1])){
+                                    newHash = '#' + newHash;
+                                }
+                                
                             }
 
                             history.replaceState(null, null, newHash);
