@@ -111,7 +111,7 @@
                     var matches = hash.match(new RegExp(respTabsId + "([0-9]+)"));
                     if (matches !== null && matches.length === 2) {
                         tabNum = parseInt(matches[1], 10) - 1;
-                        if (tabNum > count) {
+                        if (tabNum > 7) {
                             tabNum = 0;
                         }
                     }
