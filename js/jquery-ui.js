@@ -6274,9 +6274,9 @@ $.widget( "ui.autocomplete", {
 		this.valueMethod = this.element[ this.element.is( "input,textarea" ) ? "val" : "text" ];
 		this.isNewMenu = true;
 
-		this.element
+		/*this.element
 			.addClass( "ui-autocomplete-input" )
-			.attr( "autocomplete", "off" );
+			.attr( "autocomplete", "off" );*/
 
 		this._on( this.element, {
 			keydown: function( event ) {
