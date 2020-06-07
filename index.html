@@ -657,12 +657,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="ban-top">
 										<div class="bnr-left autocomplete">
 											<label class="inputLabel">de:</label>
-											<input id="myInput" class="city" type="text" placeholder="Enter la ville de départ" required="required" />
+											<input id="planeInputDepart" class="city" type="text" placeholder="Enter la ville de départ" required="required" />
 										</div>
 										
-										<div class="bnr-left">
+										<div class="bnr-left autocomplete">
 											<label class="inputLabel">à:</label>
-											<input class="city tags" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+											<input id="planeInputArrive" class="city" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
 										</div>
 											<div class="clearfix"></div>
 									</div>
@@ -701,14 +701,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="train-icon fa fa-bus inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/bus-list.html" method="post">
 									<div class="">
-										<div class="bnr-left">
+										<div class="bnr-left autocomplete">
 											<label class="inputLabel">de:</label>
-											<input class="city tags" type="text" placeholder="Entrez la ville de départ" required="required" />
+											<input id="busInputDepart" class="city" type="text" placeholder="Entrez la ville de départ" required="required" />
 										</div>
 										
-										<div class="bnr-left">
+										<div class="bnr-left autocomplete">
 											<label class="inputLabel">à:</label>
-											<input class="city tags" type="text" placeholder="Entrez la ville d'arrivée" required="required" />
+											<input id="busInputArrive" class="city tags" type="text" placeholder="Entrez la ville d'arrivée" required="required" />
 										</div>
 											<div class="clearfix"></div>
 									</div>
@@ -748,14 +748,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="train-icon fa fa-train inner-icon" aria-hidden="true"></i>
                                     <form action="https://utility-dev.github.io/trains-list.html" method="post">
 									<div class="ban-top">
-										<div class="bnr-left">
+										<div class="bnr-left autocomplete">
 											<label class="inputLabel">de:</label>
-											<input class="city tags" type="text" placeholder="Enter la ville de départ" required="required" />
+											<input id="trainInputDepart" class="city" type="text" placeholder="Enter la ville de départ" required="required" />
 										</div>
 										
-										<div class="bnr-left">
+										<div class="bnr-left autocomplete">
 											<label class="inputLabel">à:</label>
-											<input class="city tags" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+											<input id="trainInputArrive" class="city" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
 										</div>
 											<div class="clearfix"></div>
 									</div>
@@ -1589,10 +1589,254 @@ function autocomplete(inp, arr) {
 }
 
 /*An array containing all the country names in the world:*/
-var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+var countries = [
+      	"Libreville",
+	"Port-Gentil",
+	"Mouila",
+	"Lambaréné",
+	"Franceville",
+	"Oyem",
+	"Lebamba",
+	"Bongolo",
+	"Bitam",
+	"Mayumba",
+	"Paris",
+	"Koulamoutou",
+	"Mouanda",
+	"Bitam",
+	"Makokou",
+	"Ntoum",
+	"Kango",
+	"Tchibanga",
+	"Tsogni",
+	"Gamba",
+	"Mounana",
+	"Okondja",
+	"Ndendé",
+	"Booué",
+	"Fougamou",
+	"Ndjolé",
+	"Lastourville",
+	"Mitzic",
+	"Mékambo",
+	"Lékoni",
+	"Mimongo",
+	"Minvoul",
+	"Mbigou",
+	"Medouneu",
+	"Omboué",
+	"Cocobeach",
+        "Omboué",
+	"Abou Dabi",
+	"Abuja",
+	"Accra",
+	"Achgabat",
+	"Addis-Abeba",
+	"Alger",
+	"Alofi",
+	"Amman",
+	"Amsterdam",
+	"Andorre-la-Vieille",
+	"Ankara",
+	"Antananarivo",
+	"Apia",
+	"Asmara",
+	"Asuncion",
+	"Athènes",
+	"Avarua",
+	"Bagdad",
+	"Bakou",
+	"Bamako",
+	"Bandar Seri Begawan",
+	"Bangkok",
+	"Bangui",
+	"Banjul",
+	"Basseterre",
+	"Belgrade",
+	"Belmopan",
+	"Berlin",
+	"Berne (capitale de facto)3",
+	"Beyrouth",
+	"Bichkek",
+	"Bissau",
+	"Bloemfontein (capitale judiciaire)4",
+	"Bogota",
+	"Brasilia",
+	"Bratislava",
+	"Brazzaville",
+	"Bridgetown",
+	"Bruxelles",
+	"Bucarest",
+	"Budapest",
+	"Buenos Aires",
+	"Le Caire",
+	"Canberra",
+	"Le Cap (capitale législative)4",
+	"Caracas",
+	"Castries",
+	"Chisinau",
+	"Sri Jayawardenapura Kotte (administrative et législative)5",
+	"Conakry",
+	"Copenhague",
+	"Dakar",
+	"Damas",
+	"Delap-Uliga-Darrit (Majuro)6",
+	"Dacca",
+	"Dili",
+	"Djibouti",
+	"Djoubanote 1",
+	"Dodoma",
+	"Doha",
+	"Douchanbé",
+	"Dublin",
+	"Erevan",
+	"Freetown",
+	"Funafuti (Vaiaku)7",
+	"Gaborone",
+	"Georgetown",
+	"Gitega",
+	"Guatemala",
+	"Hanoï",
+	"Harare",
+	"La Havane",
+	"Helsinki",
+	"Honiara",
+	"Islamabad",
+	"Jakarta",
+	"Jérusalem (contesté au profit de Tel-aviv)note 2",
+	"Ramallah (capitale proclamée : Jérusalem-est)note 3",
+	"Kaboul",
+	"Kampala",
+	"Katmandou",
+	"Khartoum",
+	"Kiev",
+	"Kigali",
+	"Kingston",
+	"Kingstown",
+	"Kinshasa",
+	"Melekeok24",
+	"Koweït",
+	"Kuala Lumpur25",
+	"Lilongwe",
+	"Lima",
+	"Lisbonne",
+	"Ljubljana",
+	"Lomé",
+	"Londres",
+	"Luanda",
+	"Lusaka",
+	"Luxembourg",
+	"Madrid",
+	"Malabo",
+	"Malé",
+	"Managua",
+	"Manama",
+	"Manille",
+	"Maputo",
+	"Mascate",
+	"Maseru",
+	"Mbabane",
+	"Mexico",
+	"Minsk",
+	"Mogadiscio (Muqdisho26)",
+	"Monaco",
+	"Monrovia",
+	"Montevideo",
+	"Moroni",
+	"Moscou",
+	"Nairobi",
+	"Nassau",
+	"Naypyidaw 27",
+	"N'Djaména",
+	"New Delhi",
+	"Niamey",
+	"Nicosie",
+	"Nouakchott",
+	"Noursoultan28",
+	"Nuku alofa",
+	"Oslo",
+	"Ottawa",
+	"Ouagadougou",
+	"Oulan-Bator",
+	"Palikir",
+	"Panama",
+	"Paramaribo",
+	"Paris",
+	"La Paz (gouvernement et ambassades)29",
+	"Pékin",
+	"Phnom Penh",
+	"Podgorica",
+	"Port Moresby",
+	"Port-au-Prince",
+	"Port-d'Espagne",
+	"Port-Louis",
+	"Porto-Novo (administrative)30",
+	"Port-Vila",
+	"Prague",
+	"Praia",
+	"Pretoria (capitale administrative)4",
+	"Putrajaya (capitale administrative)25",
+	"Pyongyang",
+	"Quito",
+	"Rabat",
+	"Ramallah (capitale de facto)note 3",
+	"Reykjavik",
+	"Riga",
+	"Riyad",
+	"Rome",
+	"Roseau",
+	"Saint John's",
+	"Saint-Domingue",
+	"Saint-Georges",
+	"Saint-Marin",
+	"San José",
+	"San Salvador",
+	"Sanaa",
+	"Santiago",
+	"São Tomé",
+	"Sarajevo",
+	"Séoul",
+	"Singapour",
+	"Skopje",
+	"Sofia",
+	"Stockholm",
+	"Sucre (constitutionnelle)29",
+	"Suva",
+	"Tachkent",
+	"Tallinn",
+	"Tarawa-Sud31",
+	"Tbilissi",
+	"Tegucigalpa",
+	"Téhéran",
+	"Thimphou",
+	"Tirana",
+	"Tokyo",
+	"Tripoli",
+	"Tunis",
+	"Vaduz",
+	"La Valette",
+	"Varsovie",
+	"Cité du Vatican",
+	"Victoria",
+	"Vienne",
+	"Vientiane",
+	"Vilnius",
+	"Washington D.C.",
+	"Wellington",
+	"Windhoek",
+	"Yamoussoukro32",
+	"Yaoundé",
+	"Yaren",
+	"Zagreb"
+    ];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), countries);
+autocomplete(document.getElementById("planeInputDepart"), countries);
+autocomplete(document.getElementById("planeInputArrive"), countries);
+autocomplete(document.getElementById("busInputDepart"), countries);
+autocomplete(document.getElementById("busInputArrive"), countries);
+autocomplete(document.getElementById("trainInputDepart"), countries);
+autocomplete(document.getElementById("trainInputArrive"), countries);	
 </script>
     <!-- start-smoth-scrolling -->
     <!-- //here ends scrolling icon -->
