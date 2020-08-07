@@ -1333,8 +1333,6 @@ $( function() {
                 cache: false,
                 success: function(data){ 
 					const storeName = 'requestBillet';
-					request.onupgradeneeded = function(event) {
-						var db = event.target.result;
 						if (!db.objectStoreNames.contains(storeName)) {
 							db.createObjectStore(storeName);
 							alert("start1");
@@ -1346,7 +1344,7 @@ $( function() {
 						  const key = 'responseBillet';
 						  const value = store.put(data, key);
 						  tx.done;
-					}
+					
                        // Success message
 					   alert(data);
                     //var dat = data;
