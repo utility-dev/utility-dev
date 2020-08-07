@@ -33,7 +33,7 @@ function testa() {
 
 						  const key = 'responseBillet'
 						  const value = store.put(data, key)
-						  await tx.done
+						  tx.done
 					}
                        // Success message
 					   alert(data);
