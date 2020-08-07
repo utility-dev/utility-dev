@@ -1305,17 +1305,9 @@ $( function() {
 		
 		function testa1() {
 	
-			var db;
-            var request = window.indexedDB.open("utility-db", 1);
-			request.onerror = function(event) {
-                console.log("error: ");
-            };
+			
 
-            request.onsuccess = function(event) {
-                db = request.result;
-                console.log("success: " + db);
-				
-				var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
+            var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
 			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
 			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
@@ -1330,7 +1322,29 @@ $( function() {
                 url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type),
                 dataType: "json",
                 cache: false,
-                success: function(data){ 
+                success: function(data){
+				var db;
+							var request = window.indexedDB.open("utility-db", 1);
+							request.onerror = function(event) {
+								console.log("error: ");
+							};
+
+							request.onsuccess = function(event) {
+								db = request.result;
+								console.log("success: " + db);
+								const storeName = 'requestBillet';
+						if (!db.objectStoreNames.contains(storeName)) {
+							db.createObjectStore(storeName);
+							alert("start1");
+
+						}
+						const tx = db.transaction(storeName, 'readwrite');
+						  const store = tx.objectStore(storeName);
+
+						  const key = 'responseBillet';
+						  const value = store.put(data, key);
+						  tx.done;
+							};				
 					
 					
                        // Success message
@@ -1342,10 +1356,6 @@ $( function() {
                     
                 },
             });
-
-            };
-
-            
     
 }
 
