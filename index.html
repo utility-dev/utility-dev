@@ -1311,11 +1311,7 @@ $( function() {
                 console.log("error: ");
             };
 
-            request.onsuccess = function(event) {
-                db = request.result;
-                console.log("success: " + db);
-            };
-
+            
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
 			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
@@ -1332,18 +1328,23 @@ $( function() {
                 dataType: "json",
                 cache: false,
                 success: function(data){ 
+				request.onsuccess = function(event) {
+					db = request.result;
+					console.log("success: " + db);
 					const storeName = 'requestBillet';
-						if (!db.objectStoreNames.contains(storeName)) {
-							db.createObjectStore(storeName);
-							alert("start1");
+							if (!db.objectStoreNames.contains(storeName)) {
+								db.createObjectStore(storeName);
+								alert("start1");
 
-						}
+							}
 						const tx = db.transaction(storeName, 'readwrite');
 						  const store = tx.objectStore(storeName);
 
 						  const key = 'responseBillet';
 						  const value = store.put(data, key);
 						  tx.done;
+            };
+
 					
                        // Success message
 					   alert(data);
