@@ -1296,6 +1296,9 @@ $( function() {
                 var commandes = db.createObjectStore("commandes", {
                     autoIncrement: true
                 });
+				var requestBillet = db.createObjectStore("requestBillet", {
+                    autoIncrement: true
+                });
 
                 for (var i in tarifData) {
                     tarifs.add(tarifData[i]);
