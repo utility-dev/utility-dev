@@ -1304,9 +1304,6 @@ $( function() {
         })();
 		
 		function testa1() {
-	
-			
-
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
 			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
@@ -1335,7 +1332,6 @@ $( function() {
 								const storeName = 'requestBillet';
 						if (!db.objectStoreNames.contains(storeName)) {
 							db.createObjectStore(storeName);
-							alert("start1");
 
 						}
 						const tx = db.transaction(storeName, 'readwrite');
@@ -1344,12 +1340,7 @@ $( function() {
 						  const key = 'responseBillet';
 						  const value = store.put(data, key);
 						  tx.done;
-							};				
-					
-					
-                       // Success message
-					   alert(data);
-                    //var dat = data;
+							};
                 },
                 error: function() {
                     alert("start");
