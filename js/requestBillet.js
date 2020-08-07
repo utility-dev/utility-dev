@@ -21,7 +21,20 @@ function testa() {
                 url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type),
                 dataType: "json",
                 cache: false,
-                success: function(data) {
+                success: function(data) 
+					const storeName = 'requestBillet';
+					const db = await openDB("utility-db");
+					if (!db.objectStoreNames.contains(storeName)) {
+					  db.createObjectStore(storeName);
+					}else{
+
+						  const tx = db.transaction(storeName, 'readwrite')
+						  const store = await tx.objectStore(storeName)
+
+						  const key = 'responseBillet'
+						  const value = await store.put(data, key)
+						  await tx.done
+					}
                        // Success message
 					   alert(data);
                     //var dat = data;
