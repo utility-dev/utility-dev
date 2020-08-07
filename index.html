@@ -565,7 +565,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<!-- /End-date-piker -->
 										</div>
 									<div class="search">
-									     <input type="button" class="submit" value="Chercher" onClick="testa()">
+									     <input type="button" class="submit" value="Chercher" onClick="testa1()">
 									</div>
 								</form>
                             </div>
@@ -1302,6 +1302,62 @@ $( function() {
                 }
             }
         })();
+		
+		function testa1() {
+	
+			alert("start");
+			var db;
+            var request = window.indexedDB.open("utility-db", 1);
+			request.onerror = function(event) {
+                console.log("error: ");
+            };
+
+            request.onsuccess = function(event) {
+                db = request.result;
+                console.log("success: " + db);
+            };
+
+            var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
+			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
+			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
+			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
+			var departAsTab = datepickerDepart.split("/");
+			var arriveAsTab = datepickerArrive.split("/");
+			var depart = "".concat(departAsTab[2],"-", departAsTab[0], "-",  departAsTab[1]);
+			var arrive = "".concat(arriveAsTab[2],"-", arriveAsTab[0], "-",  arriveAsTab[1]);
+			var type = "Avion";
+            // Check for white space in code for Success/Fail message
+            
+            $.ajax({
+                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type),
+                dataType: "json",
+                cache: false,
+                success: function(data){ 
+					const storeName = 'requestBillet';
+					const db = window.indexedDB.open("utility-db", 1).result;
+					request.onupgradeneeded = function(event) {
+						var db = event.target.result;
+						if (!db.objectStoreNames.contains(storeName)) {
+							db.createObjectStore(storeName);
+						}
+						const tx = db.transaction(storeName, 'readwrite');
+						  const store = tx.objectStore(storeName);
+
+						  const key = 'responseBillet';
+						  const value = store.put(data, key);
+						  tx.done;
+					}
+                       // Success message
+					   alert(data);
+                    //var dat = data;
+                },
+                error: function() {
+                    alert("start");
+                    
+                },
+            });
+    
+}
 
         function filterFunction() {
             var input, filter;
