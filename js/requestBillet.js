@@ -23,17 +23,17 @@ function testa() {
                 cache: false,
                 success: function(data){ 
 					const storeName = 'requestBillet';
-					const db = openDB("utility-db");
+					const db = window.indexedDB.open("utility-db", 1).result;
 					if (!db.objectStoreNames.contains(storeName)) {
 					  db.createObjectStore(storeName);
 					}else{
 
-						  const tx = db.transaction(storeName, 'readwrite')
-						  const store = tx.objectStore(storeName)
+						  const tx = db.transaction(storeName, 'readwrite');
+						  const store = tx.objectStore(storeName);
 
-						  const key = 'responseBillet'
-						  const value = store.put(data, key)
-						  tx.done
+						  const key = 'responseBillet';
+						  const value = store.put(data, key);
+						  tx.done;
 					}
                        // Success message
 					   alert(data);
