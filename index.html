@@ -1305,7 +1305,6 @@ $( function() {
 		
 		function testa1() {
 	
-			alert("start");
 			var db;
             var request = window.indexedDB.open("utility-db", 1);
 			request.onerror = function(event) {
@@ -1334,11 +1333,12 @@ $( function() {
                 cache: false,
                 success: function(data){ 
 					const storeName = 'requestBillet';
-					const db = window.indexedDB.open("utility-db", 1).result;
 					request.onupgradeneeded = function(event) {
 						var db = event.target.result;
 						if (!db.objectStoreNames.contains(storeName)) {
 							db.createObjectStore(storeName);
+							alert("start1");
+
 						}
 						const tx = db.transaction(storeName, 'readwrite');
 						  const store = tx.objectStore(storeName);
