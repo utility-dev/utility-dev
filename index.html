@@ -40,6 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- /online fonts -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/sendCode.js"></script>
+	<script src="js/requestBillet.js"></script>
     <script src="js/registration.js"></script>
     <script src="js/connexion.js"></script>
     <script src="js/validConnexionForm.js"></script>
@@ -528,9 +529,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    
 			     <!-- tab8 -->
                         <div>
-						<div class="">
+						<div class="w3ls-requestAVForm">
                             <i class="train-icon fa fa-plane inner-icon" aria-hidden="true"></i>
-                                    <form action="vols-list.html" method="get">
+                                    <form action="#" method="get" id="requestTRA">
 									<div class="ban-top">
 										<div class="bnr-left autocomplete">
 											<label class="inputLabel">de:</label>
@@ -564,8 +565,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<!-- /End-date-piker -->
 										</div>
 									<div class="search">
-									     <input type="button" class="submit" value="Chercher" onclick="document.location.href='vols-list.html'">
-									
+									     <input type="button" class="submit" value="Chercher" onClick="testa()">
 									</div>
 								</form>
                             </div>
