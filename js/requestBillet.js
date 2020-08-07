@@ -7,7 +7,7 @@ function testa() {
 	
 			alert("start");
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
-			var VilleArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
+			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
 			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
 			var departAsTab = datepickerDepart.split("/");
@@ -18,21 +18,21 @@ function testa() {
             // Check for white space in code for Success/Fail message
             
             $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type),
+                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type),
                 dataType: "json",
                 cache: false,
-                success: function(data) 
+                success: function(data){ 
 					const storeName = 'requestBillet';
-					const db = await openDB("utility-db");
+					const db = openDB("utility-db");
 					if (!db.objectStoreNames.contains(storeName)) {
 					  db.createObjectStore(storeName);
 					}else{
 
 						  const tx = db.transaction(storeName, 'readwrite')
-						  const store = await tx.objectStore(storeName)
+						  const store = tx.objectStore(storeName)
 
 						  const key = 'responseBillet'
-						  const value = await store.put(data, key)
+						  const value = store.put(data, key)
 						  await tx.done
 					}
                        // Success message
@@ -44,8 +44,6 @@ function testa() {
                     
                 },
             });
-        
-
     
 }
 
