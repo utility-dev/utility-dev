@@ -59,7 +59,7 @@ function testa() {
 			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
 			objectStore.clear;
             for (var i in data) {
-               objectStore.add(data[i]);
+				add(data[i]);
             }
          };
          
@@ -76,7 +76,19 @@ function testa() {
 
     
 }
-
+function add(db, data) {
+            var request = db.transaction(["requestBillet"], "readwrite")
+            .objectStore("requestBillet")
+            .add(data);
+            
+            request.onsuccess = function(event) {
+               console.log("data has been added to your database.");
+            };
+            
+            request.onerror = function(event) {
+               console.log("Unable to add  is aready exist in your database! ");
+            }
+         }
 
 var countries = [
       	"Libreville",
