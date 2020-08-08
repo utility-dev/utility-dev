@@ -47,7 +47,7 @@ function testa() {
          }
          
          var db;
-         var request = window.indexedDB.open("requestBillet", 1);
+         var request = window.indexedDB.open("utility-db", 1);
          
          request.onerror = function(event) {
             console.log("error: ");
