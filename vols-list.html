@@ -599,7 +599,7 @@ function json2Table(json) {
 	});
 
   //build the table
-  const table = '<table class="table table-bordered agileinfo"><thead><tr>${headerRow}</tr><thead><tbody>${rows}<tbody><table>';
+  const table = '<table class="table table-bordered agileinfo"><thead><tr>'.join(headerRow).join('</tr><thead><tbody>${rows}<tbody><table>');
 
   return table;
 }
