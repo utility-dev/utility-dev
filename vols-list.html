@@ -548,8 +548,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 function testa1(){
+	var url = sessionStorage.getItem('requestBillet')
 	$.ajax({
-                url: sessionStorage.getItem('requestBillet'),
+                url: url,
                 dataType: "json",
                 cache: false,
                 success: function(data) {
