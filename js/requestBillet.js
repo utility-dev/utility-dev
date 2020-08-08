@@ -56,7 +56,11 @@ function testa() {
          request.onsuccess = function(event) {
             db = request.result;
             console.log("success: "+ db);
-			
+			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
+			objectStore.clear();
+            for (var i in data) {
+               objectStore.add(data[i]);
+            }
          };
          
          request.onupgradeneeded = function(event) {
