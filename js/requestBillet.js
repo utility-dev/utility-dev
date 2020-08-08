@@ -57,7 +57,7 @@ function testa() {
             db = request.result;
             console.log("success: "+ db);
 			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
-			objectStore.clear();
+			objectStore.clear;
             for (var i in data) {
                objectStore.add(data[i]);
             }
