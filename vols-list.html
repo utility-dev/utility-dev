@@ -575,14 +575,14 @@ function json2Table(json) {
 
     let rows = "";
 	$.map(json, function(val, key) {
-	  if(key.localeCompare("REFERENCE")==0){
+	  if(key.toString().localeCompare("REFERENCE")==0){
 		  res.join('<td class="t-one">').join(val).join("</td>");
 		  res.join('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
-	  }else if(key.localeCompare("DEPART")==0){
+	  }else if(key.toString().localeCompare("DEPART")==0){
 		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
-	  }else if(key.localeCompare("ARRIVE")==0){
+	  }else if(key.toString().localeCompare("ARRIVE")==0){
 		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
-	  }else if(key.localeCompare("PRICE")==0){
+	  }else if(key.toString().localeCompare("PRICE")==0){
 		  res.join('<td class="price us">').join(val).join('<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
 	  }
 	  
