@@ -56,9 +56,10 @@ function testa() {
          request.onsuccess = function(event) {
             db = request.result;
             console.log("success: "+ db);
-			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
+			var objectStore = db.transaction(["requestBillet"], "readwrite").objectStore("requestBillet");
 			objectStore.clear;
 			objectStore.add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
+			console.log(data)
             for (var i in data) {
                objectStore.add(data[i]);
             }
