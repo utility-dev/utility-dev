@@ -56,13 +56,15 @@ function testa() {
          request.onsuccess = function(event) {
             db = request.result;
             console.log("success: "+ db);
-			var transaction = db.transaction(["requestBillet"], "readwrite");
-			var objectStore = transaction.objectStore("requestBillet");
-			var objectStoreRequest = objectStore.clear();
+            if(db.objectStoreNames.contains("requestBillet")){
+				var transaction = db.transaction(["requestBillet"], "readwrite");
+				var objectStore = transaction.objectStore("requestBillet");
+				var objectStoreRequest = objectStore.clear();
 
-			console.log(data)
-            for (var i in data) {
-               objectStore.add(data[i]);
+				console.log(data)
+				for (var i in data) {
+				   objectStore.add(data[i]);
+				}
             }
          };
          
