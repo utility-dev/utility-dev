@@ -567,7 +567,7 @@ function testa1(){
 }
 
 function json2Table(json) {
-  let cols = ["No. du vol", "Nom de la compagnie", "Heure de Depart", "Heure d'Arrivée", "Jours de circulation", "prix"];
+  let cols = ["Vol", "Compagnie", "Depart", "Arrivée", "Prix"];
 
   let headerRow = cols
     .map(col => '<th>'.concat(col,'</th>'))
@@ -576,12 +576,13 @@ function json2Table(json) {
 
     let rows = "";
     for(let i = 0; i < json.length; i++){ 
-	rows = rows.concat('<td class="t-one">',json[i].REFERENCE,"</td>");
-	rows = rows.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
-	rows = rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
-	rows = rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
-	rows = rows.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
-	  
+	var res = "";    
+	res = res.concat('<td class="t-one">',json[i].REFERENCE,"</td>");
+	res = res.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i>', json[i].COMPANY_NAME,'</td>');
+	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
+	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
+	res = res.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
+	rows = rows.concat('<tr>',res,'</tr>');
     }
 
   //build the table
