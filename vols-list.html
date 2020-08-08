@@ -576,11 +576,11 @@ function json2Table(json) {
 
     let rows = "";
     for(let i = 0; i < json.length; i++){ 
-	rows.concat('<td class="t-one">',json[i].REFERENCE,"</td>");
-	rows.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
-	rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
-	rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
-	rows.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
+	rows = rows.concat('<td class="t-one">',json[i].REFERENCE,"</td>");
+	rows = rows.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
+	rows = rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
+	rows = rows.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
+	rows = rows.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
 	  
     }
 
