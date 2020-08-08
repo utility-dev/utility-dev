@@ -58,16 +58,15 @@ function testa() {
             console.log("success: "+ db);
 			var objectStore = db.transaction(["requestBillet"], "readwrite").objectStore("requestBillet");
 			objectStore.clear;
-			objectStore.add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
 			console.log(data)
             for (var i in data) {
-               objectStore.put(data[i]);
+               objectStore.add(data[i]);
             }
          };
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("requestBillet");
+            var objectStore = db.createObjectStore("requestBillet", "readwrite");
             objectStore.clear();
             for (var i in data) {
                objectStore.add(data[i]);
