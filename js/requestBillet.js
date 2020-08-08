@@ -57,9 +57,10 @@ function testa() {
             db = request.result;
             console.log("success: "+ db);
 			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
-			objectStore.clear;
+			objectStore.clear();
+			objectStore.add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
             for (var i in data) {
-				add(data[i]);
+               objectStore.add(data[i]);
             }
          };
          
@@ -76,19 +77,7 @@ function testa() {
 
     
 }
-function add(db, data) {
-            var request = db.transaction(["requestBillet"], "readwrite")
-            .objectStore("requestBillet")
-            .add(data);
-            
-            request.onsuccess = function(event) {
-               console.log("data has been added to your database.");
-            };
-            
-            request.onerror = function(event) {
-               console.log("Unable to add  is aready exist in your database! ");
-            }
-         }
+
 
 var countries = [
       	"Libreville",
