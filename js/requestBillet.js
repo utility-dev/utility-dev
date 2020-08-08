@@ -16,7 +16,7 @@ function testa() {
 			var arrive = "".concat(arriveAsTab[2],"-", arriveAsTab[0], "-",  arriveAsTab[1]);
 			var type = "Avion";
             // Check for white space in code for Success/Fail message
-            var url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type)
+            var url= "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type);
          window.indexedDB = window.indexedDB || window.mozIndexedDB || 
          window.webkitIndexedDB || window.msIndexedDB;
          
