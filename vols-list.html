@@ -519,7 +519,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //for bootstrap working -->
 <!-- here stars scrolling icon -->
 			<script type="text/javascript">
-			    testa1();
+			    
 				$(document).ready(function() {
 					/*
 						var defaults = {
@@ -538,13 +538,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<script type="text/javascript" src="js/move-top.js"></script>
 			<script type="text/javascript" src="js/easing.js"></script>
 			<script type="text/javascript">
+			testa1();
 				jQuery(document).ready(function($) {
 					$(".scroll").click(function(event){		
 						event.preventDefault();
 						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 					});
 				});
-			</script>
+				
+function testa1() {
+    var url = sessionStorage.getItem('requestBillet');
+	var data = getDataFromUrl(url);
+	
+    output = document.getElementById('output');
+    output.innerHTML = json2Table(data);
+}
+
+
+function getDataFromUrl(url){
+	var data;
+	$.ajax({
+                url: url,
+                dataType: "json",
+                cache: false,
+                success: function(d) {
+                       // Success message
+                    data = d;
+                },
+                error: function() {
+                    // Fail message
+                    console.log("cannot retrieve data from url :".concat(url));
+                    
+                },
+            })
+	return data;
+}
+
+function json2Table(json) {
+  let cols = ["No. du vol", "Nom de la compagnie", "Heure de Depart", "Heure d'Arrivée", "Jours de circulation", "prix"];
+
+  let headerRow = cols
+    .map(col => '<th>${col}</th>')
+    .join("");
+
+
+    let rows = "";
+	$.map(json, function(val, key) {
+	  if(key.localeCompare("REFERENCE")==0){
+		  res.join('<td class="t-one">').join(val).join("</td>");
+		  res.join('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
+	  }else if(key.localeCompare("DEPART")==0){
+		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
+	  }else if(key.localeCompare("ARRIVE")==0){
+		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
+	  }else if(key.localeCompare("PRICE")==0){
+		  res.join('<td class="price us">').join(val).join('<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
+	  }
+	  
+
+	});
+
+  //build the table
+  const table = '<table class="table table-bordered agileinfo"><thead><tr>${headerRow}</tr><thead><tbody>${rows}<tbody><table>';
+
+  return table;
+}
+</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
 </body>

@@ -1670,6 +1670,28 @@ autocomplete(document.getElementById("busInputDepart"), countries);
 autocomplete(document.getElementById("busInputArrive"), countries);
 autocomplete(document.getElementById("trainInputDepart"), countries);
 autocomplete(document.getElementById("trainInputArrive"), countries);	
+
+function testa() {
+
+            var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
+			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
+			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
+			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
+			var departAsTab = datepickerDepart.split("/");
+			var arriveAsTab = datepickerArrive.split("/");
+			var depart = "".concat(departAsTab[2],"-", departAsTab[0], "-",  departAsTab[1]);
+			var arrive = "".concat(arriveAsTab[2],"-", arriveAsTab[0], "-",  arriveAsTab[1]);
+			var type = "Avion";
+            // Check for white space in code for Success/Fail message
+            var url= "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type);
+			sessionStorage.setItem('depart', villeDepart);
+			sessionStorage.setItem('arrive', villeArrive);
+			sessionStorage.setItem('requestBillet', url);
+			
+			window.location.href = "file:///C:/Projet/utility-dev.github.io/vols-list.html";
+            
+         
+}
 </script>
     <!-- start-smoth-scrolling -->
     <!-- //here ends scrolling icon -->
