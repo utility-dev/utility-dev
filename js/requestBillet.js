@@ -2,10 +2,10 @@
   Jquery Validation using jqBootstrapValidation
    example is taken from jqBootstrapValidation docs 
   */
- 
+ var data;
+
 function testa() {
 	
-			var data =[]
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
 			var VilleArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
