@@ -16,14 +16,7 @@ function testa() {
 			var arrive = "".concat(arriveAsTab[2],"-", arriveAsTab[0], "-",  arriveAsTab[1]);
 			var type = "Avion";
             // Check for white space in code for Success/Fail message
-            
-            $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type),
-                dataType: "json",
-                cache: false,
-                success: function(d) {
-					data = d
-					//prefixes of implementation that we want to test
+            var url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type)
          window.indexedDB = window.indexedDB || window.mozIndexedDB || 
          window.webkitIndexedDB || window.msIndexedDB;
          
@@ -51,35 +44,19 @@ function testa() {
 			var transaction = db.transaction(["requestBillet"], "readwrite");
 			var objectStore = transaction.objectStore("requestBillet");
 			var objectStoreRequest = objectStore.clear();
+			objectStore.add({ id: "00-01", url: url, time: new Date().getTime()});
 			console.log(data)
-            for (var i in data) {
-               objectStore.add(data[i]);
-            }
+            
          };
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("requestBillet", {
-                    autoIncrement: true
-                });
+            var objectStore = db.createObjectStore("requestBillet", {keyPath: "id"});
 			for (var i in data) {
                objectStore.add(data[i]);
             }
                         
-         }
-
-                },
-                error: function() {
-                    console.log("cannot retrieve bille ");
-                    
-                },
-            });
-			
-			
-			
-        
-
-    
+         } 
 }
 
 
