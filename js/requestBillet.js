@@ -5,9 +5,9 @@
  
 function testa() {
 	
-			alert("start");
+			var data =[]
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
-			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
+			var VilleArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
 			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
 			var departAsTab = datepickerDepart.split("/");
@@ -18,32 +18,58 @@ function testa() {
             // Check for white space in code for Success/Fail message
             
             $.ajax({
-                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type),
+                url: "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",VilleArrive,"/",depart,"/",arrive,"/",type),
                 dataType: "json",
                 cache: false,
-                success: function(data){ 
-					const storeName = 'requestBillet';
-					const db = window.indexedDB.open("utility-db", 1).result;
-					if (!db.objectStoreNames.contains(storeName)) {
-					  db.createObjectStore(storeName);
-					}else{
+                success: function(d) {
+					data = d
+					console.log("retrieve bille successfully");
 
-						  const tx = db.transaction(storeName, 'readwrite');
-						  const store = tx.objectStore(storeName);
-
-						  const key = 'responseBillet';
-						  const value = store.put(data, key);
-						  tx.done;
-					}
-                       // Success message
-					   alert(data);
-                    //var dat = data;
                 },
                 error: function() {
-                    alert("start");
+                    console.log("cannot retrieve bille ");
                     
                 },
             });
+			
+			//prefixes of implementation that we want to test
+         window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+         window.webkitIndexedDB || window.msIndexedDB;
+         
+         //prefixes of window.IDB objects
+         window.IDBTransaction = window.IDBTransaction || 
+         window.webkitIDBTransaction || window.msIDBTransaction;
+         window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+         window.msIDBKeyRange
+         
+         if (!window.indexedDB) {
+            window.alert("Your browser doesn't support a stable version of IndexedDB.")
+         }
+         
+         var db;
+         var request = window.indexedDB.open("requestBillet", 1);
+         
+         request.onerror = function(event) {
+            console.log("error: ");
+         };
+         
+         request.onsuccess = function(event) {
+            db = request.result;
+            console.log("success: "+ db);
+			
+         };
+         
+         request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("requestBillet");
+            objectStore.clear();
+            for (var i in data) {
+               objectStore.add(data[i]);
+            }
+         }
+			
+        
+
     
 }
 
