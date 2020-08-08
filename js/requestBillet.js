@@ -66,7 +66,7 @@ function testa() {
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("requestBillet", "readwrite");
+            var objectStore = db.createObjectStore("requestBillet");
             objectStore.clear();
             for (var i in data) {
                objectStore.add(data[i]);
