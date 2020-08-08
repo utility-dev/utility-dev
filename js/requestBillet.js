@@ -2,10 +2,10 @@
   Jquery Validation using jqBootstrapValidation
    example is taken from jqBootstrapValidation docs 
   */
- var data;
-
+ 
+	//var data;
 function testa() {
-	
+
             var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
 			var VilleArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
 			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
@@ -23,16 +23,7 @@ function testa() {
                 cache: false,
                 success: function(d) {
 					data = d
-					console.log("retrieve bille successfully");
-
-                },
-                error: function() {
-                    console.log("cannot retrieve bille ");
-                    
-                },
-            });
-			
-			//prefixes of implementation that we want to test
+					//prefixes of implementation that we want to test
          window.indexedDB = window.indexedDB || window.mozIndexedDB || 
          window.webkitIndexedDB || window.msIndexedDB;
          
@@ -59,9 +50,7 @@ function testa() {
 			var objectStore = db.transaction(["requestBillet"], "readwrite").objectStore("requestBillet");
 			var transaction = db.transaction(["requestBillet"], "readwrite");
 			var objectStore = transaction.objectStore("requestBillet");
-
-
-			objectStore.clear;
+			var objectStoreRequest = objectStore.clear();
 			console.log(data)
             for (var i in data) {
                objectStore.add(data[i]);
@@ -78,6 +67,15 @@ function testa() {
             }
                         
          }
+
+                },
+                error: function() {
+                    console.log("cannot retrieve bille ");
+                    
+                },
+            });
+			
+			
 			
         
 
