@@ -61,7 +61,7 @@ function testa() {
 			objectStore.add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
 			console.log(data)
             for (var i in data) {
-               objectStore.add(data[i]);
+               objectStore.put(data[i]);
             }
          };
          
