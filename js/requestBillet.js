@@ -57,7 +57,7 @@ function testa() {
             db = request.result;
             console.log("success: "+ db);
 			var objectStore = db.transaction("requestBillet").objectStore("requestBillet");
-			objectStore.clear();
+			objectStore.clear;
 			objectStore.add({ id: "00-03", name: "Kenny", age: 19, email: "kenny@planet.org" });
             for (var i in data) {
                objectStore.add(data[i]);
