@@ -331,11 +331,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		   <table class="table table-bordered agileinfo"> 
 	           <thead>
  			       <tr> 
-					   <th>S.No.</th>  
-					   <th>Name in Block Letters(not more than 15 chars)</th> 
+					   <th>No</th>  
+					   <th>Nom</th> 
 					   <th>Sex M/F</th> 
 					   <th>Age</th> 
-					   <th>Berth(choice if any)</th> 
+					   <th>Tarif enfants</th> 
 				   </tr> 
 			  </thead>
 		   <tbody>
@@ -404,7 +404,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 </tbody> 
 		</table>
 		</div>
-                            <input type="submit" class="submit" value="Make payment"/>
+                            <input type="submit" class="submit" value="Effectuer le paiement"/>
                             </form>
 					</div>
 				</div>
@@ -567,7 +567,7 @@ function testa1(){
 }
 
 function json2Table(json) {
-  let cols = ["Vol", "Compagnie", "Depart", "Arrivée", "Prix"];
+  let cols = ["Vol", "Compagnie", "Depart", "Arrivée", "Prix FCFA"];
 
   let headerRow = cols
     .map(col => '<th>'.concat(col,'</th>'))
@@ -581,7 +581,7 @@ function json2Table(json) {
 	res = res.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i>', json[i].COMPANY_NAME,'</td>');
 	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
 	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
-	res = res.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
+	res = res.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">reserver</a></td>');
 	rows = rows.concat('<tr>',res,'</tr>');
     }
 
