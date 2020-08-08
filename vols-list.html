@@ -545,25 +545,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 					});
 				});
-				
-function testa1() {
-    var url = sessionStorage.getItem('requestBillet');
-	var data = getDataFromUrl(url);
-	
-    output = document.getElementById('output');
-    output.innerHTML = json2Table(data);
-}
 
 
-function getDataFromUrl(url){
-	var data;
+function testa1(){
 	$.ajax({
-                url: url,
+                url: sessionStorage.getItem('requestBillet'),
                 dataType: "json",
                 cache: false,
-                success: function(d) {
+                success: function(data) {
                        // Success message
-                    data = d;
+		    output = document.getElementById('output');
+    		    output.innerHTML = json2Table(data);
                 },
                 error: function() {
                     // Fail message
