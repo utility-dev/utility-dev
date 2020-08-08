@@ -56,28 +56,27 @@ function testa() {
          request.onsuccess = function(event) {
             db = request.result;
             console.log("success: "+ db);
-            if(db.objectStoreNames.contains("requestBillet")){
-				var transaction = db.transaction(["requestBillet"], "readwrite");
-				var objectStore = transaction.objectStore("requestBillet");
-				var objectStoreRequest = objectStore.clear();
+			var objectStore = db.transaction(["requestBillet"], "readwrite").objectStore("requestBillet");
+			var transaction = db.transaction(["requestBillet"], "readwrite");
+			var objectStore = transaction.objectStore("requestBillet");
 
-				console.log(data)
-				for (var i in data) {
-				   objectStore.add(data[i]);
-				}
+
+			objectStore.clear;
+			console.log(data)
+            for (var i in data) {
+               objectStore.add(data[i]);
             }
          };
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            if(!db.objectStoreNames.contains("requestBillet")){
             var objectStore = db.createObjectStore("requestBillet", {
                     autoIncrement: true
                 });
 			for (var i in data) {
                objectStore.add(data[i]);
             }
-            }            
+                        
          }
 			
         
