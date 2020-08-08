@@ -570,28 +570,28 @@ function json2Table(json) {
   let cols = ["No. du vol", "Nom de la compagnie", "Heure de Depart", "Heure d'Arrivée", "Jours de circulation", "prix"];
 
   let headerRow = cols
-    .map(col => '<th>${col}</th>')
+    .map(col => '<th>'.concat(col,'</th>'))
     .join("");
 
 
     let rows = "";
 	$.map(json, function(val, key) {
 	  if(key.toString().localeCompare("REFERENCE")==0){
-		  res.join('<td class="t-one">').join(val).join("</td>");
-		  res.join('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
+		  res.concat('<td class="t-one">',val,"</td>");
+		  res.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i> Train name </td>');
 	  }else if(key.toString().localeCompare("DEPART")==0){
-		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
+		  res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',val,'</td>');
 	  }else if(key.toString().localeCompare("ARRIVE")==0){
-		  res.join('<td class="wthree"><i class="fa fa-clock-o"></i>').join(val).join('</td>');
+		  res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',val,'</td>');
 	  }else if(key.toString().localeCompare("PRICE")==0){
-		  res.join('<td class="price us">').join(val).join('<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
+		  res.concat('<td class="price us">',val,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">Book Now</a></td>');
 	  }
 	  
 
 	});
 
   //build the table
-  const table = '<table class="table table-bordered agileinfo"><thead><tr>'.concat(headerRow,'</tr><thead><tbody>${rows}<tbody><table>');
+  const table = '<table class="table table-bordered agileinfo"><thead><tr>'.concat(headerRow,'</tr><thead><tbody>',rows,'<tbody><table>');
 
   return table;
 }
