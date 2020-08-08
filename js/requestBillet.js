@@ -66,7 +66,9 @@ function testa() {
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("requestBillet");
+            var objectStore = db.createObjectStore("requestBillet", {
+                    autoIncrement: true
+                });
             objectStore.clear();
             for (var i in data) {
                objectStore.add(data[i]);
