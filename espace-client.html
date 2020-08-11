@@ -281,23 +281,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="first-row form-group">
 												<div class="controls">
 													<label class="control-label">Prénom</label>
-													<input class="billing-address-name form-control" id="id-firstname" type="text" name="name">
-                                                    <script>$("#id-name").val(sessionStorage.getItem("firstname"))</script>
+													<input class="billing-address-name form-control" id="id-firstname" type="text" name="name" readonly>
+                                                    <script>$("#id-firstname").val(sessionStorage.getItem("firstname"))</script>
 												</div>
 												<div class="controls">
                                                     <label class="control-label">Nom</label>
-                                                    <input class="billing-address-name form-control" id="id-name" type="text" name="name">
+                                                    <input class="billing-address-name form-control" id="id-name" type="text" name="name" readonly>
                                                     <script>$("#id-name").val(sessionStorage.getItem("name"))</script>
                                                 </div>
                                                 <div class="controls">
                                                     <label class="control-label">Téléphone</label>
                                                     <input class="billing-address-name form-control" id="id-phone" type="text" name="name">
-                                                    <script>$("#id-name").val(sessionStorage.getItem("phone"))</script>
-                                                </div>
-                                                <div class="controls">
-                                                    <label class="control-label">Mot de passe</label>
-                                                    <input class="billing-address-name form-control" type="text" name="name" placeholder="Mot de passe actuel">
-                                                    <input class="billing-address-name form-control" type="text" name="name" placeholder="Nouveau mot de passe">
+                                                    <script>$("#id-phone").val(sessionStorage.getItem("phone"))</script>
                                                 </div>
 											<button class="submit"><span>Sauvegarder les modifications<i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></button>
 										</div>
