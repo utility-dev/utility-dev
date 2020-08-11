@@ -281,12 +281,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="first-row form-group">
 												<div class="controls">
 													<label class="control-label">Prénom</label>
-													<input class="billing-address-name form-control" id="id-firstname" type="text" name="name" readonly>
+													<input class="billing-address-name form-control" id="id-firstname" type="text" name="name" disabled="disabled">
                                                     <script>$("#id-firstname").val(sessionStorage.getItem("firstname"))</script>
 												</div>
 												<div class="controls">
                                                     <label class="control-label">Nom</label>
-                                                    <input class="billing-address-name form-control" id="id-name" type="text" name="name" readonly>
+                                                    <input class="billing-address-name form-control" id="id-name" type="text" name="name" disabled="disabled">
                                                     <script>$("#id-name").val(sessionStorage.getItem("name"))</script>
                                                 </div>
                                                 <div class="controls">
@@ -321,13 +321,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 
-<!-- test -->
+<!-- button modification numéro -->
         <script type="text/javascript">
           $("button").click(function(){
             sessionStorage.setItem("phone", $("#id-phone").val());
           });
         </script>
-<!-- test -->
+<!-- button modification numéro -->
 
 	<!-- //credit-card -->
                 </div>
