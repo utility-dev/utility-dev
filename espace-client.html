@@ -285,7 +285,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 												<div class="controls">
                                                     <label class="control-label">Nom</label>
-                                                    <input class="billing-address-name form-control" type="text" name="name">
+                                                    <input class="billing-address-name form-control" id="test" type="text" name="name">
+                                                    <script>$("#test").val(sessionStorage.getItem("firstname"))</script>
                                                 </div>
                                                 <div class="controls">
                                                     <label class="control-label">Téléphone</label>
