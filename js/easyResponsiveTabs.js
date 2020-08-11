@@ -13,7 +13,7 @@
                 activetab_bg: 'white',
                 inactive_bg: '#F5F5F5',
                 active_border_color: '#c1c1c1',
-                active_content_border_color: '#c1c1c1',
+                // active_content_border_color: '#c1c1c1',
                 activate: function () {
                 }
             }

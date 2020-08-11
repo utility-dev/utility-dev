@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<!-- html -->
+<html>
+<!-- head -->
+
+<head>
+    <title>Utility</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- bootstrap-select-CSS -->    
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Fontawesome-CSS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <!--meta data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Online Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <!--//meta data-->
+    <!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- /online fonts -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/sendCode.js"></script>
+    <script src="js/registration.js"></script>
+	<script src="js/requestBillet.js"></script>
+    <script src="js/connexion.js"></script>
+    <script src="js/validConnexionForm.js"></script>
+    <script src="js/forgotPassword.js"></script>
+    <link rel="stylesheet" href="css/jqui.css">
+	<style>
+
+/*the container must be positioned relative:*/
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
+
+</head>
+<!-- //head -->
+<!-- body -->
+
+<body>
+    <!--header-->
+    <header>
+        <div class="container">
+            <!--logo-->
+            <div class="logo">
+                <h1><a href="index.html">Utility</a></h1>
+            </div>
+            <!--//logo-->
+            <div class="w3layouts-login" id= "w3layouts-login" style ="display : none">
+		<a data-toggle="modal" data-target="#myModal" href="#"><i class="glyphicon glyphicon-user"></i>Se Connecter/S'inscrire</a>
+            </div>
+	    <div class="w3layouts-login" id= "w3layouts-loged">
+            </div>
+            <div class="clearfix"></div>
+            <!--Login modal-->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close resetRegisterForm resetLoginForm"  data-dismiss="modal" aria-hidden="true">
+                                &times;</button>
+                            <h4 class="modal-title" id="myModalLabel">
+                            Utility</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-8 extra-w3layouts" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#Login" data-toggle="tab" class="resetRegisterForm">Se Connecter</a></li>
+                                        <li><a href="#Registration" data-toggle="tab" class="resetLoginForm">S'inscrire</a></li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="Login">
+										<div class= "w3ls-connexionForm">
+                                            <form class="form-horizontal" action="#" method="get" id="loginForm">
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Tel</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="tel" placeholder="+24174689936" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                                        Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="submit btn btn-primary btn-sm">
+                                                            Valider</button>
+                                                        <a href="javascript:;" class="agileits-forgot" id="btnForgotPassword">Mot de Passe Oublié?</a>
+                                                    </div>
+                                                </div>
+												<div id="succesConnexion" class="col-sm-10"></div>
+                                            </form>
+										</div>
+											<div class="col-sm-10 w3ls-validConnexionForm">
+												<form class="form-horizontal" id="sendCodeConxForm" action="#" method="get">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendConexCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="validSuccesConnexion" class="col-sm-10"></div>
+												</form>
+										    </div>
+											<!-- mot de passe oublié-->	
+								             <div class="col-sm-10 w3ls-forgotPassword">
+												<form class="form-horizontal" id="forgotPassword" action="#" method="get">
+													<div class="form-group">
+														<label for="forgotPassword" class="col-sm-2 control-label">
+															Tél </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendForgotPassword" placeholder="Entrer votre tél" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="validForgotPassword" class="col-sm-10"></div>
+												</form>
+										    </div>
+                                           <!-- mot de passe oublié-->											
+                                        </div>
+										
+                                        <div class="tab-pane w3ls-registrationForm" id="Registration">
+                                            <form class="form-horizontal" action="#" method="get" id="formRegistration">
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Nom</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="row">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                                                <select class="form-control" id="gender">
+                                                                    <option>Mr.</option>
+                                                                    <option>Ms.</option>
+                                                                    <option>Mrs.</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                                                <input type="text" class="form-control" id="nom" placeholder="Name" required="required" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email" class="col-sm-2 control-label">
+                                                        Prénom</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="prenom" placeholder="Prénom" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="mobile" class="col-sm-2 control-label">
+                                                        Tél</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="tel" class="form-control" id="mobile" placeholder="Mobile" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password" class="col-sm-2 control-label">
+                                                        Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" id="password" placeholder="Password" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="submit btn btn-primary btn-sm">
+                                                            Enregistrer & Continuer</button>
+                                                        <button type="reset" class="submit btn btn-default btn-sm">
+                                                            Effacer</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+											</div>
+											<div class="col-sm-10 w3ls-validRegisterForm">
+												<form class="form-horizontal" id="sendCodeForm" action="#" method="get">
+													<div class="form-group">
+														<label for="sendCode" class="col-sm-2 control-label">
+															Code </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendCode" placeholder="Entrer le code reçu par sms" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+												</form>
+												</div>
+												<div id="success" class="col-sm-10"></div>
+												<div id="succes" class="col-sm-10"></div>
+                                    </div>
+                                    <div id="OR">
+                                        ET</div>
+                                </div>
+                                <div class="col-md-4 extra-agileits">
+                                    <div class="row text-center sign-with">
+                                        <div class="col-md-12">
+                                            <h3 class="other-nw">
+                                            Suivez-nous sur </h3>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="btn-group btn-group-justified">
+                                                <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                                Google +</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Login modal-->
+        </div>
+    </header>
+<!-- //header -->
+	
+<!-- innerbanner -->	
+	<div class="agileits-inner-banner">
+		
+	</div>
+<!-- //innerbanner -->
+
+<!-- breadcrumbs -->
+	<div class="w3layouts-breadcrumbs text-center">
+		<div class="container">
+			<span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Liste des Trains</span></span>
+		</div>
+	</div>
+	<!-- //breadcrumbs -->
+	<!-- Trains-list -->
+	<div class="agile-trains-list w3layouts-content">
+     <div class="container">
+	<!--bus-single --> 
+            <div class="w3agile single-bus">
+			         <h3 class="w3-head">Vols disponibles</h3>
+			 <!-- train-routes -->
+					<div class="bus-tp">
+						<div class="bus-tp-inner">
+							<h3 id='w3-vols-info'></h3>
+							<script>$("#w3-vols-info").html("".concat(sessionStorage.getItem("depart")," ==> ", sessionStorage.getItem("arrive")))</script>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!-- /train-routes -->
+				<!-- bus-midd -->
+<div class="w3agile bus-midd">
+  	    <div class="table-responsive" id="output">
+		</div>
+	</div>
+</div>
+         <div class="modal fade" id="myModalbook" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					      
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+					<h4 class="modal-title">Formulaire de reservation</h4>
+                        <form class="w3layouts-train-form" action="pay.html" method="post">
+					<div class="table-responsive">
+		   <table class="table table-bordered agileinfo"> 
+	           <thead>
+ 			       <tr> 
+					   <th>No</th>  
+					   <th>Nom</th> 
+				           <th>Prénom</th>
+				           <th>No Passeport</th> 
+					   <th>Sex M/F</th> 
+					   <th>Age</th> 
+					   <th>Tarif enfants</th> 
+				   </tr> 
+			  </thead>
+		   <tbody>
+		     <tr>
+			    <td class="t-one">1</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+
+				
+			 </tr>
+			 <tr>
+			    <td class="t-one">2</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+
+				
+			 </tr>
+			 <tr>
+			    <td class="t-one">3</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>  
+
+				
+			 </tr>
+			  <tr>
+			    <td class="t-one">4</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+
+				
+			 </tr>
+			  <tr>
+			    <td class="t-one">5</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+
+			  </tr>
+               <tr>
+			    <td class="t-one">6</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+
+				
+			 </tr>
+			 <tr>
+			    <td class="t-one">7</td> 
+			    <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+ 				<td class="wthree"> <input type="text" placeholder="" required="required" /></td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /> </td> 
+				<td class="wthree"><input type="text" placeholder="" required="required" /></td> 
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+			        <td class="wthree"><input type="text" placeholder="" required="required" /></td>
+	
+				
+			 </tr>
+			 </tbody> 
+		</table>
+		</div>
+                            <input type="submit" class="submit" value="Effectuer le paiement"/>
+                            </form>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+<!-- //Trains-list -->
+
+<!-- subscribe -->
+	<!--<div class="w3-subscribe agileits-w3layouts"> 
+		<div class="container">
+			<div class="col-md-6 social-icons w3-agile-icons">
+				<h4>Join Us</h4>  
+				<ul>
+					<li><a href="#" class="fa fa-facebook sicon facebook"> </a></li>
+					<li><a href="#" class="fa fa-twitter sicon twitter"> </a></li>
+					<li><a href="#" class="fa fa-google-plus sicon googleplus"> </a></li>
+					<li><a href="#" class="fa fa-dribbble sicon dribbble"> </a></li>
+					<li><a href="#" class="fa fa-rss sicon rss"> </a></li> 
+				</ul> 
+			</div> 
+			<div class="col-md-6 w3-agile-subscribe-right">
+				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
+				<form action="#" method="post"> 
+					<input type="email" name="email" placeholder="Enter your Email..." required="">
+					<input type="submit" value="Subscribe">
+					<div class="clearfix"> </div> 
+				</form>  
+			</div>
+			<div class="clearfix"> </div> 
+		</div>
+	</div>-->
+	<!-- //subscribe --> 
+	
+<!--footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="w3-agile-footer-top-at">
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Compagnie</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="about.html">A propos de nous</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <!--<li><a href="shortcodes.html">Shortcodes</a></li>
+                    <li><a href="icons.html">Icons Page</a></li>-->
+
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Services Mobiles</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Airtel Money</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">MobiCash</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Tata Docomo</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>    
+                        <li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">MTS</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">Jio</a></li>  -->
+                    </ul>
+                </div>
+                <div class="col-md-3 agileits-amet-sed ">
+                    <h4>Transfert vers la France</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Depuis votre compte mobile</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vers le compte Paypal du destinatire</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>   
+                        <li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Idea</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed">
+                    <h4>Transports</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li><a href="#mobilew3layouts" class="scroll">Billet Transport Local</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vols Internationnaux</a></li>
+                        <!--<li><a href="#mobilew3layouts" class="scroll">Reliance Digital TV Recharges</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>   -->
+                    </ul>
+                </div>
+                <div class="col-md-2 agileits-amet-sed ">
+                    <h4>Paiement</h4>
+                    <ul class="w3ls-nav-bottom">
+                        <li>Airtel Money</li>
+                        <li>Mobicash</li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="w3l-footer-bottom">
+            <div class="container-fluid">
+                <div class="col-md-4 w3-footer-logo">
+                    <h2><a href="index.html">Utility</a></h2>
+                </div>
+                <div class="col-md-8 agileits-footer-class">
+                    <p>© 2017 Online Recharge. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+			<script type="text/javascript">
+			    
+				$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear' 
+						};
+					*/
+										
+					$().UItoTop({ easingType: 'easeOutQuart' });
+										
+					});
+			</script>
+			<!-- start-smoth-scrolling -->
+			<script type="text/javascript" src="js/move-top.js"></script>
+			<script type="text/javascript" src="js/easing.js"></script>
+			<script type="text/javascript">
+			testa1();
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+
+
+function testa1(){
+	var url = sessionStorage.getItem('requestBillet')
+	$.ajax({
+                url: url,
+                dataType: "json",
+                cache: false,
+                success: function(data) {
+                       // Success message
+		    output = document.getElementById('output');
+    		    output.innerHTML = json2Table(data);
+                },
+                error: function() {
+                    // Fail message
+                    console.log("cannot retrieve data from url :".concat(url));
+                    
+                },
+            })
+}
+
+function json2Table(json) {
+  let cols = ["Vol", "Compagnie", "Depart", "Arrivée", "Prix FCFA"];
+
+  let headerRow = cols
+    .map(col => '<th>'.concat(col,'</th>'))
+    .join("");
+
+
+    let rows = "";
+    for(let i = 0; i < json.length; i++){ 
+	var res = "";    
+	res = res.concat('<td class="t-one">',json[i].REFERENCE,"</td>");
+	res = res.concat('<td class="wthree"><i class="fa fa-plane" aria-hidden="true"></i>', json[i].COMPANY_NAME,'</td>');
+	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].DEPART,'</td>');
+	res = res.concat('<td class="wthree"><i class="fa fa-clock-o"></i>',json[i].ARRIVE,'</td>');
+	res = res.concat('<td class="price us">',json[i].PRICE,'<a href="#" data-toggle="modal" data-target="#myModalbook" class="seat-button two">reserver</a></td>');
+	rows = rows.concat('<tr>',res,'</tr>');
+    }
+
+  //build the table
+  const table = '<table class="table table-bordered agileinfo"><thead><tr>'.concat(headerRow,'</tr><thead><tbody>',rows,'<tbody><table>');
+
+  return table;
+}
+</script>
+			<!-- start-smoth-scrolling -->
+		<!-- //here ends scrolling icon -->
+</body>
+<!-- /body -->
+</html>
+<!-- /html -->

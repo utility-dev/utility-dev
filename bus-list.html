@@ -1,9 +1,3 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <!-- html -->
 <html>
@@ -36,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
     </script>
     <!--//meta data-->
     <!-- online fonts -->
@@ -47,7 +42,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/sendCode.js"></script>
     <script src="js/registration.js"></script>
     <script src="js/connexion.js"></script>
-	<script src="js/validConnexionForm.js"></script>
+    <script src="js/validConnexionForm.js"></script>
+    <script src="js/forgotPassword.js"></script>
+    <link rel="stylesheet" href="css/jqui.css">
+	<style>
+
+/*the container must be positioned relative:*/
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
 
 </head>
 <!-- //head -->
@@ -111,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="submit btn btn-primary btn-sm">
                                                             Valider</button>
-                                                        <a href="javascript:;" class="agileits-forgot">Mot de Passe Oublié?</a>
+                                                        <a href="javascript:;" class="agileits-forgot" id="btnForgotPassword">Mot de Passe Oublié?</a>
                                                     </div>
                                                 </div>
 												<div id="succesConnexion" class="col-sm-10"></div>
@@ -131,7 +163,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 													<div id="validSuccesConnexion" class="col-sm-10"></div>
 												</form>
-										    </div>											
+										    </div>
+											<!-- mot de passe oublié-->	
+								             <div class="col-sm-10 w3ls-forgotPassword">
+												<form class="form-horizontal" id="forgotPassword" action="#" method="get">
+													<div class="form-group">
+														<label for="forgotPassword" class="col-sm-2 control-label">
+															Tél </label>
+														<div class="col-sm-10">
+															<input type="tel" class="form-control" id="sendForgotPassword" placeholder="Entrer votre tél" required="required" />
+														</div>
+													</div>
+													<div class="col-sm-10">
+														<button type="submit" class="submit btn btn-primary btn-sm"> Valider</button>
+													</div>
+													<div id="validForgotPassword" class="col-sm-10"></div>
+												</form>
+										    </div>
+                                           <!-- mot de passe oublié-->											
                                         </div>
 										
                                         <div class="tab-pane w3ls-registrationForm" id="Registration">
@@ -240,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Buses List</span></span>
+			<span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Liste des Bus</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
@@ -248,11 +297,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="agile-bus-list w3layouts-content">
      <div class="container">
 	<!--bus-single --> 
-			         <h3 class="w3-head">Buses list</h3>
+			         <h3 class="w3-head">Bus disponibles</h3>
 			 <!-- bus-routes -->
 					<div class="bus-tp">
 						<div class="bus-tp-inner">
-							<h3>Busses from City1 to City2</h3>
+							<h3>Bus pour City1 ==> City2</h3>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -530,7 +579,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <!-- subscribe -->
-	<div class="w3-subscribe agileits-w3layouts"> 
+	<!--<div class="w3-subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
 				<h4>Join Us</h4>  
@@ -552,12 +601,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clearfix"> </div> 
 		</div>
-	</div>
+	</div>-->
 	<!-- //subscribe --> 
 
 <!--footer-->
-
-    <!--footer-->
     <footer>
         <div class="container-fluid">
             <div class="w3-agile-footer-top-at">
@@ -565,63 +612,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4>Compagnie</h4>
                     <ul class="w3ls-nav-bottom">
                         <li><a href="about.html">A propos de nous</a></li>
-                        <li><a href="support.html">Contact</a></li>
-                        <li><a href="terms.html">Conditions d'utilisation</a></li>
-                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <!--<li><a href="shortcodes.html">Shortcodes</a></li>
-					<li><a href="icons.html">Icons Page</a></li>-->
+                    <li><a href="icons.html">Icons Page</a></li>-->
 
                     </ul>
                 </div>
                 <div class="col-md-3 agileits-amet-sed ">
-                    <h4>Recharge Mobile</h4>
+                    <h4>Services Mobiles</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll">Airtel</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Azur</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Libertis</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Moov</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Airtel Money</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">MobiCash</a></li>
                         <!--<li><a href="#mobilew3layouts" class="scroll">Tata Docomo</a></li>
-						<li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">MTS</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">Jio</a></li>	-->
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>    
+                        <li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">MTS</a></li>  
+                        <li><a href="#mobilew3layouts" class="scroll">Jio</a></li>  -->
                     </ul>
                 </div>
                 <div class="col-md-3 agileits-amet-sed ">
-                    <h4>Abonnement Décodeurs</h4>
+                    <h4>Transfert vers la France</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll">Canal +</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">IP9</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">IPTV</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Depuis votre compte mobile</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vers le compte Paypal du destinatire</a></li>
                         <!--<li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
-						<li><a href="#mobilew3layouts" class="scroll">BSNL</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">Idea</a></li>	
-						<li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
-						<li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li>	-->
+                        <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>   
+                        <li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">Idea</a></li> 
+                        <li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li> -->
                     </ul>
                 </div>
                 <div class="col-md-2 agileits-amet-sed">
-                    <h4>Paiement de Factures</h4>
+                    <h4>Transports</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll"> Electricité</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Gas</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Eau</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Billet Transport Local</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vols Internationnaux</a></li>
                         <!--<li><a href="#mobilew3layouts" class="scroll">Reliance Digital TV Recharges</a></li>
-						<li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
-						<li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>	-->
+                        <li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>   -->
                     </ul>
                 </div>
                 <div class="col-md-2 agileits-amet-sed ">
-                    <h4>Options de Paiement</h4>
+                    <h4>Paiement</h4>
                     <ul class="w3ls-nav-bottom">
                         <li>Airtel Money</li>
                         <li>Mobicash</li>
-                        <li>MOOV Money</li>
-                        <li>Flooz</li>
-                        <li>MobiCash</li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

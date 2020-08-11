@@ -30,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
     </script>
     <!--//meta data-->
     <!-- online fonts -->
@@ -39,10 +40,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- /online fonts -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/sendCode.js"></script>
+	<script src="js/requestBillet.js"></script>
     <script src="js/registration.js"></script>
     <script src="js/connexion.js"></script>
     <script src="js/validConnexionForm.js"></script>
     <script src="js/forgotPassword.js"></script>
+    <link rel="stylesheet" href="css/jqui.css">
+	<style>
+
+/*the container must be positioned relative:*/
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
 
 </head>
 <!-- //head -->
@@ -251,32 +289,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <div class="banner1">
                                 <div class="caption">
-                                    <h3><span>Economisez</span> 500 FCFA sur tous vos bouquet canal+</h3>
-                                    <p><a href="#mobilew3layouts" class="scroll">Reabonné vous maintenant</a></p>
+                                    <h3><span>Services Airtel Money et Mobicash</span></h3>
+                                    <p><a href="#mobilew3layouts" class="scroll">Utiliser vos services Airtel Money et Mobicash en un click!!</a></p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="banner2">
                                 <div class="caption">
-                                    <h3><span>50% off</span> on train Tickets</h3>
-                                    <p><a href="train.html">Book now</a></p>
+                                    <h3><span>Reserver</span> Vos billets de Trains</h3>
+                                    <p><a href="train.html">Plus besoin de se déplacer ni de faire la queue pour achéter vos billets</a></p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="banner3">
-                                <div class="caption">
-                                    <h3><span>Flat Rs.200 Cash back</span>  on Movie Tickets</h3>
-                                    <p><a href="movies.html">Book now</a></p>
-                                </div>
-                            </div>
-                        </li>
+
                         <li>
                             <div class="banner4">
                                 <div class="caption">
-                                    <h3><span>Upto Rs.125 Discount </span> & Flat 100% Money Back</h3>
-                                    <p><a href="bus.html">Book now</a></p>
+                                    <h3><span>Reserver vos billets de Bus, Car etc.</span></h3>
+                                    <p><a href="bus.html">Plus besoin de se rendre à la gare routière ni en agence pour acheter votre billet</a></p>
                                 </div>
                             </div>
                         </li>
@@ -293,13 +324,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div id="parentVerticalTab">
                     <div class="agileits-tab_nav">
                         <ul class="resp-tabs-list hor_1">
-                            <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Recharge Mobile</li>
-                            <li><i class="icon fa fa-television" aria-hidden="true"></i>Abonnement Canal +</li>
-                            <li><i class="icon fa fa-lightbulb-o" aria-hidden="true"></i>Electricite Edan Seeg</li>
-                            <li><i class="icon fa fa-connectdevelop" aria-hidden="true"></i>Abonnement Ip9</li>
-                            <li><i class="icon fa fa-flask" aria-hidden="true"></i>Bouteille de Gas</li>
-                            <li><i class="icon fa fa-tint" aria-hidden="true"></i>Eau Seeg</li>
-                            <li><i class="icon fa fa-paper-plane" aria-hidden="true"></i>Transfert d'argent</li>
+                            <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Mobicash</li>
+                            <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Airtel Money</li>
+                            <li><i class="icon fa fa-paper-plane" aria-hidden="true"></i>Transfert International</li>
+							<li><i class="icon fa fa-plane" aria-hidden="true"></i>Billet d'avion</li>
+							<li><i class="icon fa fa-bus" aria-hidden="true"></i>Billet de bus</li>
+							<li><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de trains</li>
+							<li><i class="icon fa fa-subway" aria-hidden="true"></i>Billet de bateau</li>
                         </ul>
                     </div>
                     <div class="resp-tabs-container hor_1">
@@ -311,45 +342,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="tab-grids">
                                     <div id="tab1" class="tab-grid">
                                         <div class="login-form">
-                                            <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
+                                            <form action="pay.html" method="get" id="signup">
                                                 <ol>
-                                                    <li>
-                                                        <h4>Entrer Votre Numéro de téléphone</h4>
-                                                        <input type="tel" id="tel" name="tel" pattern="\d{10}" placeholder="Numéro de Téléphone" required="required" onkeyup="filterFunction()" />
-                                                        <p class="validation01">
-                                                            <span class="invalid">SVP Entrer un Numéro de Téléphone Valide</span>
-                                                            <span class="valid">Valider!</span>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <h4>Selectionner Votre Opérateur</h4>
+													<li>
+                                                        <h4>Service</h4>
                                                         <div class="agileits-select">
                                                             <select class="selectpicker show-tick" id="selectOpe" data-live-search="true" required="required">
-                                                                <option data-tokens="Select Operator">Opérateur</option>
-                                                                <option data-tokens="Airtel" value="07">Airtel</option>
-                                                                <option data-tokens="Libertis" value="06">Libertis</option>
+                                                                <option data-tokens="transfert" value="action_id">Transfert d’argent</option>
+                                                                <option data-tokens="retrait" value="action_id">Retrait d’argent</option>
+																<option data-tokens="forfaits" value="action_id">Achat forfaits</option>
+																<option data-tokens="credit" value="action_id">Achat de crédit</option>
+																<option data-tokens="canal" value="action_id">Canal+</option>
+																<option data-tokens="satcon" value="action_id">SATCON</option>
+																<option data-tokens="mobilEdan" value="action_id">MobilEdan</option>
+																<option data-tokens="facile" value="action_id">Mobile Facile</option>
+																<option data-tokens="factures" value="action_id">Factures Gabon Télécom</option>
                                                             </select>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div class="mobile-right ">
-                                                            <h4>Combien Voulez-Vous Recharger?</h4>
-                                                            <div class="agileits-select">
-                                                                <select class="selectpicker show-tick" data-live-search="true" required="required">
-                                                                    <option data-tokens="Select Operator">Montant</option>
-                                                                    <option data-tokens="1000">1000</option>
-                                                                    <option data-tokens="2000">2000</option>
-                                                                    <option data-tokens="3000">3000</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="mobile-rchge">
-                                                                <a href="#">Voir les promotions</a>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                    </li>
+														<h4>Montant (seuls les frais Mobicash sont appliqués)</h4>
+														<div class="mobile-right ">
+															<div class="mobile-rchge">
+																<input type="text" placeholder="Montant" name="amount" required="required" />
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</li>
                                                     <li>
-                                                        <input type="submit" class="submit" value="Recharger Maintenant" />
+                                                        <input type="button" class="submit" value="Valider" onclick="document.location.href='pay.html'"/>
                                                     </li>
                                                 </ol>
                                             </form>
@@ -380,220 +401,116 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- /tab1 -->
                         <!-- tab2 -->								
                         <div>
-                            <div class="login-form">
-                                <i class="icon fa fa-television inner-icon" aria-hidden="true"></i>
-                                <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-
-                                    <ol>
-                                        <li>
-                                            <h4>Entrer Votre Code</h4>
-                                            <input type="text" id="customer" value="Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Code';}" required="">
-                                            <p class="validation01">
-                                                <span class="invalid">SVP Entrer un Code Valide</span>
-                                                <span class="valid">Valider!</span>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <h4>Combien souhaitiez-vous payer?</h4>
-                                            <div class="mobile-right ">
-                                                <div class="mobile-rchge">
-                                                    <input type="text" placeholder="Montant" name="amount" required="required" />
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <input type="submit" class="submit" value="Payer Maintenant" />
-                                        </li>
-                                    </ol>
-                                </form>
-
-                            </div>
-                        </div>
-                        <!-- /tab2 -->
-                        <!-- tab3 -->
-                        <div>
-							<div class="login-form">
-                                        <i class="icon fa fa-lightbulb-o inner-icon" aria-hidden="true"></i>
-                                                <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-                                                    <ol>
-                                                        <li>
-                                                            <h4>Entrer Votre Numéro de compteur</h4>
-                                                            <input type="tel" id="tels" name="tel" pattern="\d{10}" placeholder="Numéro de compteur" required />
-                                                            <p class="validation01">
-                                                                <span class="invalid">SVP Entrer un Numéro de Compteur Valide</span>
-                                                                <span class="valid">Valider!</span>
-                                                            </p>
-                                                        </li>
-                                                        <li>
-                                                            <div class="mobile-right ">
-                                                                <h4>Combien souhaitiez-vous payer?</h4>
-                                                                <div class="mobile-rchge">
-                                                                    <input type="text" placeholder="Montant" name="amount" required="required" />
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <input type="submit" class="submit" value="Recharger Maintenant" />
-                                                        </li>
-                                                    </ol>
-                                                </form>
-
+                            <div class="tabs-box">
+                                <img src="images/mobile.png" class="w3ls-mobile" alt="" data-pin-nopin="true">
+                                <div class="clearfix"> </div>
+                                <div class="tab-grids">
+                                    <div id="tab1" class="tab-grid">
+                                        <div class="login-form">
+                                            <form action="pay.html" method="get" id="signup">
+                                                <ol>
+													<li>
+                                                        <h4>Service</h4>
+                                                        <div class="agileits-select">
+                                                            <select class="selectpicker show-tick" id="selectOpe" data-live-search="true" required="required">
+                                                                <option data-tokens="credit" value="action_id">Achat crédit d'appel</option>
+                                                                <option data-tokens="transfert" value="action_id">Transfert d'argent</option>
+																<option data-tokens="retrait" value="action_id">Retrait d'argent</option>
+																<option data-tokens="compte" value="action_id">Mon compte</option>
+																<option data-tokens="canal" value="action_id">Canal+</option>
+																<option data-tokens="seeg" value="action_id">SEEG</option>
+																<option data-tokens="mobilEdan" value="action_id">MobilEdan</option>
+																<option data-tokens="eFacture" value="action_id">eFacture</option>
+																<option data-tokens="gimac" value="action_id">GIMAC</option>
+                                                            </select>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+														<h4>Montant (seuls les frais Airtel Money sont appliqués)</h4>
+														<div class="mobile-right ">
+															<div class="mobile-rchge">
+																<input type="text" placeholder="Montant" name="amount" required="required" />
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</li>
+                                                    <li>
+                                                        <input type="button" class="submit" value="Valider" onclick="document.location.href='pay.html'"/>
+                                                    </li>
+                                                </ol>
+                                            </form>
 
                                         </div>
-								</div>
-                        <!-- /tab3 -->
 
-                        <!-- tab4 -->
-                        <div>
-						<div class="login-form">
-                            <i class="icon fa fa-connectdevelop inner-icon" aria-hidden="true"></i>
-                                    <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <h4>Entrer Votre Numéro Client</h4>
-                                                <input type="tel" id="telss" name="tel" pattern="\d{10}" placeholder="Numéro Client" required />
-                                                <p class="validation01">
-                                                    <span class="invalid">SVP Entrer un Numéro Client Valide</span>
-                                                    <span class="valid">Valider!</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <h4>Combien souhaitiez-vous payer?</h4>
-                                                    <div class="mobile-rchge">
-                                                        <input type="text" placeholder="Montant" name="amount" required="required" />
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Recharger Maintenant" />
-                                            </li>
-                                        </ol>
-                                    </form>
-
+                                    </div>   
                                 </div>
-                        </div>
-                        <!-- /tab4 -->
 
-                        <!-- tab5 -->
-                        <div>
-							<div class="login-form">
-                            <i class="icon fa fa-flask inner-icon" aria-hidden="true"></i>
-                                
-                                    <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <h4>Selectionner le Nombre de bouteilles que vous souhaitiez payer?</h4>
-                                                <div class="agileits-select">
-                                                    <select class="selectpicker show-tick" data-live-search="true">
-                                                        <option data-tokens="Select Operator">Nombre de bouteilles </option>
-                                                        <option data-tokens="Operator1">1</option>
-                                                        <option data-tokens="Operator2">2</option>
-                                                        <option data-tokens="Operator3">3</option>
-                                                        <option data-tokens="Operator4">4</option>
-                                                        <option data-tokens="Operator5">5</option>
-                                                        <option data-tokens="Operator6">6</option>
-                                                        <option data-tokens="Operator7">7</option>
-                                                        <option data-tokens="Operator5">8</option>
-                                                        <option data-tokens="Operator6">9</option>
-                                                        <option data-tokens="Operator7">10</option>
-                                                    </select>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <h4>Entrer Votre adresse n'hésitez pas à donner plus de details sur le lieux ou vous souhaitiez être livré</h4>
-                                                <input type="text" id="customer" value="Entrer votre adresse ex : Avant l'hopital Militaire" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Adresse';}" required="">
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Payer Maintenant" />
-                                            </li>
-                                        </ol>
-                                    </form>
-
-                                </div>
-                        </div>
-                        <!-- /tab5 -->
-                        <!-- tab6 -->
-                        <div>
-						 <div class="login-form">
-                            <i class="icon fa fa-tint inner-icon" aria-hidden="true"></i>
-                                    <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <h4>Entrer Votre Numéro de compteur</h4>
-                                                <input type="text" id="customer" value="Numéro de Compteur" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Numéro de Compteur';}" required="">
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <h4>Combien Voulez-Vous Payer?</h4>
-                                                    <div class="mobile-rchge">
-                                                        <input type="text" placeholder="Enter amount" name="amount" required="required" />
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Payer Votre Facture" />
-                                            </li>
-                                        </ol>
-                                    </form>
+                                <div class="clearfix"> </div>
                             </div>
-                        </div>
-                        <!-- /tab6 -->
+                            <!-- script -->
+                            <script>
+                                $(document).ready(function() {
+                                    $("#tab2").hide();
+                                    $("#tab3").hide();
+                                    $("#tab4").hide();
+                                    $(".tabs-menu a").click(function(event) {
+                                        event.preventDefault();
+                                        var tab = $(this).attr("href");
+                                        $(".tab-grid").not(tab).css("display", "none");
+                                        $(tab).fadeIn("slow");
+                                    });
+                                });
+                            </script>
 
-                        <!-- tab7 -->
+                        </div>
+
                         <div>
 						<div class="login-form">
-                            <i class="icon fa fa-paper-plane inner-icon" aria-hidden="true"></i>
-                                    <form action="https://utility-dev.github.io/pay.html" method="post" id="signup">
+                            <i class="train-icon fa fa-paper-plane inner-icon" aria-hidden="true"></i>
+                                    <form action="pay.html" method="get" id="signup">
                                         <ol>
                                             <li>
-                                                <h4>Entrer le type de compte mobile source?</h4>
+                                                <h4>Votre compte Source (enregistrée dans une sim de ce mobile)</h4>
                                                 <div class="agileits-select">
                                                     <select class="selectpicker show-tick" data-live-search="true">
-                                                        <option data-tokens="Select Operator">Banque Mobile Source </option>
                                                         <option data-tokens="Operator1">Airtel Money</option>
                                                         <option data-tokens="Operator2">MobiCash</option>
-                                                        <option data-tokens="Operator3">Flooz</option>
-                                                        <option data-tokens="Operator4">Moov Money</option>
                                                     </select>
                                                 </div>
                                             </li>
                                             <li>
-                                                <h4>Entrer Votre Numéro de tél associé au compte mobile source</h4>
-                                                <input type="tel" id="teld" name="tel" pattern="\d{10}" placeholder="Numéro de Téléphone Source" required="required" />
-                                                <p class="validation01">
-                                                    <span class="invalid">SVP Entrer un Numéro de Téléphone Valide</span>
-                                                    <span class="valid">Valider!</span>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <h4>Entrer le type de compte mobile de destination?</h4>
-                                                <div class="agileits-select">
-                                                    <select class="selectpicker show-tick" data-live-search="true">
-                                                        <option data-tokens="Select Operator">Banque Mobile Cible </option>
-                                                        <option data-tokens="Operator1">Airtel Money</option>
-                                                        <option data-tokens="Operator2">MobiCash</option>
-                                                        <option data-tokens="Operator3">Flooz</option>
-                                                        <option data-tokens="Operator4">Moov Money</option>
-                                                    </select>
+                                                <h4>Infos Destinataire</h4>
+												
+                                                <div class="mobile-rchge">
+                                                    <input type="text" placeholder="Nom" name="nom" required="required" />
                                                 </div>
+												
+												<div class="mobile-rchge">
+                                                    <input type="text" placeholder="prénom" name="prenom" required="required" />
+                                                </div>
+												
+												<div class="mobile-rchge">
+                                                    <input type="text" placeholder="identifiant paypal" name="paypal" required="required" />
+                                                </div>
+												
+												<div class="mobile-rchge">
+                                                    <input type="text" placeholder="Tel" name="tel" required="required" />
+                                                </div>
+												<div class="clearfix"></div>
                                             </li>
-                                            <li>
-                                                <h4>Entrer Votre Numéro de tél associé au compte mobile cible</h4>
-                                                <input type="tel" id="teld" name="tel" pattern="\d{10}" placeholder="Numéro de Téléphone Cible" required="required" />
-                                                <p class="validation01">
-                                                    <span class="invalid">SVP Entrer un Numéro de Téléphone Valide</span>
-                                                    <span class="valid">Valider!</span>
-                                                </p>
+											<li>
+                                                <div class="mobile-right ">
+                                                    <h4>Raisons du transfert?</h4>
+                                                    <div class="agileits-select">
+                                                    <select class="selectpicker show-tick" data-live-search="true">
+                                                        <option data-tokens="Operator1">Soutien Familiale</option>
+                                                        <option data-tokens="Operator2">Don</option>
+                                                    </select>
+													<div class="clearfix"></div>
                                             </li>
-
                                             <li>
                                                 <div class="mobile-right ">
-                                                    <h4>Combien Voulez-Vous Transferer?</h4>
+                                                    <h4>Montant à Transferer?</h4>
                                                     <div class="mobile-rchge">
                                                         <input type="text" placeholder="Montant" name="amount" required="required" />
                                                     </div>
@@ -602,13 +519,205 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </li>
 
                                             <li>
-                                                <input type="submit" class="submit" value="Transférer Maintenant" />
+                                                <input type="button" class="submit" value="Transférer Maintenant" onclick="document.location.href='pay.html'"/>
                                             </li>
                                         </ol>
                                     </form>
                             </div>
                         </div>
                         <!-- /tab7 -->
+			    
+			     <!-- tab8 -->
+                        <div>
+						<div class="w3ls-requestAVForm">
+                            <i class="train-icon fa fa-plane inner-icon" aria-hidden="true"></i>
+                                    <form action="#" method="get" id="requestTRA">
+									<div class="ban-top">
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">de:</label>
+											<input id="planeInputDepart" class="city" type="text" placeholder="Enter la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">à:</label>
+											<input id="planeInputArrive" class="city" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+												<input class="date" id="datepicker" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+												<input class="date" id="datepicker1" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker,#datepicker1" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="button" class="submit" value="Chercher" onClick="testa()">
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab8 -->
+			    
+			 <!-- tab9 -->
+                        <div>
+						<div class="login-form">
+                            <i class="train-icon fa fa-bus inner-icon" aria-hidden="true"></i>
+                                    <form action="bus-list.html" method="get">
+									<div class="">
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">de:</label>
+											<input id="busInputDepart" class="city" type="text" placeholder="Entrez la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">à:</label>
+											<input id="busInputArrive" class="city tags" type="text" placeholder="Entrez la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+												<input class="date" id="datepicker3" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+												<input class="date" id="datepicker4" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker3,#datepicker4" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="button" class="submit" value="Chercher" onclick="document.location.href='bus-list.html'">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab9 -->
+						
+			 <!-- tab10 -->
+                        <div>
+						<div class="login-form">
+                            <i class="train-icon fa fa-train inner-icon" aria-hidden="true"></i>
+                                    <form action="trains-list.html" method="get">
+									<div class="ban-top">
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">de:</label>
+											<input id="trainInputDepart" class="city" type="text" placeholder="Enter la ville de départ" required="required" />
+										</div>
+										
+										<div class="bnr-left autocomplete">
+											<label class="inputLabel">à:</label>
+											<input id="trainInputArrive" class="city" type="text" placeholder="Entrer la ville d'arrivée" required="required" />
+										</div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+												<input class="date" id="datepicker5" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+												<input class="date" id="datepicker6" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker5,#datepicker6" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="button" class="submit" value="Chercher" onclick="document.location.href='trains-list.html'">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab10 -->
+						
+						<!-- tab11 -->
+                        <div>
+						<div class="login-form">
+                            <i class="train-icon fa fa-ship inner-icon" aria-hidden="true"></i>
+                                    <form action="boat-list.html" method="get">
+									<div class="ban-top">
+											<label class="inputLabel">de:</label>
+											<div class="agileits-select">
+                                                    <select class="selectpicker show-tick" data-live-search="true">
+                                                        <option data-tokens="Operator1">Libreville</option>
+                                                        <option data-tokens="Operator2">Port-Gentil</option>
+														<option data-tokens="Operator2">Lambaréné</option>
+                                                    </select>
+                                            </div>
+										
+											<label class="inputLabel">à:</label>
+											<div class="agileits-select">
+                                                    <select class="selectpicker show-tick" data-live-search="true">
+                                                        <option data-tokens="Operator1">Libreville</option>
+                                                        <option data-tokens="Operator2">Port-Gentil</option>
+														<option data-tokens="Operator2">Lambaréné</option>
+                                                    </select>
+                                            </div>
+											<div class="clearfix"></div>
+									</div>
+									 <div class="ban-bottom">
+											<div class="bnr-right">
+												<label class="inputLabel">Date de départ:</label>
+												<input class="date" id="datepicker7" type="text" placeholder="dd-mm-yyyy"  required="required" />
+											</div>
+											<div class="bnr-right">
+												<label class="inputLabel">Date de retour<span class="opt">&nbsp;(Optionel):</span></label>
+												<input class="date" id="datepicker8" type="text" placeholder="dd-mm-yyyy" />
+											</div>
+												<div class="clearfix"></div>
+												<!-- start-date-piker -->
+												<link rel="stylesheet" href="css/jquery-ui.css">
+												<script src="js/jquery-ui.js"></script>
+													<script>
+														$(function() {
+														$( "#datepicker7,#datepicker8" ).datepicker();
+														});
+													</script>
+											<!-- /End-date-piker -->
+										</div>
+									<div class="search">
+									     <input type="button" class="submit" value="Chercher" onclick="document.location.href='boat-list.html'">
+									
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <!-- /tab11 -->
+						
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -645,36 +754,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <img src="images/phone.jpg" class="img-responsive" alt="" />
             </div>
             <div class="col-md-6 phone-text">
-                <h4>Application mobile de paiement en ligne sur votre smartphone!</h4>
-                <p class="subtitle">Paiement Simple et Rapide</p>
+                <h4>Application pour simplifier vos services Airtel Money et MobiCash, Transférer de l'argent à l'international et reserver vos billets</h4>
+                <!--<p class="subtitle">Paiement Simple et Rapide</p>-->
                 <div class="text-1">
-                    <h5>Recharge</h5>
-                    <p>Recharge votre Mobile, Airtel, Moov, Azur, Libertis...</p>
-                    <p>Payer vos abonnement, Canal +, Ip9...</p>
+                    <h5>Services Mobiles</h5>
+                    <p>Recharge votre Mobile, Transfert d'argent, Services bancaires, Payer vos factures (SEEG), reabonnement canal+, IP9...</p>
                 </div>
                 <div class="text-1">
-                    <h5>Factures</h5>
-                    <p>Payer vos facture (Electricité, Eau, Gas etc...)</p>
+                    <h5>Achat des billets de transport et Transfert d'argent en France</h5>
+                    <p>Reserver et Acheter vos billets de transport et payer avec votre compte Airtel ou Mobicash.</p>
+					<p>Envoyer de l'argent en France depuis votre compte mobile</p>
                 </div>
-                <!--<div class="text-1">
-						<h5>Book Online</h5>
-						<p>Book Online Tickets(Movies, Bus, Train etc...)</p>
-					</div>-->
-                <!--<div class="agileinfo-dwld-app">
-							<h6>Download The App : 
-								<a href="#"><i class="fa fa-apple"></i></a>
-								<a href="#"><i class="fa fa-windows"></i></a>
-								<a href="#"><i class="fa fa-android"></i></a>
-							</h6>
-						</div>-->
+
             </div>
             <div class="clearfix"></div>
-            <!-- <div class="wthree-mobile-app">
-				<form action="#" method="get"> 
-					<input class="text" type="tel" name="tel" placeholder="Enter Your Mobile Number" required="">
-					<input type="submit" value="Send Download Link">
-				</form>
-			</div>-->
+
         </div>
     </div>
     <!--//phone-->
@@ -703,67 +797,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"> </div>
         </div>
     </div>
-    <!-- //Support content -->
 
-    <!--offers-->
-    <!--<div class="w3-offers">
-			<div class="container">
-				<div class="w3-agile-offers">
-					<h3>the best offers</h3>
-					<p>Contrary to popular belief
-							, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-				</div>
-			</div>
-		</div>-->
-    <!--//offers-->
-
-    <!--partners-->
-    <!--<div class="w3layouts-partners">
-		<h3>We are accepted at</h3>
-	 		<div class="container">
-				<ul>
-					<li><a href="#"><img class="img-responsive" src="images/lg.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg1.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg2.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg3.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg4.png" alt=""></a></li>
-				</ul>
-				<ul>
-					<li><a href="#"><img class="img-responsive" src="images/lg5.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg6.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg7.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg8.png" alt=""></a></li>
-					<li><a href="#"><img class="img-responsive" src="images/lg9.png" alt=""></a></li>	
-				</ul>
-			</div>
-		</div>	-->
-    <!--//partners-->
-
-    <!-- subscribe -->
-    <!--<div class="w3-subscribe agileits-w3layouts"> 
-		<div class="container">
-			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Join Us</h4>  
-				<ul>
-					<li><a href="#" class="fa fa-facebook sicon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter sicon twitter"> </a></li>
-					<li><a href="#" class="fa fa-google-plus sicon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble sicon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss sicon rss"> </a></li> 
-				</ul> 
-			</div> 
-			<div class="col-md-6 w3-agile-subscribe-right">
-				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
-				<form action="#" method="post"> 
-					<input type="email" name="email" placeholder="Enter your Email..." required="">
-					<input type="submit" value="Subscribe">
-					<div class="clearfix"> </div> 
-				</form>  
-			</div>
-			<div class="clearfix"> </div> 
-		</div>
-	</div>-->
-    <!-- //subscribe -->
     
 <!--footer-->
     <footer>
@@ -773,52 +807,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4>Compagnie</h4>
                     <ul class="w3ls-nav-bottom">
                         <li><a href="about.html">A propos de nous</a></li>
-                        <li><a href="support.html">Contact</a></li>
-                        <li><a href="terms.html">Conditions d'utilisation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
-                        <!--<li><a href="shortcodes.html">Shortcodes</a></li>
-                    <li><a href="icons.html">Icons Page</a></li>-->
 
                     </ul>
                 </div>
                 <div class="col-md-3 agileits-amet-sed ">
-                    <h4>Recharge Mobile</h4>
+                    <h4>Services Mobiles</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll">Airtel</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Libertis</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Moov</a></li>
-                        <!--<li><a href="#mobilew3layouts" class="scroll">Tata Docomo</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Reliance GSM</a></li> 
-                        <li><a href="#mobilew3layouts" class="scroll">Reliance CDMA</a></li>    
-                        <li><a href="#mobilew3layouts" class="scroll">Telenor</a></li>  
-                        <li><a href="#mobilew3layouts" class="scroll">MTS</a></li>  
-                        <li><a href="#mobilew3layouts" class="scroll">Jio</a></li>  -->
+                        <li><a href="#mobilew3layouts" class="scroll">Airtel Money</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">MobiCash</a></li>
+                       
                     </ul>
                 </div>
                 <div class="col-md-3 agileits-amet-sed ">
-                    <h4>Abonnement Décodeurs</h4>
+                    <h4>Transfert vers la France</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll">Canal +</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">IP9</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">IPTV</a></li>
-                        <!--<li><a href="#mobilew3layouts" class="scroll">Aircel</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">BSNL</a></li> 
-                        <li><a href="#mobilew3layouts" class="scroll">MTNL Delhi</a></li>   
-                        <li><a href="#mobilew3layouts" class="scroll">Vodafone</a></li> 
-                        <li><a href="#mobilew3layouts" class="scroll">Idea</a></li> 
-                        <li><a href="#mobilew3layouts" class="scroll">MTNL Mumbai</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Tata Photon Whiz</a></li> -->
+                        <li><a href="#mobilew3layouts" class="scroll">Depuis votre compte mobile</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vers le compte Paypal du destinatire</a></li>
+             
                     </ul>
                 </div>
                 <div class="col-md-2 agileits-amet-sed">
-                    <h4>Factures</h4>
+                    <h4>Transports</h4>
                     <ul class="w3ls-nav-bottom">
-                        <li><a href="#mobilew3layouts" class="scroll"> Electricité</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Gas</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Eau</a></li>
-                        <!--<li><a href="#mobilew3layouts" class="scroll">Reliance Digital TV Recharges</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Sun Direct Recharges</a></li>
-                        <li><a href="#mobilew3layouts" class="scroll">Videocon D2H Recharges</a></li>   -->
+                        <li><a href="#mobilew3layouts" class="scroll">Billet Transport Local</a></li>
+                        <li><a href="#mobilew3layouts" class="scroll">Vols Internationnaux</a></li>
+                        
                     </ul>
                 </div>
                 <div class="col-md-2 agileits-amet-sed ">
@@ -826,7 +840,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="w3ls-nav-bottom">
                         <li>Airtel Money</li>
                         <li>Mobicash</li>
-                        <li>MobiCash</li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -965,6 +978,252 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		       $('#forgotPassword').show();
             });
         });
+	    
+$( function() {
+    var availableTags = [
+      	"Libreville",
+	"Port-Gentil",
+	"Mouila",
+	"Lambaréné",
+	"Franceville",
+	"Oyem",
+	"Lebamba",
+	"Bongolo",
+	"Bitam",
+	"Mayumba",
+	"Paris",
+	"Koulamoutou",
+	"Mouanda",
+	"Bitam",
+	"Makokou",
+	"Ntoum",
+	"Kango",
+	"Tchibanga",
+	"Tsogni",
+	"Gamba",
+	"Mounana",
+	"Okondja",
+	"Ndendé",
+	"Booué",
+	"Fougamou",
+	"Ndjolé",
+	"Lastourville",
+	"Mitzic",
+	"Mékambo",
+	"Lékoni",
+	"Mimongo",
+	"Minvoul",
+	"Mbigou",
+	"Medouneu",
+	"Omboué",
+	"Cocobeach",
+        "Omboué",
+	"Abou Dabi",
+	"Abuja",
+	"Accra",
+	"Achgabat",
+	"Addis-Abeba",
+	"Alger",
+	"Alofi",
+	"Amman",
+	"Amsterdam",
+	"Andorre-la-Vieille",
+	"Ankara",
+	"Antananarivo",
+	"Apia",
+	"Asmara",
+	"Asuncion",
+	"Athènes",
+	"Avarua",
+	"Bagdad",
+	"Bakou",
+	"Bamako",
+	"Bandar Seri Begawan",
+	"Bangkok",
+	"Bangui",
+	"Banjul",
+	"Basseterre",
+	"Belgrade",
+	"Belmopan",
+	"Berlin",
+	"Berne (capitale de facto)3",
+	"Beyrouth",
+	"Bichkek",
+	"Bissau",
+	"Bloemfontein (capitale judiciaire)4",
+	"Bogota",
+	"Brasilia",
+	"Bratislava",
+	"Brazzaville",
+	"Bridgetown",
+	"Bruxelles",
+	"Bucarest",
+	"Budapest",
+	"Buenos Aires",
+	"Le Caire",
+	"Canberra",
+	"Le Cap (capitale législative)4",
+	"Caracas",
+	"Castries",
+	"Chisinau",
+	"Sri Jayawardenapura Kotte (administrative et législative)5",
+	"Conakry",
+	"Copenhague",
+	"Dakar",
+	"Damas",
+	"Delap-Uliga-Darrit (Majuro)6",
+	"Dacca",
+	"Dili",
+	"Djibouti",
+	"Djoubanote 1",
+	"Dodoma",
+	"Doha",
+	"Douchanbé",
+	"Dublin",
+	"Erevan",
+	"Freetown",
+	"Funafuti (Vaiaku)7",
+	"Gaborone",
+	"Georgetown",
+	"Gitega",
+	"Guatemala",
+	"Hanoï",
+	"Harare",
+	"La Havane",
+	"Helsinki",
+	"Honiara",
+	"Islamabad",
+	"Jakarta",
+	"Jérusalem (contesté au profit de Tel-aviv)note 2",
+	"Ramallah (capitale proclamée : Jérusalem-est)note 3",
+	"Kaboul",
+	"Kampala",
+	"Katmandou",
+	"Khartoum",
+	"Kiev",
+	"Kigali",
+	"Kingston",
+	"Kingstown",
+	"Kinshasa",
+	"Melekeok24",
+	"Koweït",
+	"Kuala Lumpur25",
+	"Lilongwe",
+	"Lima",
+	"Lisbonne",
+	"Ljubljana",
+	"Lomé",
+	"Londres",
+	"Luanda",
+	"Lusaka",
+	"Luxembourg",
+	"Madrid",
+	"Malabo",
+	"Malé",
+	"Managua",
+	"Manama",
+	"Manille",
+	"Maputo",
+	"Mascate",
+	"Maseru",
+	"Mbabane",
+	"Mexico",
+	"Minsk",
+	"Mogadiscio (Muqdisho26)",
+	"Monaco",
+	"Monrovia",
+	"Montevideo",
+	"Moroni",
+	"Moscou",
+	"Nairobi",
+	"Nassau",
+	"Naypyidaw 27",
+	"N'Djaména",
+	"New Delhi",
+	"Niamey",
+	"Nicosie",
+	"Nouakchott",
+	"Noursoultan28",
+	"Nuku alofa",
+	"Oslo",
+	"Ottawa",
+	"Ouagadougou",
+	"Oulan-Bator",
+	"Palikir",
+	"Panama",
+	"Paramaribo",
+	"Paris",
+	"La Paz (gouvernement et ambassades)29",
+	"Pékin",
+	"Phnom Penh",
+	"Podgorica",
+	"Port Moresby",
+	"Port-au-Prince",
+	"Port-d'Espagne",
+	"Port-Louis",
+	"Porto-Novo (administrative)30",
+	"Port-Vila",
+	"Prague",
+	"Praia",
+	"Pretoria (capitale administrative)4",
+	"Putrajaya (capitale administrative)25",
+	"Pyongyang",
+	"Quito",
+	"Rabat",
+	"Ramallah (capitale de facto)note 3",
+	"Reykjavik",
+	"Riga",
+	"Riyad",
+	"Rome",
+	"Roseau",
+	"Saint John's",
+	"Saint-Domingue",
+	"Saint-Georges",
+	"Saint-Marin",
+	"San José",
+	"San Salvador",
+	"Sanaa",
+	"Santiago",
+	"São Tomé",
+	"Sarajevo",
+	"Séoul",
+	"Singapour",
+	"Skopje",
+	"Sofia",
+	"Stockholm",
+	"Sucre (constitutionnelle)29",
+	"Suva",
+	"Tachkent",
+	"Tallinn",
+	"Tarawa-Sud31",
+	"Tbilissi",
+	"Tegucigalpa",
+	"Téhéran",
+	"Thimphou",
+	"Tirana",
+	"Tokyo",
+	"Tripoli",
+	"Tunis",
+	"Vaduz",
+	"La Valette",
+	"Varsovie",
+	"Cité du Vatican",
+	"Victoria",
+	"Vienne",
+	"Vientiane",
+	"Vilnius",
+	"Washington D.C.",
+	"Wellington",
+	"Windhoek",
+	"Yamoussoukro32",
+	"Yaoundé",
+	"Yaren",
+	"Zagreb"
+    ];
+    $( ".tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
 
         (function() {
 	   $('#sendCodeForm').hide();
@@ -1034,27 +1293,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 var tarifs = db.createObjectStore("tarifs", {
                     autoIncrement: true
                 });
-                var commandes = db.createObjectStore("commandes", {
-                    autoIncrement: true
-                });
+				
+				var requestBillet = db.createObjectStore("requestBillet", {keyPath: "id"});
 
-                for (var i in tarifData) {
+                /*for (var i in tarifData) {
                     tarifs.add(tarifData[i]);
-                }
+                }*/
             }
         })();
+		
 
         function filterFunction() {
             var input, filter;
-            alert('test');
             input = document.getElementById("tel");
-            alert(input.value);
             filter = input.value.substring(0, 2);
-            alert(filter);
             div = document.getElementById("selectOpe");
-            alert(div.value);
             opt = div.getElementsByTagName("option");
-            alert(opt.length);
             if (filter.trim() != "") {
                 for (i = 0; i < opt.length; i++) {
                     if (opt[i].value.localeCompare(filter) == 0) {
@@ -1066,6 +1320,379 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         }
     </script>
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  
+            
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+ 
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = [
+      	"Libreville",
+	"Port-Gentil",
+	"Mouila",
+	"Lambaréné",
+	"Franceville",
+	"Oyem",
+	"Lebamba",
+	"Bongolo",
+	"Bitam",
+	"Mayumba",
+	"Paris",
+	"Koulamoutou",
+	"Mouanda",
+	"Bitam",
+	"Makokou",
+	"Ntoum",
+	"Kango",
+	"Tchibanga",
+	"Tsogni",
+	"Gamba",
+	"Mounana",
+	"Okondja",
+	"Ndendé",
+	"Booué",
+	"Fougamou",
+	"Ndjolé",
+	"Lastourville",
+	"Mitzic",
+	"Mékambo",
+	"Lékoni",
+	"Mimongo",
+	"Minvoul",
+	"Mbigou",
+	"Medouneu",
+	"Omboué",
+	"Cocobeach",
+        "Omboué",
+	"Abou Dabi",
+	"Abuja",
+	"Accra",
+	"Achgabat",
+	"Addis-Abeba",
+	"Alger",
+	"Alofi",
+	"Amman",
+	"Amsterdam",
+	"Andorre-la-Vieille",
+	"Ankara",
+	"Antananarivo",
+	"Apia",
+	"Asmara",
+	"Asuncion",
+	"Athènes",
+	"Avarua",
+	"Bagdad",
+	"Bakou",
+	"Bamako",
+	"Bandar Seri Begawan",
+	"Bangkok",
+	"Bangui",
+	"Banjul",
+	"Basseterre",
+	"Belgrade",
+	"Belmopan",
+	"Berlin",
+	"Berne (capitale de facto)3",
+	"Beyrouth",
+	"Bichkek",
+	"Bissau",
+	"Bloemfontein (capitale judiciaire)4",
+	"Bogota",
+	"Brasilia",
+	"Bratislava",
+	"Brazzaville",
+	"Bridgetown",
+	"Bruxelles",
+	"Bucarest",
+	"Budapest",
+	"Buenos Aires",
+	"Le Caire",
+	"Canberra",
+	"Le Cap (capitale législative)4",
+	"Caracas",
+	"Castries",
+	"Chisinau",
+	"Sri Jayawardenapura Kotte (administrative et législative)5",
+	"Conakry",
+	"Copenhague",
+	"Dakar",
+	"Damas",
+	"Delap-Uliga-Darrit (Majuro)6",
+	"Dacca",
+	"Dili",
+	"Djibouti",
+	"Djoubanote 1",
+	"Dodoma",
+	"Doha",
+	"Douchanbé",
+	"Dublin",
+	"Erevan",
+	"Freetown",
+	"Funafuti (Vaiaku)7",
+	"Gaborone",
+	"Georgetown",
+	"Gitega",
+	"Guatemala",
+	"Hanoï",
+	"Harare",
+	"La Havane",
+	"Helsinki",
+	"Honiara",
+	"Islamabad",
+	"Jakarta",
+	"Jérusalem (contesté au profit de Tel-aviv)note 2",
+	"Ramallah (capitale proclamée : Jérusalem-est)note 3",
+	"Kaboul",
+	"Kampala",
+	"Katmandou",
+	"Khartoum",
+	"Kiev",
+	"Kigali",
+	"Kingston",
+	"Kingstown",
+	"Kinshasa",
+	"Melekeok24",
+	"Koweït",
+	"Kuala Lumpur25",
+	"Lilongwe",
+	"Lima",
+	"Lisbonne",
+	"Ljubljana",
+	"Lomé",
+	"Londres",
+	"Luanda",
+	"Lusaka",
+	"Luxembourg",
+	"Madrid",
+	"Malabo",
+	"Malé",
+	"Managua",
+	"Manama",
+	"Manille",
+	"Maputo",
+	"Mascate",
+	"Maseru",
+	"Mbabane",
+	"Mexico",
+	"Minsk",
+	"Mogadiscio (Muqdisho26)",
+	"Monaco",
+	"Monrovia",
+	"Montevideo",
+	"Moroni",
+	"Moscou",
+	"Nairobi",
+	"Nassau",
+	"Naypyidaw 27",
+	"N'Djaména",
+	"New Delhi",
+	"Niamey",
+	"Nicosie",
+	"Nouakchott",
+	"Noursoultan28",
+	"Nuku alofa",
+	"Oslo",
+	"Ottawa",
+	"Ouagadougou",
+	"Oulan-Bator",
+	"Palikir",
+	"Panama",
+	"Paramaribo",
+	"Paris",
+	"La Paz (gouvernement et ambassades)29",
+	"Pékin",
+	"Phnom Penh",
+	"Podgorica",
+	"Port Moresby",
+	"Port-au-Prince",
+	"Port-d'Espagne",
+	"Port-Louis",
+	"Porto-Novo (administrative)30",
+	"Port-Vila",
+	"Prague",
+	"Praia",
+	"Pretoria (capitale administrative)4",
+	"Putrajaya (capitale administrative)25",
+	"Pyongyang",
+	"Quito",
+	"Rabat",
+	"Ramallah (capitale de facto)note 3",
+	"Reykjavik",
+	"Riga",
+	"Riyad",
+	"Rome",
+	"Roseau",
+	"Saint John's",
+	"Saint-Domingue",
+	"Saint-Georges",
+	"Saint-Marin",
+	"San José",
+	"San Salvador",
+	"Sanaa",
+	"Santiago",
+	"São Tomé",
+	"Sarajevo",
+	"Séoul",
+	"Singapour",
+	"Skopje",
+	"Sofia",
+	"Stockholm",
+	"Sucre (constitutionnelle)29",
+	"Suva",
+	"Tachkent",
+	"Tallinn",
+	"Tarawa-Sud31",
+	"Tbilissi",
+	"Tegucigalpa",
+	"Téhéran",
+	"Thimphou",
+	"Tirana",
+	"Tokyo",
+	"Tripoli",
+	"Tunis",
+	"Vaduz",
+	"La Valette",
+	"Varsovie",
+	"Cité du Vatican",
+	"Victoria",
+	"Vienne",
+	"Vientiane",
+	"Vilnius",
+	"Washington D.C.",
+	"Wellington",
+	"Windhoek",
+	"Yamoussoukro32",
+	"Yaoundé",
+	"Yaren",
+	"Zagreb"
+    ];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("planeInputDepart"), countries);
+autocomplete(document.getElementById("planeInputArrive"), countries);
+autocomplete(document.getElementById("busInputDepart"), countries);
+autocomplete(document.getElementById("busInputArrive"), countries);
+autocomplete(document.getElementById("trainInputDepart"), countries);
+autocomplete(document.getElementById("trainInputArrive"), countries);	
+
+function testa() {
+
+            var villeDepart = $("div.w3ls-requestAVForm input#planeInputDepart").val();
+			var villeArrive = $("div.w3ls-requestAVForm input#planeInputArrive").val();
+			var datepickerDepart = $("div.w3ls-requestAVForm input#datepicker").val();
+			var datepickerArrive = $("div.w3ls-requestAVForm input#datepicker1").val();
+			var departAsTab = datepickerDepart.split("/");
+			var arriveAsTab = datepickerArrive.split("/");
+			var depart = "".concat(departAsTab[2],"-", departAsTab[0], "-",  departAsTab[1]);
+			var arrive = "".concat(arriveAsTab[2],"-", arriveAsTab[0], "-",  arriveAsTab[1]);
+			var type = "Avion";
+            // Check for white space in code for Success/Fail message
+            var url= "https://tsoumbou.pythonanywhere.com/api/request/".concat(villeDepart,"/",villeArrive,"/",depart,"/",arrive,"/",type);
+			sessionStorage.setItem('depart', villeDepart);
+			sessionStorage.setItem('arrive', villeArrive);
+			sessionStorage.setItem('requestBillet', url);
+			
+	  $(location).attr('href','https://utility-dev.github.io/vols-list.html');
+            
+         
+}
+</script>
     <!-- start-smoth-scrolling -->
     <!-- //here ends scrolling icon -->
 </body>
