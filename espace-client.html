@@ -749,17 +749,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         function updateUserPhone(){
         $.ajax({
-                    url: "https://tsoumbou.pythonanywhere.com/api/updateInfosClient/".concat($("#id-phone").val()),
-                    dataType: "json",
-                    cache: false,
-                    success: function(data) {
-                           // Success message
-                        console.log("test OK");
-                    },
-                    error: function() {
-                        // Fail message
-                        console.log("KO");
-                    },
+                url: "https://tsoumbou.pythonanywhere.com/api/updateInfosClient/".concat($("#id-phone").val()),
+                dataType: "json",
+                cache: false,
+                success: function(data) {
+                       // Success message
+                    console.log("test OK");
+                },
+                error: function() {
+                    // Fail message
+                    console.log("KO");
+                },
             })
 }
     </script>
