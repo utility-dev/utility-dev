@@ -323,11 +323,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- test -->
         <script type="text/javascript">
-        $(document).ready(function(){
           $("button").click(function(){
-            $("#id-phone").val(sessionStorage.setItem("phone"));
+            sessionStorage.setItem("phone", $("#id-phone").val());
           });
-        });
         </script>
 <!-- test -->
 
