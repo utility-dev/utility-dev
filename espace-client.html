@@ -277,7 +277,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div>
                     <form action="#" method="post" class="creditly-card-form agileinfo_form">
 									<section class="creditly-wrapper wthree, w3_agileits_wrapper">
-                                        <p id="msg-update-phone"></p>
+                                        <div id="msg-update-phone" class="col-sm-10"></div>
 										<div class="credit-card-wrapper">
 											<div class="first-row form-group">
 												<div class="controls">
@@ -756,13 +756,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        // Success message
                     console.log("test OK");
                     sessionStorage.setItem("phone", $("#id-phone").val());
-                    $('#msg-update-phone').html("Mise à jour effectuée avec succès.");
+                    $('#msg-update-phone').html("<h3 class='other-nw alert-danger'>Mise à jour effectuée avec succès.</h3>");
                 },
                 error: function() {
                     // Fail message
                     console.log("KO");
                     console.log("Error");
-                    $('#msg-update-phone').html("Problème rencontré lors de la mise à jour, réessayez !");
+                    $('#msg-update-phone').html("<h3 class='other-nw alert-danger'>Problème rencontré lors de la mise à jour, réessayez !</h3>");
                 },
             })
 }
