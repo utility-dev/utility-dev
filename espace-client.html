@@ -756,13 +756,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        // Success message
                     console.log("test OK");
                     sessionStorage.setItem("phone", $("#id-phone").val());
-                    $('#msg-update-phone').html("<h3 class='other-nw alert-danger'>Mise à jour effectuée avec succès.</h3>");
+                    $('#msg-update-phone').html("<h4 class='other-nw alert-success'>Mise à jour effectuée avec succès.</h4>");
                 },
                 error: function() {
                     // Fail message
                     console.log("KO");
                     console.log("Error");
-                    $('#msg-update-phone').html("<h3 class='other-nw alert-danger'>Problème rencontré lors de la mise à jour, réessayez !</h3>");
+                    $('#msg-update-phone').html("<h4 class='other-nw alert-danger'>Problème rencontré lors de la mise à jour, réessayez !</h4>");
                 },
             })
 }
